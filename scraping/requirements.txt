@@ -1,3 +1,5 @@
-browserbase==1.0.5
 playwright==1.48.0
 python-dotenv==1.0.1
+feedparser==6.0.10
+textblob==0.15.3
+psycopg2-binary==2.9.9

@@ -5,6 +5,7 @@ import random
 import logging
 import uuid
 import psycopg2
+import feedparser
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 from urllib.parse import urlparse
@@ -24,28 +25,34 @@ logger = logging.getLogger("article_scraper")
 
 load_dotenv()
 
-# Neon database configuration
-NEON_DB_URL = os.environ["NEON_DB_URL"]  # Get value from .env without default
+NEON_DB_URL = os.environ["NEON_DB_URL"]
 
 # News sources configuration
 sources = [
     # Right-Leaning
+    # {
+    #     "url": "https://www.foxnews.com",
+    #     "source": "Fox News",
+    #     "community": "right"
+    # },
+    # Left-Leaning
     {
-        "url": "https://www.foxnews.com",
-        "source": "Fox News",
-        "community": "right"
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+        "source": "New York Times",
+        "community": "left"
     }
 ]
 
 # Selectors for different websites
-# These selectors need to be customized for each website
 selectors = {
     "www.foxnews.com": {
         "articles": "article.article[class*='story-']",
         "title": ".headline.speakable",
-        "date": ".article-date time, .article-info time, time.time",
-        "author": ".author-byline a, .author-byline span, .article-meta .author",
-        "quote": ".article-body p"
+        "content": ".article-body p"
+    },
+    "rss.nytimes.com": {
+        "rss": True,
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
     }
 }
 
@@ -81,7 +88,6 @@ class ArticleScraper:
     
     def setup(self):
         """Initialize the browser session"""
-        # Launch a browser directly with Playwright
         self.browser = self.playwright.chromium.launch(headless=True)
         self.context = self.browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
@@ -104,10 +110,10 @@ class ArticleScraper:
         parsed_url = urlparse(url)
         return parsed_url.netloc
     
-    def get_selectors(self, domain: str) -> Dict[str, str]:
+    def get_selectors(self, domain: str) -> Dict[str, Any]:
         """Get appropriate selectors for the domain"""
         # Return domain-specific selectors or empty dict if domain not found
-        return selectors[domain]
+        return selectors.get(domain, {})
     
     def random_delay(self, min_seconds: float = 1.0, max_seconds: float = 3.0):
         """Add random delay to avoid detection"""
@@ -123,34 +129,6 @@ class ArticleScraper:
         except Exception as e:
             logger.error(f"Error analyzing sentiment: {str(e)}")
             return 0.0
-    
-    def format_date(self, date_str: Optional[str]) -> str:
-        """Format date string to ISO format for frontend"""
-        if not date_str:
-            return datetime.now().isoformat()
-            
-        try:
-            # Try various date formats
-            formats = [
-                "%B %d, %Y %I:%M%p %Z",  # April 8, 2025 12:12pm EDT
-                "%B %d, %Y",             # April 8, 2025
-                "%Y-%m-%dT%H:%M:%S%z",   # 2025-04-08T12:12:00-0400
-                "%a, %d %b %Y %H:%M:%S %z",  # Mon, 08 Apr 2025 12:12:00 -0400
-                "%Y-%m-%d %H:%M:%S",     # 2025-04-08 12:12:00
-            ]
-            
-            for fmt in formats:
-                try:
-                    dt = datetime.strptime(date_str, fmt)
-                    return dt.isoformat()
-                except ValueError:
-                    continue
-                    
-            # If all formats fail, return the original string
-            return date_str
-        except Exception as e:
-            logger.error(f"Error formatting date: {str(e)}")
-            return datetime.now().isoformat()
     
     def get_title_from_url(self, url: str) -> str:
         """Extract a title from the URL when regular title extraction fails"""
@@ -203,10 +181,9 @@ class ArticleScraper:
             # Create a new page for each article to avoid connection issues
             article_page = self.context.new_page()
             try:
-                article_page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                article_page.goto(url, wait_until="networkidle", timeout=30000)
                 self.random_delay()
                 
-                # Extract article data - try multiple approaches for title
                 title = None
                 title_element = article_page.query_selector(site_selectors["title"])
                 if title_element:
@@ -216,21 +193,18 @@ class ArticleScraper:
                 if not title:
                     title = self.get_title_from_url(url)
                 
-                date_element = article_page.query_selector(site_selectors["date"])
-                date_str = date_element.text_content().strip() if date_element else None
-                formatted_date = self.format_date(date_str)
-                
                 # Extract content text
-                content_elements = article_page.query_selector_all(".article-body p")
+                content_elements = article_page.query_selector_all(site_selectors["content"])
                 content_text = " ".join([el.text_content().strip() for el in content_elements]) if content_elements else ""
-                # Analyze sentiment
+
+
+                print(content_text)
                 sentiment_score = self.analyze_sentiment(content_text)
                 
-                quote = content_elements[0].text_content().strip()
+                quote = content_elements[0].text_content().strip() if content_elements and len(content_elements) > 0 else ""
                 
-                # Format as Perspective
                 article_url = url
-                
+            
                 perspective = {
                     "id": str(uuid.uuid4()),
                     "title": title,
@@ -238,8 +212,8 @@ class ArticleScraper:
                     "community": community,
                     "quote": quote,
                     "sentiment": sentiment_score,
-                    "date": formatted_date,
                     "url": article_url,
+                    "date": datetime.now().isoformat(),
                     "scraped_at": datetime.now().isoformat()
                 }
                 
@@ -254,6 +228,66 @@ class ArticleScraper:
             logger.error(f"Error scraping {url}: {str(e)}")
             return None
     
+    def scrape_rss_feed(self, url: str, source_name: str, community: str) -> List[Dict[str, Any]]:
+        """Scrape articles from an RSS feed"""
+        perspectives = []
+        
+        try:
+            logger.info(f"Parsing RSS feed: {url}")
+            feed = feedparser.parse(url)
+            
+            if not feed.entries:
+                logger.warning(f"No entries found in RSS feed: {url}")
+                return perspectives
+                
+            logger.info(f"Found {len(feed.entries)} entries in RSS feed")
+            
+            for i, entry in enumerate(feed.entries):
+                try:
+                    title = entry.title
+                    link = entry.link
+                    
+                    # Extract content or summary
+                    content = ""
+                    if hasattr(entry, 'content') and entry.content:
+                        content = entry.content[0].value
+                    elif hasattr(entry, 'summary'):
+                        content = entry.summary
+                        
+                    # Calculate sentiment using both title and content
+                    combined_text = title + ". " + content if content else title
+                    sentiment_score = self.analyze_sentiment(combined_text)
+                    
+                    # Extract a quote (first paragraph or sentence)
+                    quote = content.split('.')[0] if content else ""
+                    if len(quote) > 200:
+                        quote = quote[:197] + "..."
+                    
+                    perspective = {
+                        "id": str(uuid.uuid4()),
+                        "title": title,
+                        "source": source_name,
+                        "community": community,
+                        "quote": quote,
+                        "sentiment": sentiment_score,
+                        "url": link,
+                        "scraped_at": datetime.now().isoformat()
+                    }
+                    
+                    self.save_to_database(perspective)
+                    perspectives.append(perspective)
+                    logger.info(f"  Processed RSS entry {i+1}: {title[:50]}...")
+                    
+                except Exception as e:
+                    logger.error(f"Error processing RSS entry: {str(e)}")
+                    continue
+                    
+            return perspectives
+            
+        except Exception as e:
+            logger.error(f"Error parsing RSS feed {url}: {str(e)}")
+            return perspectives
+    
     def save_to_database(self, perspective: Dict[str, Any]):
         """Save perspective to Neon database"""
         if not self.db_conn:
@@ -267,15 +301,14 @@ class ArticleScraper:
             # Insert perspective data
             cursor.execute("""
                 INSERT INTO perspectives 
-                (id, title, source, community, quote, sentiment, date, url, scraped_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                (id, title, source, community, quote, sentiment, url, scraped_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (id) DO UPDATE SET
                 title = EXCLUDED.title,
                 source = EXCLUDED.source,
                 community = EXCLUDED.community,
                 quote = EXCLUDED.quote,
                 sentiment = EXCLUDED.sentiment,
-                date = EXCLUDED.date,
                 url = EXCLUDED.url,
                 scraped_at = EXCLUDED.scraped_at
             """, (
@@ -285,7 +318,6 @@ class ArticleScraper:
                 perspective["community"],
                 perspective["quote"],
                 perspective["sentiment"],
-                perspective["date"],
                 perspective["url"],
                 perspective["scraped_at"]
             ))
@@ -308,6 +340,9 @@ class ArticleScraper:
         print(f"Extracted domain: {domain}")
         
         perspectives = []
+        
+        if site_selectors.get("rss", False):
+            return self.scrape_rss_feed(url, source_name, community)
         
         try:
             logger.info(f"Visiting {url}")

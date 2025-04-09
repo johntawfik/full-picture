@@ -1,0 +1,1199 @@
+2025-04-08 13:59:31,662 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+2025-04-08 13:59:32,385 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 13:59:32,387 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/891b18e6-d541-4b3c-972d-0458f37fa180
+2025-04-08 13:59:33,606 - article_scraper - INFO - Scraping Fox News
+2025-04-08 13:59:33,606 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:00:31,878 - article_scraper - INFO - Connected to Neon database
+2025-04-08 14:00:32,493 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:00:32,496 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/fe7c8a1a-6ded-438e-b537-fe214d61f655
+2025-04-08 14:00:33,529 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:00:33,530 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:05:01,899 - article_scraper - ERROR - Timeout while scraping https://www.foxnews.com
+2025-04-08 14:05:06,515 - article_scraper - INFO - Scraping Breitbart
+2025-04-08 14:05:06,518 - article_scraper - INFO - Visiting https://www.breitbart.com
+2025-04-08 14:05:33,872 - article_scraper - INFO - Scraping article: https://www.breitbart.com/clips/2025/04/08/breitbarts-carney-i-dont-think-we-should-give-the-stock-market-a-veto-over-the-public-policy-of-the-united-states/
+2025-04-08 14:05:45,793 - article_scraper - ERROR - Error scraping https://www.breitbart.com/clips/2025/04/08/breitbarts-carney-i-dont-think-we-should-give-the-stock-market-a-veto-over-the-public-policy-of-the-united-states/: ElementHandle.text_content: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(":scope")
+
+2025-04-08 14:05:47,128 - article_scraper - INFO - Scraping article: https://www.breitbart.com/politics/2025/04/08/watch-live-karoline-leavitt-holds-white-house-press-briefing-11/
+2025-04-08 14:05:47,136 - article_scraper - ERROR - Error scraping https://www.breitbart.com/politics/2025/04/08/watch-live-karoline-leavitt-holds-white-house-press-briefing-11/: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:05:49,799 - article_scraper - INFO - Scraping article: https://www.breitbart.com/politics/2025/04/08/exclusive-senior-cia-official-who-facilitated-bidens-military-covid-19-vaccine-mandate-fired/
+2025-04-08 14:05:49,804 - article_scraper - ERROR - Error scraping https://www.breitbart.com/politics/2025/04/08/exclusive-senior-cia-official-who-facilitated-bidens-military-covid-19-vaccine-mandate-fired/: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:05:51,835 - article_scraper - INFO - Scraping article: https://www.breitbart.com/politics/2025/04/08/rep-jasmine-crockett-advocates-for-illegal-immigration-we-done-picking-cotton/
+2025-04-08 14:05:51,837 - article_scraper - ERROR - Error scraping https://www.breitbart.com/politics/2025/04/08/rep-jasmine-crockett-advocates-for-illegal-immigration-we-done-picking-cotton/: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:05:53,913 - article_scraper - INFO - Scraping article: https://www.breitbart.com/health/2025/04/08/the-w-h-o-just-simulated-a-massive-pandemic-now-it-wants-a-new-global-treaty/
+2025-04-08 14:05:53,940 - article_scraper - ERROR - Error scraping https://www.breitbart.com/health/2025/04/08/the-w-h-o-just-simulated-a-massive-pandemic-now-it-wants-a-new-global-treaty/: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:05:58,314 - article_scraper - INFO - Scraping Daily Wire
+2025-04-08 14:05:58,320 - article_scraper - INFO - Visiting https://www.dailywire.com
+2025-04-08 14:05:58,349 - article_scraper - ERROR - Error scraping https://www.dailywire.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:02,321 - article_scraper - INFO - Scraping Washington Examiner
+2025-04-08 14:06:02,322 - article_scraper - INFO - Visiting https://www.washingtonexaminer.com
+2025-04-08 14:06:02,326 - article_scraper - ERROR - Error scraping https://www.washingtonexaminer.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:07,339 - article_scraper - INFO - Scraping Newsmax
+2025-04-08 14:06:07,340 - article_scraper - INFO - Visiting https://www.newsmax.com
+2025-04-08 14:06:07,346 - article_scraper - ERROR - Error scraping https://www.newsmax.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:13,201 - article_scraper - INFO - Scraping HuffPost
+2025-04-08 14:06:13,203 - article_scraper - INFO - Visiting https://www.huffpost.com
+2025-04-08 14:06:13,212 - article_scraper - ERROR - Error scraping https://www.huffpost.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:17,461 - article_scraper - INFO - Scraping Vox
+2025-04-08 14:06:17,461 - article_scraper - INFO - Visiting https://www.vox.com
+2025-04-08 14:06:17,466 - article_scraper - ERROR - Error scraping https://www.vox.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:21,747 - article_scraper - INFO - Scraping MSNBC
+2025-04-08 14:06:21,749 - article_scraper - INFO - Visiting https://www.msnbc.com
+2025-04-08 14:06:21,754 - article_scraper - ERROR - Error scraping https://www.msnbc.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:27,161 - article_scraper - INFO - Scraping Mother Jones
+2025-04-08 14:06:27,163 - article_scraper - INFO - Visiting https://www.motherjones.com
+2025-04-08 14:06:27,168 - article_scraper - ERROR - Error scraping https://www.motherjones.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:31,275 - article_scraper - INFO - Scraping Daily Kos
+2025-04-08 14:06:31,275 - article_scraper - INFO - Visiting https://www.dailykos.com
+2025-04-08 14:06:31,279 - article_scraper - ERROR - Error scraping https://www.dailykos.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:36,103 - article_scraper - INFO - Scraping Reuters
+2025-04-08 14:06:36,103 - article_scraper - INFO - Visiting https://www.reuters.com
+2025-04-08 14:06:36,107 - article_scraper - ERROR - Error scraping https://www.reuters.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:41,080 - article_scraper - INFO - Connected to Neon database
+2025-04-08 14:06:41,093 - article_scraper - INFO - Scraping Associated Press
+2025-04-08 14:06:41,094 - article_scraper - INFO - Visiting https://apnews.com
+2025-04-08 14:06:41,096 - article_scraper - ERROR - Error scraping https://apnews.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:41,616 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:06:41,618 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/73ccfe51-f267-49bd-8e4f-7cf4437e6f39
+2025-04-08 14:06:42,916 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:06:42,917 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:06:42,917 - article_scraper - INFO - Loading https://www.foxnews.com (attempt 1/2)
+2025-04-08 14:06:45,533 - article_scraper - INFO - Scraping BBC News
+2025-04-08 14:06:45,533 - article_scraper - INFO - Visiting https://www.bbc.com/news
+2025-04-08 14:06:45,534 - article_scraper - ERROR - Error scraping https://www.bbc.com/news: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:06:47,592 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 14:07:17,648 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 14:07:17,649 - article_scraper - INFO - Loading https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling (attempt 1/2)
+2025-04-08 14:07:58,993 - article_scraper - WARNING - Error extracting content: ElementHandle.text_content: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator(":scope")
+
+2025-04-08 14:30:06,069 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.143.47.40), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.143.47.40), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+2025-04-08 14:30:06,673 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:30:06,674 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/b17a01df-6133-4ef6-88a4-c18975da2ee2
+2025-04-08 14:30:08,025 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:30:08,026 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:30:29,270 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:30:29,270 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:30:34,816 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+2025-04-08 14:30:35,359 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:30:35,370 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/a405c555-8898-4590-8c14-6d5fc48daf7d
+2025-04-08 14:30:36,457 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:30:36,458 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:31:09,175 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:31:09,176 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:32:56,972 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.143.47.40), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.143.47.40), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+2025-04-08 14:32:57,474 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:32:57,475 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/82fac782-baed-4bd9-8802-e04da323f45d
+2025-04-08 14:32:58,718 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:32:58,719 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:33:02,602 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.23.186.13), port 5432 failed: ERROR:  connection is insecure (try using `sslmode=require`)
+
+2025-04-08 14:33:02,951 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 14:33:02,952 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.455875 seconds
+2025-04-08 14:33:03,632 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 14:33:03,632 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.906758 seconds
+2025-04-08 14:33:04,025 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 14:33:04,936 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:33:04,938 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/ef7f8ed2-1d0a-46b9-a7d4-1bb40a42b4e0
+2025-04-08 14:33:06,053 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:33:06,053 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:34:29,364 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:34:29,366 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:34:30,749 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.143.47.40), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+
+2025-04-08 14:34:31,387 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:34:31,390 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/b865431c-0aca-411a-958f-3651ac96f341
+2025-04-08 14:34:32,696 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:34:32,696 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:34:53,915 - article_scraper - INFO - Found 195 potential article elements on Fox News
+2025-04-08 14:35:00,465 - article_scraper - INFO -   Article 1: Unknown title... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 14:35:04,618 - article_scraper - INFO -   Article 2: Unknown title... - https://www.foxnews.com/politics/house-republicans-worry-even-trump-cant-save-them-tax-cuts-budget-bill-hang-balance
+2025-04-08 14:35:20,353 - article_scraper - INFO -   Article 3: Unknown title... - https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 14:37:27,383 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:37:27,383 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:37:29,029 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.131.64.200), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+
+2025-04-08 14:37:29,578 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:37:29,580 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/ab43e70a-64b9-4d9e-9d12-51f358aefdab
+2025-04-08 14:37:30,882 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:37:30,883 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:37:52,164 - article_scraper - INFO - Found 195 potential article elements on Fox News
+2025-04-08 14:37:57,437 - article_scraper - INFO -   Article 1: Unknown title... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 14:38:03,252 - article_scraper - INFO -   Article 2: Unknown title... - https://www.foxnews.com/politics/house-republicans-worry-even-trump-cant-save-them-tax-cuts-budget-bill-hang-balance
+2025-04-08 14:38:08,439 - article_scraper - INFO -   Article 3: Unknown title... - https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 14:40:52,992 - article_scraper - ERROR - Error connecting to Neon database: connection to server at "ep-small-grass-05986387.us-east-2.aws.neon.tech" (3.131.64.200), port 5432 failed: ERROR:  password authentication failed for user 'neondb_owner'
+
+2025-04-08 14:40:53,482 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 14:40:53,483 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.406418 seconds
+2025-04-08 14:40:54,102 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 14:40:54,103 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.972834 seconds
+2025-04-08 14:40:55,311 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 14:40:55,312 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 14:43:18,526 - article_scraper - INFO - Connected to Neon database
+2025-04-08 14:43:19,169 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:43:19,171 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/29df0558-42f5-4ecc-a598-320157f357aa
+2025-04-08 14:43:20,449 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:43:20,449 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:43:37,846 - article_scraper - INFO - Found 195 potential article elements on Fox News
+2025-04-08 14:43:45,123 - article_scraper - INFO -   Article 1: Supreme Court Trump Probationary Federal Workers R... (from URL) - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 14:43:49,880 - article_scraper - INFO -   Article 2: House Republicans Worry Even Trump Cant Save Them ... (from URL) - https://www.foxnews.com/politics/house-republicans-worry-even-trump-cant-save-them-tax-cuts-budget-bill-hang-balance
+2025-04-08 14:43:55,155 - article_scraper - INFO -   Article 3: Judge Boasberg Cancels Planned Hearing Review Trum... (from URL) - https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 14:44:29,483 - article_scraper - INFO -   Article 4: Navy Kilby Houthi Missiles Red Sea Costs... (from URL) - https://www.foxnews.com/politics/navy-kilby-houthi-missiles-red-sea-costs
+2025-04-08 14:45:50,651 - article_scraper - INFO -   Article 5: Karoline Leavitt Democrats Have Officially Become ... (from URL) - https://www.foxnews.com/media/karoline-leavitt-democrats-have-officially-become-party-crazy
+2025-04-08 14:46:48,929 - article_scraper - ERROR - Timeout while scraping https://www.foxnews.com
+2025-04-08 14:46:53,328 - article_scraper - INFO - Scraping Breitbart
+2025-04-08 14:46:53,329 - article_scraper - INFO - Visiting https://www.breitbart.com
+2025-04-08 14:47:23,374 - article_scraper - ERROR - Timeout while scraping https://www.breitbart.com
+2025-04-08 14:47:27,635 - article_scraper - INFO - Scraping Daily Wire
+2025-04-08 14:47:27,636 - article_scraper - INFO - Visiting https://www.dailywire.com
+2025-04-08 14:47:51,302 - article_scraper - INFO - Found 0 potential article elements on Daily Wire
+2025-04-08 14:47:51,343 - article_scraper - INFO - Successfully extracted 0 article links from Daily Wire
+2025-04-08 14:47:54,475 - article_scraper - INFO - Scraping Washington Examiner
+2025-04-08 14:47:54,477 - article_scraper - INFO - Visiting https://www.washingtonexaminer.com
+2025-04-08 14:48:07,229 - article_scraper - INFO - Found 0 potential article elements on Washington Examiner
+2025-04-08 14:48:07,230 - article_scraper - INFO - Successfully extracted 0 article links from Washington Examiner
+2025-04-08 14:48:10,922 - article_scraper - INFO - Scraping Newsmax
+2025-04-08 14:48:10,931 - article_scraper - INFO - Visiting https://www.newsmax.com
+2025-04-08 14:48:18,596 - article_scraper - INFO - Found 0 potential article elements on Newsmax
+2025-04-08 14:48:18,598 - article_scraper - INFO - Successfully extracted 0 article links from Newsmax
+2025-04-08 14:48:22,001 - article_scraper - INFO - Scraping HuffPost
+2025-04-08 14:48:22,005 - article_scraper - INFO - Visiting https://www.huffpost.com
+2025-04-08 14:48:35,477 - article_scraper - INFO - Found 0 potential article elements on HuffPost
+2025-04-08 14:48:35,490 - article_scraper - INFO - Successfully extracted 0 article links from HuffPost
+2025-04-08 14:48:41,372 - article_scraper - INFO - Scraping Vox
+2025-04-08 14:48:41,383 - article_scraper - INFO - Visiting https://www.vox.com
+2025-04-08 14:48:45,543 - article_scraper - ERROR - Error scraping https://www.vox.com: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.vox.com/", waiting until "domcontentloaded"
+
+2025-04-08 14:48:48,911 - article_scraper - INFO - Scraping MSNBC
+2025-04-08 14:48:48,913 - article_scraper - INFO - Visiting https://www.msnbc.com
+2025-04-08 14:48:48,924 - article_scraper - ERROR - Error scraping https://www.msnbc.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:48:54,589 - article_scraper - INFO - Scraping Mother Jones
+2025-04-08 14:48:54,611 - article_scraper - INFO - Visiting https://www.motherjones.com
+2025-04-08 14:48:54,708 - article_scraper - ERROR - Error scraping https://www.motherjones.com: Page.goto: Target page, context or browser has been closed
+2025-04-08 14:48:59,817 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 14:52:44,906 - article_scraper - INFO - Connected to Neon database
+2025-04-08 14:52:45,562 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:52:45,564 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/3d54489b-1ca9-427c-bebc-b7c63374115f
+2025-04-08 14:52:46,781 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:52:46,783 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:53:09,123 - article_scraper - INFO - Found 195 potential article elements on Fox News
+2025-04-08 14:53:17,098 - article_scraper - INFO -   Article 1: Supreme Court Trump Probationary Federal Workers R... (from URL) - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 14:53:23,906 - article_scraper - INFO -   Article 2: House Republicans Worry Even Trump Cant Save Them ... (from URL) - https://www.foxnews.com/politics/house-republicans-worry-even-trump-cant-save-them-tax-cuts-budget-bill-hang-balance
+2025-04-08 14:54:22,836 - article_scraper - INFO -   Article 3: Judge Boasberg Cancels Planned Hearing Review Trum... (from URL) - https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 14:55:30,908 - article_scraper - INFO -   Article 4: Navy Kilby Houthi Missiles Red Sea Costs... (from URL) - https://www.foxnews.com/politics/navy-kilby-houthi-missiles-red-sea-costs
+2025-04-08 14:58:04,659 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:58:04,660 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 14:58:44,611 - article_scraper - INFO - Connected to Neon database
+2025-04-08 14:58:45,218 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 14:58:45,219 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/fa18754f-0062-4995-8280-cc1ba7e33913
+2025-04-08 14:58:46,459 - article_scraper - INFO - Scraping Fox News
+2025-04-08 14:58:46,460 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 14:58:54,660 - article_scraper - INFO -   Article 2: Www.foxnews.com... - https://www.foxnews.com//www.foxnews.com/us
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 3: Crime... - https://www.foxnews.com//www.foxnews.com/category/us/crime
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 4: Immigration... - https://www.foxnews.com//www.foxnews.com/category/us/immigration
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 5: Terror... - https://www.foxnews.com//www.foxnews.com/category/us/terror
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 6: True Crime... - https://www.foxnews.com//www.foxnews.com/true-crime
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 7: Bryan Kohberger... - https://www.foxnews.com//www.foxnews.com/category/us/bryan-kohberger
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 8: Karen Read... - https://www.foxnews.com//www.foxnews.com/category/us/karen-read
+2025-04-08 14:58:54,662 - article_scraper - INFO -   Article 9: Www.foxnews.com... - https://www.foxnews.com//www.foxnews.com/politics
+2025-04-08 14:58:54,663 - article_scraper - INFO -   Article 10: Trump's First 100 Days... - https://www.foxnews.com//www.foxnews.com/category/politics/elections/presidential/trump-transition
+2025-04-08 14:58:54,663 - article_scraper - INFO - Successfully extracted 9 article links from Fox News
+2025-04-08 14:58:54,663 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com//www.foxnews.com/us
+2025-04-08 14:58:54,663 - article_scraper - INFO - Scraping article: https://www.foxnews.com//www.foxnews.com/us
+2025-04-08 14:59:03,315 - article_scraper - INFO -   Used URL-based title: Www.foxnews.com
+2025-04-08 19:50:21,604 - article_scraper - INFO - Connected to Neon database
+2025-04-08 19:50:22,251 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 19:50:22,254 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/93468b3c-baea-45ed-8c6b-16bf6f7f1b4e
+2025-04-08 19:50:23,556 - article_scraper - INFO - Scraping Fox News
+2025-04-08 19:50:23,557 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 19:50:29,120 - article_scraper - ERROR - Error scraping https://www.foxnews.com: Page.query_selector_all: selector: expected string, got undefined
+2025-04-08 19:50:36,441 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 19:52:20,651 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 19:52:20,652 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 19:52:21,739 - article_scraper - INFO - Connected to Neon database
+2025-04-08 19:52:22,242 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 19:52:22,244 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/34a2a275-2dff-419c-8907-c120bd529079
+2025-04-08 19:52:23,343 - article_scraper - INFO - Scraping Fox News
+2025-04-08 19:52:23,343 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 19:52:29,602 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 19:52:29,603 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 19:52:30,382 - article_scraper - INFO - Connected to Neon database
+2025-04-08 19:52:30,890 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 19:52:30,891 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/48d12415-95d9-47d7-a1ea-65741ec7a4c1
+2025-04-08 19:52:31,597 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 19:52:31,716 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 19:52:36,026 - article_scraper - INFO - Connected to Neon database
+2025-04-08 19:52:36,503 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 19:52:36,504 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/dc41d11c-faee-464b-b627-45866703f069
+2025-04-08 19:52:37,700 - article_scraper - INFO - Scraping Fox News
+2025-04-08 19:52:37,700 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 19:52:52,431 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 19:53:00,376 - article_scraper - INFO -   Article 1: Us Panama Taking Back Canal From Chinas Influence ... (from URL) - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 19:53:03,572 - article_scraper - INFO -   Article 2: 6371239843112... (from URL) - https://www.foxnews.com/video/6371239843112
+2025-04-08 19:53:15,769 - article_scraper - INFO -   Article 3: Texas Ag Ken Paxton Announces Run Us Senate... (from URL) - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 19:53:44,441 - article_scraper - INFO -   Article 4: Supreme Court Trump Probationary Federal Workers R... (from URL) - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 19:55:18,226 - article_scraper - INFO -   Article 5: Rep Jasmine Crockett Suggests United States Needs ... (from URL) - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 19:56:37,664 - article_scraper - INFO -   Article 6: Ex Mlb Players Octavio Dotel Tony Blanco Among Dea... (from URL) - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 19:57:16,356 - article_scraper - INFO -   Article 7: Economist Says Trumps Tariffs Win Win Strategy Neg... (from URL) - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 19:57:47,778 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(":scope")
+
+2025-04-08 19:57:47,781 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 19:57:47,783 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 19:57:47,783 - article_scraper - INFO - Successfully extracted 7 article links from Fox News
+2025-04-08 19:57:47,783 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 19:57:47,784 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 19:57:47,786 - article_scraper - ERROR - Error scraping https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth: Page.goto: Target page, context or browser has been closed
+2025-04-08 19:57:47,786 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 19:57:49,795 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 19:57:49,795 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 19:57:49,800 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/6371239843112: Page.goto: Target page, context or browser has been closed
+2025-04-08 19:57:49,800 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371239843112
+2025-04-08 19:57:52,758 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 19:57:52,758 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 19:57:52,762 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate: Page.goto: Target page, context or browser has been closed
+2025-04-08 19:57:52,762 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 19:57:54,940 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 19:57:54,942 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 19:57:54,948 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling: Page.goto: Target page, context or browser has been closed
+2025-04-08 19:57:54,948 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 19:57:57,678 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 19:57:57,678 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 19:57:57,681 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton: Page.goto: Target page, context or browser has been closed
+2025-04-08 19:57:57,682 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 19:58:04,906 - article_scraper - INFO - Scraping Reddit r/politics
+2025-04-08 19:58:04,987 - article_scraper - ERROR - Error scraping Reddit r/politics: BrowserContext.new_page: Target page, context or browser has been closed
+2025-04-08 19:58:09,824 - article_scraper - INFO - Scraping Reddit r/worldnews
+2025-04-08 19:58:09,881 - article_scraper - ERROR - Error scraping Reddit r/worldnews: BrowserContext.new_page: Target page, context or browser has been closed
+2025-04-08 19:58:13,042 - article_scraper - INFO - Scraping Reddit r/conservative
+2025-04-08 19:58:13,060 - article_scraper - ERROR - Error scraping Reddit r/conservative: BrowserContext.new_page: Target page, context or browser has been closed
+2025-04-08 19:58:17,489 - article_scraper - INFO - Scraping Reddit r/news
+2025-04-08 19:58:17,498 - article_scraper - ERROR - Error scraping Reddit r/news: BrowserContext.new_page: Target page, context or browser has been closed
+2025-04-08 19:58:21,992 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:03:33,707 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:03:34,288 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 20:03:34,290 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/a58dac45-7139-43a6-8bbf-37ff28ace6a5
+2025-04-08 20:03:35,455 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:03:35,456 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:03:56,461 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-08 20:04:04,914 - article_scraper - INFO -   Article 1: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:04:32,042 - article_scraper - INFO -   Article 2: WATCH LIVE: President Trump gives remarks at Repub... - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:06:36,477 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:08:47,267 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(":scope")
+
+2025-04-08 20:08:47,270 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,271 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,272 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,273 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,305 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,305 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:08:47,306 - article_scraper - INFO - Successfully extracted 3 article links from Fox News
+2025-04-08 20:08:47,306 - article_scraper - INFO - Scraping article 1/3: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:08:47,307 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:08:47,308 - article_scraper - ERROR - Error scraping https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:08:47,308 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:08:49,872 - article_scraper - INFO - Scraping article 2/3: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:08:49,872 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:08:49,876 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/6371239843112: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:08:49,876 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:08:52,076 - article_scraper - INFO - Scraping article 3/3: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:08:52,077 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:08:52,080 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:08:52,080 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:08:57,975 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:12:23,815 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:12:24,407 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 20:12:24,409 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/3fe6ad34-110c-41f1-83e2-108be65307f1
+2025-04-08 20:12:25,569 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:12:25,569 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:12:42,959 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:12:43,378 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:12:43,379 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.377505 seconds
+2025-04-08 20:12:43,979 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:12:43,979 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.787008 seconds
+2025-04-08 20:12:44,909 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:12:44,909 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:13:38,842 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:13:39,267 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:13:39,268 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.478399 seconds
+2025-04-08 20:13:39,956 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:13:39,957 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.936704 seconds
+2025-04-08 20:13:41,039 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:13:41,040 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:15:01,763 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:15:02,183 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:15:02,184 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.495547 seconds
+2025-04-08 20:15:02,921 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:15:02,922 - browserbase._base_client - INFO - Retrying request to /v1/sessions in 0.869770 seconds
+2025-04-08 20:15:04,007 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 429 Too Many Requests"
+2025-04-08 20:15:04,007 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:19:15,233 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:19:15,767 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 201 Created"
+2025-04-08 20:19:15,768 - article_scraper - INFO - Session replay URL: https://browserbase.com/sessions/9f27d65e-7f99-44e7-ad96-c961593b7cb6
+2025-04-08 20:19:17,119 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:19:17,119 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:19:37,017 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-08 20:19:43,941 - article_scraper - INFO -   Article 1: Up 1m Migrants Who Used Bidens Cbp One App Ordered... (from URL) - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:19:49,303 - article_scraper - INFO -   Article 2: 6371239843112... (from URL) - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:20:52,743 - article_scraper - INFO -   Article 3: Texas Ag Ken Paxton Announces Run Us Senate... (from URL) - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:22:31,375 - article_scraper - INFO -   Article 4: Us Panama Taking Back Canal From Chinas Influence ... (from URL) - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:24:47,672 - article_scraper - WARNING - Error extracting article link: ElementHandle.query_selector: Target page, context or browser has been closed
+2025-04-08 20:24:47,684 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:24:47,688 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:24:47,690 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:24:47,691 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:24:47,693 - article_scraper - WARNING - Error extracting article link: ElementHandle.get_attribute: Target page, context or browser has been closed
+2025-04-08 20:24:47,693 - article_scraper - INFO - Successfully extracted 5 article links from Fox News
+2025-04-08 20:24:47,693 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:24:47,694 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:24:47,697 - article_scraper - ERROR - Error scraping https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:24:47,697 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:24:50,421 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:24:50,421 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:24:50,425 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/6371239843112: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:24:50,426 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:24:53,132 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:24:53,134 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:24:53,167 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:24:53,172 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:24:55,791 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:24:55,791 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:24:55,802 - article_scraper - ERROR - Error scraping https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:24:55,802 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:24:57,176 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:24:57,177 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:24:57,179 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton: Page.goto: Target page, context or browser has been closed
+2025-04-08 20:24:57,179 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:25:03,562 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:26:27,282 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 20:26:27,283 - asyncio - ERROR - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-04-08 20:26:29,825 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:26:30,320 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 402 Payment Required"
+2025-04-08 20:26:30,322 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:27:46,265 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:27:46,717 - httpx - INFO - HTTP Request: POST https://api.browserbase.com/v1/sessions "HTTP/1.1 402 Payment Required"
+2025-04-08 20:27:46,719 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:29:45,340 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:29:47,854 - article_scraper - INFO - Browser session initialized
+2025-04-08 20:29:47,854 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:29:47,854 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:29:52,381 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 20:29:52,410 - article_scraper - INFO -   Article 1: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:29:52,426 - article_scraper - INFO -   Article 2: WATCH LIVE: President Trump gives remarks at Repub... - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:29:52,451 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:29:52,462 - article_scraper - INFO -   Article 4: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:29:52,471 - article_scraper - INFO -   Article 5: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:29:52,479 - article_scraper - INFO -   Article 6: SCOTUS rules on Trump's power to fire thousands of... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 20:29:52,492 - article_scraper - INFO -   Article 7: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 20:29:52,500 - article_scraper - INFO -   Article 8: Prominent former DNC fundraiser blasts CNN anchor'... - https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 20:29:52,508 - article_scraper - INFO -   Article 9: Former Reagan economic advisor says world 'will pr... - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 20:29:52,516 - article_scraper - INFO -   Article 10: 'It Ends With Us' actor calls out Blake Lively’s '... - https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 20:29:52,516 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 20:29:52,516 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:29:52,516 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:29:55,519 - article_scraper - ERROR - Error saving to database: column "content" of relation "perspectives" does not exist
+LINE 3: ..., source, community, quote, sentiment, date, url, content, a...
+                                                             ^
+
+2025-04-08 20:29:55,541 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:29:57,212 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:29:57,213 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:29:59,833 - article_scraper - ERROR - Error saving to database: column "content" of relation "perspectives" does not exist
+LINE 3: ..., source, community, quote, sentiment, date, url, content, a...
+                                                             ^
+
+2025-04-08 20:29:59,858 - article_scraper - INFO -   Successfully scraped: WATCH LIVE: Trump speaks at National Republican Co...
+2025-04-08 20:30:01,133 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:30:01,133 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:30:06,467 - article_scraper - ERROR - Error saving to database: column "content" of relation "perspectives" does not exist
+LINE 3: ..., source, community, quote, sentiment, date, url, content, a...
+                                                             ^
+
+2025-04-08 20:30:06,510 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:30:09,329 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:30:09,330 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:30:14,060 - article_scraper - ERROR - Error saving to database: column "content" of relation "perspectives" does not exist
+LINE 3: ..., source, community, quote, sentiment, date, url, content, a...
+                                                             ^
+
+2025-04-08 20:30:14,084 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:30:16,980 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:30:16,981 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:30:22,100 - article_scraper - ERROR - Error saving to database: column "content" of relation "perspectives" does not exist
+LINE 3: ..., source, community, quote, sentiment, date, url, content, a...
+                                                             ^
+
+2025-04-08 20:30:22,135 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:30:29,997 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:30:55,957 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:30:56,718 - article_scraper - INFO - Browser session initialized
+2025-04-08 20:30:56,719 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:30:56,720 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:31:01,004 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 20:31:01,161 - article_scraper - INFO -   Article 1: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:31:01,175 - article_scraper - INFO -   Article 2: WATCH LIVE: President Trump gives remarks at Repub... - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:31:01,185 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:31:01,197 - article_scraper - INFO -   Article 4: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:31:01,209 - article_scraper - INFO -   Article 5: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:31:01,224 - article_scraper - INFO -   Article 6: SCOTUS rules on Trump's power to fire thousands of... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 20:31:01,247 - article_scraper - INFO -   Article 7: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 20:31:01,275 - article_scraper - INFO -   Article 8: Prominent former DNC fundraiser blasts CNN anchor'... - https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 20:31:01,542 - article_scraper - INFO -   Article 9: Former Reagan economic advisor says world 'will pr... - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 20:31:01,559 - article_scraper - INFO -   Article 10: 'It Ends With Us' actor calls out Blake Lively’s '... - https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 20:31:01,559 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 20:31:01,559 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:31:01,559 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:31:06,979 - article_scraper - INFO - Saved perspective to database: 6d755ee4-34d6-447b-8b67-b6a3a92cffbd
+2025-04-08 20:31:06,980 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:31:07,994 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:31:07,994 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:31:11,173 - article_scraper - INFO - Saved perspective to database: a4b43530-25ae-4a30-b209-fc19bf35ede0
+2025-04-08 20:31:11,174 - article_scraper - INFO -   Successfully scraped: WATCH LIVE: Trump speaks at National Republican Co...
+2025-04-08 20:31:13,925 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:31:13,925 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:31:17,905 - article_scraper - INFO - Saved perspective to database: 03098f2b-924f-456b-8814-0e99962aaa55
+2025-04-08 20:31:17,906 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:31:20,191 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:31:20,191 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:31:25,549 - article_scraper - INFO - Saved perspective to database: 3b5363df-0adb-4907-93c0-ff38757851e0
+2025-04-08 20:31:25,550 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:31:28,414 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:31:28,415 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:31:33,007 - article_scraper - INFO - Saved perspective to database: 6811a1b6-1579-40fe-b712-01c9324f2f4b
+2025-04-08 20:31:33,007 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:31:39,566 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:43:36,525 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:43:37,164 - article_scraper - INFO - Browser session initialized
+2025-04-08 20:43:37,164 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:43:37,164 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:43:40,954 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 20:43:41,279 - article_scraper - INFO -   Article 1: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:43:41,302 - article_scraper - INFO -   Article 2: WATCH LIVE: President Trump gives remarks at Repub... - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:43:41,323 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:43:41,337 - article_scraper - INFO -   Article 4: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:43:41,378 - article_scraper - INFO -   Article 5: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:43:41,389 - article_scraper - INFO -   Article 6: SCOTUS rules on Trump's power to fire thousands of... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 20:43:41,402 - article_scraper - INFO -   Article 7: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 20:43:41,415 - article_scraper - INFO -   Article 8: Prominent former DNC fundraiser blasts CNN anchor'... - https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 20:43:41,426 - article_scraper - INFO -   Article 9: Former Reagan economic advisor says world 'will pr... - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 20:43:41,692 - article_scraper - INFO -   Article 10: 'It Ends With Us' actor calls out Blake Lively ove... - https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 20:43:41,693 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 20:43:41,693 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:43:41,694 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:43:45,374 - article_scraper - INFO - Saved perspective to database: 7bc43673-fefa-4b65-998e-df48a76a3b42
+2025-04-08 20:43:45,374 - article_scraper - INFO -   Successfully scraped: Recommended Videos...
+2025-04-08 20:43:47,755 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:43:47,756 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:43:51,015 - article_scraper - INFO - Saved perspective to database: d879f7d7-30a3-4571-947b-f62740238808
+2025-04-08 20:43:51,015 - article_scraper - INFO -   Successfully scraped: WATCH LIVE: Trump speaks at National Republican Co...
+2025-04-08 20:43:52,136 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:43:52,137 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:43:57,362 - article_scraper - INFO - Saved perspective to database: 87ea11a1-1723-4182-9898-00f26e2a36be
+2025-04-08 20:43:57,363 - article_scraper - INFO -   Successfully scraped: Recommended Videos...
+2025-04-08 20:43:59,915 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:43:59,916 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:44:04,788 - article_scraper - INFO - Saved perspective to database: ab28551a-ccf9-4674-8e8c-6ff754ff6eeb
+2025-04-08 20:44:04,789 - article_scraper - INFO -   Successfully scraped: Recommended Videos...
+2025-04-08 20:44:06,907 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:44:06,907 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:44:13,298 - article_scraper - INFO - Saved perspective to database: ad972a11-9e19-4451-a24a-1bbbdd0064e9
+2025-04-08 20:44:13,301 - article_scraper - INFO -   Successfully scraped: Recommended Videos...
+2025-04-08 20:44:22,004 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 20:48:17,659 - article_scraper - INFO - Connected to Neon database
+2025-04-08 20:48:18,364 - article_scraper - INFO - Browser session initialized
+2025-04-08 20:48:18,364 - article_scraper - INFO - Scraping Fox News
+2025-04-08 20:48:18,364 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 20:48:21,692 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 20:48:21,814 - article_scraper - INFO -   Article 1: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:48:21,836 - article_scraper - INFO -   Article 2: WATCH LIVE: President Trump gives remarks at Repub... - https://www.foxnews.com/video/6371239843112
+2025-04-08 20:48:21,854 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:48:21,868 - article_scraper - INFO -   Article 4: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:48:21,889 - article_scraper - INFO -   Article 5: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:48:21,904 - article_scraper - INFO -   Article 6: SCOTUS rules on Trump's power to fire thousands of... - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 20:48:21,926 - article_scraper - INFO -   Article 7: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 20:48:21,941 - article_scraper - INFO -   Article 8: Prominent former DNC fundraiser blasts CNN anchor'... - https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 20:48:21,954 - article_scraper - INFO -   Article 9: Former Reagan economic advisor says world 'will pr... - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 20:48:21,967 - article_scraper - INFO -   Article 10: 'It Ends With Us' actor calls out Blake Lively ove... - https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 20:48:21,967 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 20:48:21,967 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:48:21,968 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 20:48:25,621 - article_scraper - INFO - Saved perspective to database: 4771bb23-367f-432b-9212-08c143535ad9
+2025-04-08 20:48:25,622 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:48:28,078 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:48:28,079 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371239843112
+2025-04-08 20:48:30,699 - article_scraper - INFO - Saved perspective to database: 894341b0-bbc0-41e5-a56e-aecb25bb49cf
+2025-04-08 20:48:30,699 - article_scraper - INFO -   Successfully scraped: WATCH LIVE: Trump speaks at National Republican Co...
+2025-04-08 20:48:33,311 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:48:33,311 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 20:48:38,827 - article_scraper - INFO - Saved perspective to database: 685bde83-0c8a-4084-acb1-cda04e86ad2e
+2025-04-08 20:48:38,827 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:48:40,568 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:48:40,569 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 20:48:45,837 - article_scraper - INFO - Saved perspective to database: 71fe2ad8-daae-4707-9be1-8e8db109395e
+2025-04-08 20:48:45,838 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:48:47,261 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:48:47,262 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 20:48:52,567 - article_scraper - INFO - Saved perspective to database: 6ed0e712-c003-4069-ace4-7013acd701aa
+2025-04-08 20:48:52,569 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 20:49:00,152 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 22:36:52,387 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:36:54,254 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:36:54,255 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:36:54,255 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:37:01,106 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:37:02,157 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:37:02,298 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:37:03,741 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:37:04,821 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:37:04,995 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:37:05,121 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:37:05,255 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:37:05,389 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:37:05,453 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:37:05,515 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:37:05,515 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:37:05,516 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:37:05,516 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:37:31,514 - article_scraper - INFO - Saved perspective to database: aeed687d-8031-4e27-8328-013b0236b614
+2025-04-08 22:37:31,529 - article_scraper - INFO -   Successfully scraped: Trump admin cuts $4M in Princeton funding related ...
+2025-04-08 22:37:32,897 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:37:32,898 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:38:27,730 - article_scraper - ERROR - Timeout while scraping https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:38:27,740 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:38:29,928 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:38:29,932 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:39:55,929 - article_scraper - INFO - Saved perspective to database: e6ec85fe-e3ce-45b5-b334-5f6c994884f2
+2025-04-08 22:39:55,942 - article_scraper - INFO -   Successfully scraped: Texas AG Ken Paxton announces run for US Senate...
+2025-04-08 22:39:57,969 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:39:57,970 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:40:02,800 - article_scraper - INFO - Saved perspective to database: 16ea1c4e-449e-4975-acc9-ad5b3c460ad3
+2025-04-08 22:40:02,800 - article_scraper - INFO -   Successfully scraped: Rep. Jasmine Crockett suggests the United States n...
+2025-04-08 22:40:04,280 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:40:04,280 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:40:08,210 - article_scraper - INFO - Saved perspective to database: b3d2dddf-252e-42e1-ac25-a33dfc151d8e
+2025-04-08 22:40:08,210 - article_scraper - INFO -   Successfully scraped: Ex-MLB players Octavio Dotel, Tony Blanco among de...
+2025-04-08 22:40:13,780 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 22:47:22,210 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:47:23,100 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:47:23,100 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:47:23,100 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:47:27,395 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:47:27,435 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:47:27,447 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:47:27,456 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:47:27,469 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:47:27,492 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:47:27,505 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:47:27,517 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:47:27,534 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:47:27,544 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:47:27,551 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:47:27,551 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:47:27,551 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:47:27,551 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:47:30,265 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research: name 'content_text' is not defined
+2025-04-08 22:47:30,265 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:47:32,225 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:47:32,225 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:49:29,769 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:49:30,530 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:49:30,530 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:49:30,530 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:49:34,682 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:49:34,714 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:49:34,729 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:49:34,739 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:49:34,909 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:49:34,923 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:49:34,935 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:49:34,949 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:49:34,957 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:49:34,966 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:49:34,987 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:49:34,987 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:49:34,987 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:49:34,988 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:49:37,316 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research: 'quote'
+2025-04-08 22:49:37,316 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:49:38,981 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:49:38,982 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:49:43,490 - article_scraper - ERROR - Error scraping https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin: 'quote'
+2025-04-08 22:49:43,491 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:49:44,622 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:49:44,622 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:49:48,239 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate: 'quote'
+2025-04-08 22:49:48,239 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:49:50,603 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:49:50,604 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:49:54,371 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton: 'quote'
+2025-04-08 22:49:54,371 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:50:45,293 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:50:45,795 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:50:45,795 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:50:45,795 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:50:49,134 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:50:49,452 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:50:49,471 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:50:49,485 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:50:49,508 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:50:49,547 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:50:49,561 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:50:49,573 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:50:49,584 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:50:49,649 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:50:49,668 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:50:49,668 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:50:49,668 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:50:49,669 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:50:53,932 - article_scraper - ERROR - Error scraping article https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research: 'ArticleScraper' object has no attribute 'data_dir'
+2025-04-08 22:50:53,933 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:50:53,933 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:50:58,084 - article_scraper - ERROR - Error scraping article https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin: 'ArticleScraper' object has no attribute 'data_dir'
+2025-04-08 22:50:58,085 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:50:58,085 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:51:04,347 - article_scraper - ERROR - Error scraping article https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate: 'ArticleScraper' object has no attribute 'data_dir'
+2025-04-08 22:51:04,349 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:51:04,349 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:51:10,427 - article_scraper - ERROR - Error scraping article https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton: 'ArticleScraper' object has no attribute 'data_dir'
+2025-04-08 22:51:10,429 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:51:10,430 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:51:15,103 - article_scraper - ERROR - Error scraping article https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse: 'ArticleScraper' object has no attribute 'data_dir'
+2025-04-08 22:51:19,475 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 22:51:48,934 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:51:49,462 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:51:49,462 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:51:49,462 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:51:54,051 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:51:54,085 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:51:54,094 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:51:54,108 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:51:54,116 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:51:54,125 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:51:54,134 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:51:54,155 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:51:54,166 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:51:54,178 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:51:54,186 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:51:54,186 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:51:54,186 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:51:54,186 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:51:56,775 - article_scraper - ERROR - Error saving to database: 'content'
+2025-04-08 22:51:56,810 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:51:59,770 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:51:59,770 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:52:02,906 - article_scraper - ERROR - Error saving to database: 'content'
+2025-04-08 22:52:02,937 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:52:05,280 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:52:05,282 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:54:18,493 - article_scraper - INFO - Connected to Neon database
+2025-04-08 22:54:19,547 - article_scraper - INFO - Browser session initialized
+2025-04-08 22:54:19,547 - article_scraper - INFO - Scraping Fox News
+2025-04-08 22:54:19,547 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 22:54:22,731 - article_scraper - INFO - Found 209 potential article elements on Fox News
+2025-04-08 22:54:22,946 - article_scraper - INFO -   Article 1: Trump admin yanks $4 million in funding from elite... - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:54:22,956 - article_scraper - INFO -   Article 2: Nearly 1 million migrants who entered US with Bide... - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:54:22,966 - article_scraper - INFO -   Article 3: Texas AG Ken Paxton launches primary against longt... - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:54:22,982 - article_scraper - INFO -   Article 4: Dem unloads in bizarre rant — doubles down when th... - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:54:23,001 - article_scraper - INFO -   Article 5: Dozens dead, including 2 former MLB players, after... - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:54:23,015 - article_scraper - INFO -   Article 6: Secretary Hegseth sends blunt message to China ove... - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 22:54:23,026 - article_scraper - INFO -   Article 7: Wallets won't take a big hit as egg strategy veers... - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 22:54:23,038 - article_scraper - INFO -   Article 8: Heart-stopping video shows crews rush to save fire... - https://www.foxnews.com/video/6371240005112
+2025-04-08 22:54:23,065 - article_scraper - INFO -   Article 9: Famous pooch melts hearts at Senate committee hear... - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 22:54:23,092 - article_scraper - INFO -   Article 10: 'Snow White' surpasses 'Fast and Furious' film in ... - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 22:54:23,092 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 22:54:23,092 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:54:23,092 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 22:54:27,719 - article_scraper - INFO - Saved perspective to database: 4dc14b22-1f61-4483-a5e3-b52a0c46abd6
+2025-04-08 22:54:27,722 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:54:28,759 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:54:28,760 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 22:54:37,764 - article_scraper - INFO - Saved perspective to database: 564ed13e-8cbb-41fe-ad2c-08265d343261
+2025-04-08 22:54:37,767 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:54:40,214 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:54:40,217 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 22:54:44,347 - article_scraper - INFO - Saved perspective to database: b2b3be49-ce5f-4787-ab82-176a602e5241
+2025-04-08 22:54:44,348 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:54:46,754 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:54:46,755 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 22:54:55,034 - article_scraper - INFO - Saved perspective to database: bf0bfc15-66dd-489f-8b68-523df3316087
+2025-04-08 22:54:55,058 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:54:56,528 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:54:56,529 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 22:55:04,211 - article_scraper - INFO - Saved perspective to database: a09ca59f-0d2a-471e-bab8-f5b12e100e60
+2025-04-08 22:55:04,212 - article_scraper - INFO -   Successfully scraped: Recommended...
+2025-04-08 22:55:09,626 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:01:10,447 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:01:10,979 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:01:10,979 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:01:10,979 - article_scraper - ERROR - Error processing Fox News: 'default'
+2025-04-08 23:01:11,014 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:01:52,946 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:01:53,610 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:01:53,610 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:01:53,611 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 23:01:58,635 - article_scraper - ERROR - Error scraping https://www.foxnews.com: Page.query_selector_all: selector: expected string, got undefined
+2025-04-08 23:02:02,792 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:04:26,603 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:04:27,022 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:04:27,022 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:04:27,022 - article_scraper - ERROR - Error processing Fox News: 'www.foxnews.com'
+2025-04-08 23:04:27,051 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:05:37,934 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:05:38,438 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:05:38,438 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:05:38,438 - article_scraper - ERROR - Error processing Fox News: 'www.foxnews.com'
+2025-04-08 23:05:38,468 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:06:00,778 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:06:01,226 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:06:01,226 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:06:01,226 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 23:06:05,875 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-08 23:06:05,922 - article_scraper - INFO -   Article 1: Trump Admin Cuts More Princeton Funding Related Cl... (from URL) - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:06:05,933 - article_scraper - INFO -   Article 2: Up 1m Migrants Who Used Bidens Cbp One App Ordered... (from URL) - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:06:05,950 - article_scraper - INFO -   Article 3: Texas Ag Ken Paxton Announces Run Us Senate... (from URL) - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:06:05,970 - article_scraper - INFO -   Article 4: Rep Jasmine Crockett Suggests United States Needs ... (from URL) - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:06:05,982 - article_scraper - INFO -   Article 5: Ex Mlb Players Octavio Dotel Tony Blanco Among Dea... (from URL) - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:06:05,997 - article_scraper - INFO -   Article 6: Us Panama Taking Back Canal From Chinas Influence ... (from URL) - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 23:06:06,011 - article_scraper - INFO -   Article 7: Agriculture Secretary Doesnt Expect Egg Prices Sig... (from URL) - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 23:06:06,022 - article_scraper - INFO -   Article 8: 6371240005112... (from URL) - https://www.foxnews.com/video/6371240005112
+2025-04-08 23:06:06,034 - article_scraper - INFO -   Article 9: Babydog Justice Makes Agriculture Committee Debut ... (from URL) - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 23:06:06,062 - article_scraper - INFO -   Article 10: Disneys Snow White Produced Higher Carbon Emission... (from URL) - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 23:06:06,062 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 23:06:06,062 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:06:06,063 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:06:10,671 - article_scraper - INFO - Saved perspective to database: 530ab3c0-1a2f-44d6-a2f6-8d16575e505b
+2025-04-08 23:06:10,672 - article_scraper - INFO -   Successfully scraped: Trump admin cuts $4M in Princeton funding related ...
+2025-04-08 23:06:12,957 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:06:12,958 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:06:15,493 - article_scraper - INFO - Saved perspective to database: 23d82c79-b973-4fb5-86e6-70f594b442d7
+2025-04-08 23:06:15,493 - article_scraper - INFO -   Successfully scraped: Up to 1M migrants who used Biden's CBP One app ord...
+2025-04-08 23:06:17,932 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:06:17,933 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:06:23,717 - article_scraper - INFO - Saved perspective to database: 14ec6eda-0ef5-478d-8502-416d863dfa6e
+2025-04-08 23:06:23,717 - article_scraper - INFO -   Successfully scraped: Texas AG Ken Paxton announces run for US Senate...
+2025-04-08 23:06:25,187 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:06:25,187 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:06:30,652 - article_scraper - INFO - Saved perspective to database: 7a66aacf-5eb1-4c3b-896d-1ad527669783
+2025-04-08 23:06:30,652 - article_scraper - INFO -   Successfully scraped: Rep. Jasmine Crockett suggests the United States n...
+2025-04-08 23:06:32,369 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:06:32,369 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:06:34,777 - article_scraper - INFO - Saved perspective to database: dd9db24b-6899-43dd-a44e-ab88c669caf8
+2025-04-08 23:06:34,777 - article_scraper - INFO -   Successfully scraped: Ex-MLB players Octavio Dotel, Tony Blanco among de...
+2025-04-08 23:06:41,102 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:07:25,826 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:07:26,312 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:07:26,312 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:07:26,312 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 23:07:29,732 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-08 23:07:29,853 - article_scraper - INFO -   Article 1: Trump Admin Cuts More Princeton Funding Related Cl... (from URL) - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:07:29,864 - article_scraper - INFO -   Article 2: Up 1m Migrants Who Used Bidens Cbp One App Ordered... (from URL) - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:07:29,873 - article_scraper - INFO -   Article 3: Texas Ag Ken Paxton Announces Run Us Senate... (from URL) - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:07:29,889 - article_scraper - INFO -   Article 4: Rep Jasmine Crockett Suggests United States Needs ... (from URL) - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:07:29,916 - article_scraper - INFO -   Article 5: Ex Mlb Players Octavio Dotel Tony Blanco Among Dea... (from URL) - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:07:29,937 - article_scraper - INFO -   Article 6: Us Panama Taking Back Canal From Chinas Influence ... (from URL) - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 23:07:29,954 - article_scraper - INFO -   Article 7: Agriculture Secretary Doesnt Expect Egg Prices Sig... (from URL) - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 23:07:29,977 - article_scraper - INFO -   Article 8: 6371240005112... (from URL) - https://www.foxnews.com/video/6371240005112
+2025-04-08 23:07:29,994 - article_scraper - INFO -   Article 9: Babydog Justice Makes Agriculture Committee Debut ... (from URL) - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 23:07:30,010 - article_scraper - INFO -   Article 10: Disneys Snow White Produced Higher Carbon Emission... (from URL) - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 23:07:30,010 - article_scraper - INFO - Successfully extracted 10 article links from Fox News
+2025-04-08 23:07:30,010 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:07:30,010 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:07:33,979 - article_scraper - INFO - Saved perspective to database: efb0f5b7-1008-4c8f-897f-5e9834b820b1
+2025-04-08 23:07:33,980 - article_scraper - INFO -   Successfully scraped: Trump admin cuts $4M in Princeton funding related ...
+2025-04-08 23:07:35,439 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:07:35,440 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:07:40,040 - article_scraper - INFO - Saved perspective to database: 0dc86d92-f073-46a8-b30b-a3d32783b75e
+2025-04-08 23:07:40,040 - article_scraper - INFO -   Successfully scraped: Up to 1M migrants who used Biden's CBP One app ord...
+2025-04-08 23:07:41,623 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:07:41,623 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:07:46,646 - article_scraper - INFO - Saved perspective to database: 25451aec-4406-4ad4-a33b-5df3f378136e
+2025-04-08 23:07:46,647 - article_scraper - INFO -   Successfully scraped: Texas AG Ken Paxton announces run for US Senate...
+2025-04-08 23:07:48,967 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:07:48,967 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:07:54,342 - article_scraper - INFO - Saved perspective to database: 199da37c-eda6-46e2-aa81-73cea47bb859
+2025-04-08 23:07:54,345 - article_scraper - INFO -   Successfully scraped: Rep. Jasmine Crockett suggests the United States n...
+2025-04-08 23:07:55,654 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:07:55,654 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:08:01,664 - article_scraper - INFO - Saved perspective to database: 7802fe28-ce1c-402c-b71f-34c02f15bf37
+2025-04-08 23:08:01,668 - article_scraper - INFO -   Successfully scraped: Ex-MLB players Octavio Dotel, Tony Blanco among de...
+2025-04-08 23:08:06,909 - article_scraper - INFO - Browser session and database connection closed
+2025-04-08 23:09:48,894 - article_scraper - INFO - Connected to Neon database
+2025-04-08 23:09:49,326 - article_scraper - INFO - Browser session initialized
+2025-04-08 23:09:49,326 - article_scraper - INFO - Scraping Fox News
+2025-04-08 23:09:49,326 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-08 23:09:52,346 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-08 23:09:52,415 - article_scraper - INFO -   Article 1: Trump Admin Cuts More Princeton Funding Related Cl... (from URL) - https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:09:52,436 - article_scraper - INFO -   Article 2: Up 1m Migrants Who Used Bidens Cbp One App Ordered... (from URL) - https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:09:52,488 - article_scraper - INFO -   Article 3: Texas Ag Ken Paxton Announces Run Us Senate... (from URL) - https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:09:52,542 - article_scraper - INFO -   Article 4: Rep Jasmine Crockett Suggests United States Needs ... (from URL) - https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:09:52,556 - article_scraper - INFO -   Article 5: Ex Mlb Players Octavio Dotel Tony Blanco Among Dea... (from URL) - https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:09:52,572 - article_scraper - INFO -   Article 6: Us Panama Taking Back Canal From Chinas Influence ... (from URL) - https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 23:09:52,588 - article_scraper - INFO -   Article 7: Agriculture Secretary Doesnt Expect Egg Prices Sig... (from URL) - https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 23:09:52,598 - article_scraper - INFO -   Article 8: 6371240005112... (from URL) - https://www.foxnews.com/video/6371240005112
+2025-04-08 23:09:52,606 - article_scraper - INFO -   Article 9: Babydog Justice Makes Agriculture Committee Debut ... (from URL) - https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 23:09:52,629 - article_scraper - INFO -   Article 10: Disneys Snow White Produced Higher Carbon Emission... (from URL) - https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 23:09:52,636 - article_scraper - INFO -   Article 11: foxweather.com... (from URL) - https://www.foxweather.com/
+2025-04-08 23:09:52,645 - article_scraper - INFO -   Article 12: Mornings With Maria... (from URL) - https://www.foxbusiness.com/shows/mornings-with-maria
+2025-04-08 23:09:52,653 - article_scraper - INFO -   Article 13: Senator Ted Cruz Investigation Usa Fencing Transge... (from URL) - https://www.outkick.com/sports/senator-ted-cruz-investigation-usa-fencing-transgender-athlete
+2025-04-08 23:09:52,669 - article_scraper - INFO -   Article 14: Utbwh1j... (from URL) - https://trib.al/utbwH1j
+2025-04-08 23:09:52,680 - article_scraper - INFO -   Article 15: Walmart Flash Deals... (from URL) - https://www.foxnews.com/deals/walmart-flash-deals
+2025-04-08 23:09:52,703 - article_scraper - INFO -   Article 16: 5614615980001... (from URL) - https://www.foxnews.com/video/5614615980001
+2025-04-08 23:09:52,717 - article_scraper - INFO -   Article 17: Virginia Shooting Leaves Least 3 Dead 3 Injured... (from URL) - https://www.foxnews.com/us/virginia-shooting-leaves-least-3-dead-3-injured
+2025-04-08 23:09:52,723 - article_scraper - INFO -   Article 18: Federal Judge Rules White Houses Associated Press ... (from URL) - https://www.foxnews.com/media/federal-judge-rules-white-houses-associated-press-ban-unconstitutional-viewpoint-discrimination
+2025-04-08 23:09:52,732 - article_scraper - INFO -   Article 19: Judge Boasberg Cancels Planned Hearing Review Trum... (from URL) - https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 23:09:52,743 - article_scraper - INFO -   Article 20: 6371247438112... (from URL) - https://www.foxnews.com/video/6371247438112
+2025-04-08 23:09:52,753 - article_scraper - INFO -   Article 21: American Man Bahamas Family Vacation Found Dead Af... (from URL) - https://www.foxnews.com/us/american-man-bahamas-family-vacation-found-dead-after-leaving-dinner-jacket
+2025-04-08 23:09:52,761 - article_scraper - INFO -   Article 22: Morbidly Obese Florida Man Who Admitted Killing Mi... (from URL) - https://www.foxnews.com/us/morbidly-obese-florida-man-who-admitted-killing-miami-herald-employee-executed-tuesday
+2025-04-08 23:09:52,768 - article_scraper - INFO -   Article 23: Supreme Court Trump Probationary Federal Workers R... (from URL) - https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 23:09:52,774 - article_scraper - INFO -   Article 24: Games... (from URL) - https://www.foxnews.com/games
+2025-04-08 23:09:52,784 - article_scraper - INFO -   Article 25: Wheel Fortune Host Ryan Seacrest Wipes Out Stage... (from URL) - https://www.foxnews.com/entertainment/wheel-fortune-host-ryan-seacrest-wipes-out-stage
+2025-04-08 23:09:52,794 - article_scraper - INFO -   Article 26: Navy Kilby Houthi Missiles Red Sea Costs... (from URL) - https://www.foxnews.com/politics/navy-kilby-houthi-missiles-red-sea-costs
+2025-04-08 23:09:52,800 - article_scraper - INFO -   Article 27: Blue City Proposes Bill Place Menstrual Products M... (from URL) - https://www.foxnews.com/politics/blue-city-proposes-bill-place-menstrual-products-mens-bathrooms
+2025-04-08 23:09:52,809 - article_scraper - INFO -   Article 28: Blake Livelys It Ends Us Co Star Shocked Over Near... (from URL) - https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 23:09:52,823 - article_scraper - INFO -   Article 29: California Man Angry Abortion Gun Rights Casesplea... (from URL) - https://www.foxnews.com/us/california-man-angry-abortion-gun-rights-casespleads-guilty-kill-justice-bree-kavanaugh
+2025-04-08 23:09:52,836 - article_scraper - INFO -   Article 30: Usha Vance Reveals How Switch Flipped After Husban... (from URL) - https://www.foxnews.com/media/usha-vance-reveals-how-switch-flipped-after-husband-joined-trump-ticket-says-maga-has-totally-welcomed-her
+2025-04-08 23:09:52,844 - article_scraper - INFO -   Article 31: Trumptransition... (from URL) - https://foxnews.com/trumptransition
+2025-04-08 23:09:52,851 - article_scraper - INFO -   Article 32: Politics Cartoons Slideshow... (from URL) - https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-08 23:09:52,857 - article_scraper - INFO -   Article 33: Microsoft Software Discount Stacksocial... (from URL) - https://www.foxnews.com/deals/microsoft-software-discount-stacksocial
+2025-04-08 23:09:52,866 - article_scraper - INFO -   Article 34: Hot Dog Towers Budget Friendly Replacement Seafood... (from URL) - https://www.foxnews.com/food-drink/hot-dog-towers-budget-friendly-replacement-seafood-towers
+2025-04-08 23:09:52,873 - article_scraper - INFO -   Article 35: American Culture Quiz Test Yourself Space Sagas Fa... (from URL) - https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-space-sagas-famous-foods-showbiz-spectacles
+2025-04-08 23:09:52,881 - article_scraper - INFO -   Article 36: Easter Gifts That Arent Candy... (from URL) - https://www.foxnews.com/deals/easter-gifts-that-arent-candy
+2025-04-08 23:09:52,888 - article_scraper - INFO -   Article 37: Sydney Sweeney Turns Heads Flash Lacy Lingerie Aft... (from URL) - https://www.foxnews.com/entertainment/sydney-sweeney-turns-heads-flash-lacy-lingerie-after-reportedly-calling-off-wedding
+2025-04-08 23:09:52,923 - article_scraper - INFO -   Article 38: Christie Brinkley 71 Channels Former Sports Illust... (from URL) - https://www.foxnews.com/entertainment/christie-brinkley-71-channels-former-sports-illustrated-swim-persona-red-bikini
+2025-04-08 23:09:52,931 - article_scraper - INFO -   Article 39: Jake Tappers Book Is A Slap In The Face To Anyone ... (from URL) - https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 23:09:52,939 - article_scraper - INFO -   Article 40: Economist Says Trumps Tariffs Win Win Strategy Neg... (from URL) - https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 23:09:52,946 - article_scraper - INFO -   Article 41: Mariners Victor Robles Fractures Shoulder After Sl... (from URL) - https://www.foxnews.com/sports/mariners-victor-robles-fractures-shoulder-after-slamming-wall-during-highlight-reel-catch
+2025-04-08 23:09:52,952 - article_scraper - INFO -   Article 42: Madonna Confronts Elton John Over Decades Long Feu... (from URL) - https://www.foxnews.com/entertainment/madonna-confronts-elton-john-over-decades-long-feud
+2025-04-08 23:09:52,959 - article_scraper - INFO -   Article 43: Illinois School Faces Criminal Doj Referral After ... (from URL) - https://www.foxnews.com/sports/illinois-school-faces-criminal-doj-referral-after-allegations-forcing-girls-change-trans-student
+2025-04-08 23:09:52,968 - article_scraper - INFO -   Article 44: Prince Harry King Charles Dodge Each Other Ahead C... (from URL) - https://www.foxnews.com/entertainment/prince-harry-king-charles-dodge-each-other-ahead-court-appeal-security-expert
+2025-04-08 23:09:52,979 - article_scraper - INFO -   Article 45: Movie Star Rejects Changing Characters Satisfy Div... (from URL) - https://www.foxnews.com/media/movie-star-rejects-changing-characters-satisfy-diversity-goals-instead-wants-new-original-characters
+2025-04-08 23:09:52,985 - article_scraper - INFO -   Article 46: Houstons Kelvin Sampson Final Possession Title Los... (from URL) - https://www.foxnews.com/sports/houstons-kelvin-sampson-final-possession-title-loss-youve-gotta-get-shot
+2025-04-08 23:09:52,992 - article_scraper - INFO -   Article 47: Diabetes Rewires Brain Surprising Way Study Finds... (from URL) - https://www.foxnews.com/health/diabetes-rewires-brain-surprising-way-study-finds
+2025-04-08 23:09:53,000 - article_scraper - INFO -   Article 48: Nhl First Round Pick Retires Age 21 Due Tissue Dis... (from URL) - https://www.foxnews.com/sports/nhl-first-round-pick-retires-age-21-due-tissue-disorder-diagnosis
+2025-04-08 23:09:53,006 - article_scraper - INFO -   Article 49: Anti Semitism... (from URL) - https://www.foxnews.com/category/topic/anti-semitism
+2025-04-08 23:09:53,021 - article_scraper - INFO -   Article 50: Man Woman Walking Beach Stumble Ancient Weapon Dis... (from URL) - https://www.foxnews.com/travel/man-woman-walking-beach-stumble-ancient-weapon-discovery-secrets-past
+2025-04-08 23:09:53,029 - article_scraper - INFO -   Article 51: 3d Scans Titanic Sinking Anniversary... (from URL) - https://www.foxweather.com/earth-space/3d-scans-titanic-sinking-anniversary
+2025-04-08 23:09:53,035 - article_scraper - INFO -   Article 52: Hooters Axes Bikini Nights Embraces Charity Work P... (from URL) - https://www.foxbusiness.com/media/hooters-axes-bikini-nights-embraces-charity-work-post-bankruptcy-overhaul
+2025-04-08 23:09:53,042 - article_scraper - INFO -   Article 53: A Great Tribute Trump Touts Record Fundraising Fro... (from URL) - https://www.foxnews.com/politics/a-great-tribute-trump-touts-record-fundraising-from-national-republican-congressional-committee
+2025-04-08 23:09:53,050 - article_scraper - INFO -   Article 54: Everyone Just Finding Out Lady Who Helped Tanked B... (from URL) - https://www.outkick.com/sports/everyone-just-finding-out-lady-who-helped-tanked-bud-light-works-liv-golf-now
+2025-04-08 23:09:53,056 - article_scraper - INFO -   Article 55: Karoline Leavitt Democrats Have Officially Become ... (from URL) - https://www.foxnews.com/media/karoline-leavitt-democrats-have-officially-become-party-crazy
+2025-04-08 23:09:53,064 - article_scraper - INFO -   Article 56: Former New Mexico College Football Player Faces Po... (from URL) - https://www.foxnews.com/us/former-new-mexico-college-football-player-faces-possible-life-prison-after-drug-trafficking-conviction
+2025-04-08 23:09:53,070 - article_scraper - INFO -   Article 57: Us National Debt Tracker... (from URL) - https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-08 23:09:53,078 - article_scraper - INFO -   Article 58: 6370978203112... (from URL) - https://www.foxbusiness.com/video/6370978203112
+2025-04-08 23:09:53,084 - article_scraper - INFO -   Article 59: Sandwich Hurt Credit Score Hidden Dangers Buy Now ... (from URL) - https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-08 23:09:53,090 - article_scraper - INFO -   Article 60: Part 2 Martin Scorseses Saints Returns Fox Nation ... (from URL) - https://www.foxnews.com/media/part-2-martin-scorseses-saints-returns-fox-nation-easter-season
+2025-04-08 23:09:53,097 - article_scraper - INFO -   Article 61: Artificial Intelligence... (from URL) - https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-08 23:09:53,104 - article_scraper - INFO -   Article 62: Food Drink... (from URL) - https://www.foxnews.com/food-drink
+2025-04-08 23:09:53,112 - article_scraper - INFO -   Article 63: Travel... (from URL) - https://www.foxnews.com/travel
+2025-04-08 23:09:53,118 - article_scraper - INFO -   Article 64: Health... (from URL) - https://www.foxnews.com/health
+2025-04-08 23:09:53,124 - article_scraper - INFO -   Article 65: Fun Facts Animal Most Eyes World Scallop... (from URL) - https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-08 23:09:53,131 - article_scraper - INFO -   Article 66: Amazon Haul Trending Products... (from URL) - https://www.foxnews.com/deals/amazon-haul-trending-products?intcmp=hp1r_deals_obtest
+2025-04-08 23:09:53,139 - article_scraper - INFO -   Article 67: 4htv27u... (from URL) - https://bit.ly/4hTv27u
+2025-04-08 23:09:53,139 - article_scraper - INFO - Successfully extracted 67 article links from Fox News
+2025-04-08 23:09:53,139 - article_scraper - INFO - Scraping article 1/5: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:09:53,139 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/trump-admin-cuts-more-princeton-funding-related-climate-research
+2025-04-08 23:09:58,349 - article_scraper - INFO - Saved perspective to database: c956547a-fe47-4b54-80ba-06e0fdbe8a0b
+2025-04-08 23:09:58,349 - article_scraper - INFO -   Successfully scraped: Trump admin cuts $4M in Princeton funding related ...
+2025-04-08 23:10:01,345 - article_scraper - INFO - Scraping article 2/5: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:10:01,345 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/up-1m-migrants-who-used-bidens-cbp-one-app-ordered-deport-trump-admin
+2025-04-08 23:10:03,655 - article_scraper - INFO - Saved perspective to database: 3a9ce428-914e-4a88-ac34-7753ec40eda3
+2025-04-08 23:10:03,655 - article_scraper - INFO -   Successfully scraped: Up to 1M migrants who used Biden's CBP One app ord...
+2025-04-08 23:10:05,983 - article_scraper - INFO - Scraping article 3/5: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:10:05,983 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/texas-ag-ken-paxton-announces-run-us-senate
+2025-04-08 23:10:09,306 - article_scraper - INFO - Saved perspective to database: d5060e34-7b03-435e-9792-de24dec6fb95
+2025-04-08 23:10:09,307 - article_scraper - INFO -   Successfully scraped: Texas AG Ken Paxton announces run for US Senate...
+2025-04-08 23:10:12,108 - article_scraper - INFO - Scraping article 4/5: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:10:12,113 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/rep-jasmine-crockett-suggests-united-states-needs-illegal-immigrants-because-we-done-picking-cotton
+2025-04-08 23:10:17,583 - article_scraper - INFO - Saved perspective to database: e4af3052-d4e2-4789-9360-ab158bb58db1
+2025-04-08 23:10:17,583 - article_scraper - INFO -   Successfully scraped: Rep. Jasmine Crockett suggests the United States n...
+2025-04-08 23:10:20,290 - article_scraper - INFO - Scraping article 5/5: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:10:20,290 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/ex-mlb-players-octavio-dotel-tony-blanco-among-dead-dominican-republic-roof-collapse
+2025-04-08 23:10:25,038 - article_scraper - INFO - Saved perspective to database: 1d534e44-3c46-4814-8d39-46491d907e00
+2025-04-08 23:10:25,039 - article_scraper - INFO -   Successfully scraped: Ex-MLB players Octavio Dotel, Tony Blanco among de...
+2025-04-08 23:10:26,495 - article_scraper - INFO - Scraping article 6/5: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 23:10:26,496 - article_scraper - INFO - Scraping article: https://www.foxnews.com/world/us-panama-taking-back-canal-from-chinas-influence-says-hegseth
+2025-04-08 23:10:34,094 - article_scraper - INFO - Saved perspective to database: 8959f1cd-1bc2-463e-8372-0f4b85d0f49c
+2025-04-08 23:10:34,096 - article_scraper - INFO -   Successfully scraped: US, Panama ‘taking back’ canal from ‘China's influ...
+2025-04-08 23:10:35,429 - article_scraper - INFO - Scraping article 7/5: https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 23:10:35,430 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/agriculture-secretary-doesnt-expect-egg-prices-significantly-increase-after-trump-tariff-announcement
+2025-04-08 23:10:39,958 - article_scraper - INFO - Saved perspective to database: b297d3b1-a2d1-43da-ad45-9023c40e6907
+2025-04-08 23:10:39,959 - article_scraper - INFO -   Successfully scraped: Agriculture secretary doesn't expect egg prices to...
+2025-04-08 23:10:41,881 - article_scraper - INFO - Scraping article 8/5: https://www.foxnews.com/video/6371240005112
+2025-04-08 23:10:41,882 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371240005112
+2025-04-08 23:10:45,360 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/6371240005112: list index out of range
+2025-04-08 23:10:45,361 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371240005112
+2025-04-08 23:10:46,604 - article_scraper - INFO - Scraping article 9/5: https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 23:10:46,605 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/babydog-justice-makes-agriculture-committee-debut-she-humanizes-all-us
+2025-04-08 23:10:52,676 - article_scraper - INFO - Saved perspective to database: 0ab584f2-fd0c-4781-a47a-9ebdae088810
+2025-04-08 23:10:52,677 - article_scraper - INFO -   Successfully scraped: Babydog Justice makes Agriculture Committee debut:...
+2025-04-08 23:10:54,719 - article_scraper - INFO - Scraping article 10/5: https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 23:10:54,719 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/disneys-snow-white-produced-higher-carbon-emissions-than-latest-fast-furious-film-report
+2025-04-08 23:10:59,620 - article_scraper - INFO - Saved perspective to database: 75691de5-2577-4292-bb56-d0e468ba80b0
+2025-04-08 23:10:59,621 - article_scraper - INFO -   Successfully scraped: Disney's 'Snow White' produced higher carbon emiss...
+2025-04-08 23:11:02,023 - article_scraper - INFO - Scraping article 11/5: https://www.foxweather.com/
+2025-04-08 23:11:02,023 - article_scraper - ERROR - Error scraping https://www.foxweather.com/: 'www.foxweather.com'
+2025-04-08 23:11:02,023 - article_scraper - WARNING -   Failed to extract content from: https://www.foxweather.com/
+2025-04-08 23:11:04,086 - article_scraper - INFO - Scraping article 12/5: https://www.foxbusiness.com/shows/mornings-with-maria
+2025-04-08 23:11:04,087 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/shows/mornings-with-maria: 'www.foxbusiness.com'
+2025-04-08 23:11:04,087 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/shows/mornings-with-maria
+2025-04-08 23:11:06,186 - article_scraper - INFO - Scraping article 13/5: https://www.outkick.com/sports/senator-ted-cruz-investigation-usa-fencing-transgender-athlete
+2025-04-08 23:11:06,187 - article_scraper - ERROR - Error scraping https://www.outkick.com/sports/senator-ted-cruz-investigation-usa-fencing-transgender-athlete: 'www.outkick.com'
+2025-04-08 23:11:06,187 - article_scraper - WARNING -   Failed to extract content from: https://www.outkick.com/sports/senator-ted-cruz-investigation-usa-fencing-transgender-athlete
+2025-04-08 23:11:08,239 - article_scraper - INFO - Scraping article 14/5: https://trib.al/utbwH1j
+2025-04-08 23:11:08,239 - article_scraper - ERROR - Error scraping https://trib.al/utbwH1j: 'trib.al'
+2025-04-08 23:11:08,240 - article_scraper - WARNING -   Failed to extract content from: https://trib.al/utbwH1j
+2025-04-08 23:11:11,236 - article_scraper - INFO - Scraping article 15/5: https://www.foxnews.com/deals/walmart-flash-deals
+2025-04-08 23:11:11,237 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/walmart-flash-deals
+2025-04-08 23:11:14,528 - article_scraper - INFO - Saved perspective to database: 1966bb1e-f5bc-48fe-bc51-b2efde6102e6
+2025-04-08 23:11:14,528 - article_scraper - INFO -   Successfully scraped: Celebrate warmer weather with Walmart's weekly fla...
+2025-04-08 23:11:17,486 - article_scraper - INFO - Scraping article 16/5: https://www.foxnews.com/video/5614615980001
+2025-04-08 23:11:17,488 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/5614615980001
+2025-04-08 23:11:20,739 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/5614615980001: list index out of range
+2025-04-08 23:11:20,740 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/5614615980001
+2025-04-08 23:11:21,911 - article_scraper - INFO - Scraping article 17/5: https://www.foxnews.com/us/virginia-shooting-leaves-least-3-dead-3-injured
+2025-04-08 23:11:21,911 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/virginia-shooting-leaves-least-3-dead-3-injured
+2025-04-08 23:11:27,930 - article_scraper - INFO - Saved perspective to database: b384c783-c75e-4f71-96b2-2cb20abc9982
+2025-04-08 23:11:27,930 - article_scraper - INFO -   Successfully scraped: Virginia shooting leaves at least 3 dead, 3 injure...
+2025-04-08 23:11:29,557 - article_scraper - INFO - Scraping article 18/5: https://www.foxnews.com/media/federal-judge-rules-white-houses-associated-press-ban-unconstitutional-viewpoint-discrimination
+2025-04-08 23:11:29,558 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/federal-judge-rules-white-houses-associated-press-ban-unconstitutional-viewpoint-discrimination
+2025-04-08 23:11:34,897 - article_scraper - INFO - Saved perspective to database: 0f4dc575-b566-4a02-b8d6-6a68c1595dd6
+2025-04-08 23:11:34,900 - article_scraper - INFO -   Successfully scraped: Federal judge rules White House's Associated Press...
+2025-04-08 23:11:37,018 - article_scraper - INFO - Scraping article 19/5: https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 23:11:37,019 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/judge-boasberg-cancels-planned-hearing-review-trump-deportations
+2025-04-08 23:11:39,953 - article_scraper - INFO - Saved perspective to database: 7b512c65-9866-4e43-a9be-70330f32bf4e
+2025-04-08 23:11:39,953 - article_scraper - INFO -   Successfully scraped: Judge Boasberg cancels planned hearing to review T...
+2025-04-08 23:11:41,149 - article_scraper - INFO - Scraping article 20/5: https://www.foxnews.com/video/6371247438112
+2025-04-08 23:11:41,149 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371247438112
+2025-04-08 23:11:43,173 - article_scraper - ERROR - Error scraping https://www.foxnews.com/video/6371247438112: list index out of range
+2025-04-08 23:11:43,173 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371247438112
+2025-04-08 23:11:45,685 - article_scraper - INFO - Scraping article 21/5: https://www.foxnews.com/us/american-man-bahamas-family-vacation-found-dead-after-leaving-dinner-jacket
+2025-04-08 23:11:45,685 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/american-man-bahamas-family-vacation-found-dead-after-leaving-dinner-jacket
+2025-04-08 23:11:50,328 - article_scraper - INFO - Saved perspective to database: 47088058-7720-4afc-a0e8-de41f2f1eff1
+2025-04-08 23:11:50,329 - article_scraper - INFO -   Successfully scraped: American man on Bahamas family vacation found dead...
+2025-04-08 23:11:52,581 - article_scraper - INFO - Scraping article 22/5: https://www.foxnews.com/us/morbidly-obese-florida-man-who-admitted-killing-miami-herald-employee-executed-tuesday
+2025-04-08 23:11:52,582 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/morbidly-obese-florida-man-who-admitted-killing-miami-herald-employee-executed-tuesday
+2025-04-08 23:11:56,721 - article_scraper - INFO - Saved perspective to database: dff7a524-119d-4252-90a5-a2af4558aa50
+2025-04-08 23:11:56,722 - article_scraper - INFO -   Successfully scraped: 'Morbidly obese' Florida man who admitted to killi...
+2025-04-08 23:11:58,833 - article_scraper - INFO - Scraping article 23/5: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 23:11:58,834 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/supreme-court-trump-probationary-federal-workers-ruling
+2025-04-08 23:12:04,144 - article_scraper - INFO - Saved perspective to database: 9051f54c-af7f-4b91-b657-8c128c3d7aca
+2025-04-08 23:12:04,145 - article_scraper - INFO -   Successfully scraped: Supreme Court rules on status of tens of thousands...
+2025-04-08 23:12:05,675 - article_scraper - INFO - Scraping article 24/5: https://www.foxnews.com/games
+2025-04-08 23:12:05,676 - article_scraper - INFO - Scraping article: https://www.foxnews.com/games
+2025-04-08 23:12:09,570 - article_scraper - ERROR - Error scraping https://www.foxnews.com/games: list index out of range
+2025-04-08 23:12:09,571 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/games
+2025-04-08 23:12:12,443 - article_scraper - INFO - Scraping article 25/5: https://www.foxnews.com/entertainment/wheel-fortune-host-ryan-seacrest-wipes-out-stage
+2025-04-08 23:12:12,443 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/wheel-fortune-host-ryan-seacrest-wipes-out-stage
+2025-04-08 23:12:18,039 - article_scraper - INFO - Saved perspective to database: a4f2400c-eaaf-4985-b4b2-5c741fd2ad1d
+2025-04-08 23:12:18,041 - article_scraper - INFO -   Successfully scraped: 'Wheel of Fortune' host Ryan Seacrest wipes out on...
+2025-04-08 23:12:20,993 - article_scraper - INFO - Scraping article 26/5: https://www.foxnews.com/politics/navy-kilby-houthi-missiles-red-sea-costs
+2025-04-08 23:12:20,994 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/navy-kilby-houthi-missiles-red-sea-costs
+2025-04-08 23:12:25,566 - article_scraper - INFO - Saved perspective to database: acac61f3-4dae-43d9-aaf9-5d3bb9b85714
+2025-04-08 23:12:25,567 - article_scraper - INFO -   Successfully scraped: New Navy chief 'regrets' costly missile intercepto...
+2025-04-08 23:12:28,387 - article_scraper - INFO - Scraping article 27/5: https://www.foxnews.com/politics/blue-city-proposes-bill-place-menstrual-products-mens-bathrooms
+2025-04-08 23:12:28,388 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/blue-city-proposes-bill-place-menstrual-products-mens-bathrooms
+2025-04-08 23:12:33,477 - article_scraper - INFO - Saved perspective to database: 8106dfa5-e62d-4513-88a4-e0957898b65a
+2025-04-08 23:12:33,477 - article_scraper - INFO -   Successfully scraped: Blue city proposes bill to place menstrual product...
+2025-04-08 23:12:36,010 - article_scraper - INFO - Scraping article 28/5: https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 23:12:36,011 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/blake-livelys-it-ends-us-co-star-shocked-over-nearly-nude-scene-allegations-challenges-her-claims
+2025-04-08 23:12:40,607 - article_scraper - INFO - Saved perspective to database: 396f61b0-d446-4fa0-85c1-7028bb12ebed
+2025-04-08 23:12:40,608 - article_scraper - INFO -   Successfully scraped: Blake Lively's 'It Ends With Us' co-star shocked o...
+2025-04-08 23:12:41,941 - article_scraper - INFO - Scraping article 29/5: https://www.foxnews.com/us/california-man-angry-abortion-gun-rights-casespleads-guilty-kill-justice-bree-kavanaugh
+2025-04-08 23:12:41,941 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/california-man-angry-abortion-gun-rights-casespleads-guilty-kill-justice-bree-kavanaugh
+2025-04-08 23:12:46,394 - article_scraper - INFO - Saved perspective to database: d60f259c-c79f-4dce-89f1-951fc3945813
+2025-04-08 23:12:46,395 - article_scraper - INFO -   Successfully scraped: California man angry about abortion, gun rights ca...
+2025-04-08 23:12:48,562 - article_scraper - INFO - Scraping article 30/5: https://www.foxnews.com/media/usha-vance-reveals-how-switch-flipped-after-husband-joined-trump-ticket-says-maga-has-totally-welcomed-her
+2025-04-08 23:12:48,563 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/usha-vance-reveals-how-switch-flipped-after-husband-joined-trump-ticket-says-maga-has-totally-welcomed-her
+2025-04-08 23:12:53,717 - article_scraper - INFO - Saved perspective to database: 6de04f79-e95b-4869-8531-3a00220073fb
+2025-04-08 23:12:53,718 - article_scraper - INFO -   Successfully scraped: Usha Vance reveals how 'switch flipped' after husb...
+2025-04-08 23:12:55,669 - article_scraper - INFO - Scraping article 31/5: https://foxnews.com/trumptransition
+2025-04-08 23:12:55,670 - article_scraper - ERROR - Error scraping https://foxnews.com/trumptransition: 'foxnews.com'
+2025-04-08 23:12:55,670 - article_scraper - WARNING -   Failed to extract content from: https://foxnews.com/trumptransition
+2025-04-08 23:12:57,687 - article_scraper - INFO - Scraping article 32/5: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-08 23:12:57,687 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-08 23:13:01,667 - article_scraper - ERROR - Error scraping https://www.foxnews.com/politics/politics-cartoons-slideshow: list index out of range
+2025-04-08 23:13:01,669 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-08 23:13:03,627 - article_scraper - INFO - Scraping article 33/5: https://www.foxnews.com/deals/microsoft-software-discount-stacksocial
+2025-04-08 23:13:03,627 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/microsoft-software-discount-stacksocial
+2025-04-08 23:13:06,828 - article_scraper - INFO - Saved perspective to database: e539d200-c806-4096-b314-c9233f65ba19
+2025-04-08 23:13:06,828 - article_scraper - INFO -   Successfully scraped: Upgrade to Microsoft 11 for just $10 and save up t...
+2025-04-08 23:13:08,324 - article_scraper - INFO - Scraping article 34/5: https://www.foxnews.com/food-drink/hot-dog-towers-budget-friendly-replacement-seafood-towers
+2025-04-08 23:13:08,324 - article_scraper - INFO - Scraping article: https://www.foxnews.com/food-drink/hot-dog-towers-budget-friendly-replacement-seafood-towers
+2025-04-08 23:13:14,156 - article_scraper - INFO - Saved perspective to database: f4e6883b-5c10-4857-9359-0f4f808e847b
+2025-04-08 23:13:14,157 - article_scraper - INFO -   Successfully scraped: Hot dog towers are a budget-friendly replacement f...
+2025-04-08 23:13:15,784 - article_scraper - INFO - Scraping article 35/5: https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-space-sagas-famous-foods-showbiz-spectacles
+2025-04-08 23:13:15,785 - article_scraper - INFO - Scraping article: https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-space-sagas-famous-foods-showbiz-spectacles
+2025-04-08 23:13:18,169 - article_scraper - INFO - Saved perspective to database: 245fab21-d614-4f6b-af5f-1cc667638423
+2025-04-08 23:13:18,169 - article_scraper - INFO -   Successfully scraped: American Culture Quiz: Test yourself on space saga...
+2025-04-08 23:13:19,793 - article_scraper - INFO - Scraping article 36/5: https://www.foxnews.com/deals/easter-gifts-that-arent-candy
+2025-04-08 23:13:19,793 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/easter-gifts-that-arent-candy
+2025-04-08 23:13:22,447 - article_scraper - INFO - Saved perspective to database: 94fa7bcc-b9b4-4735-b074-f36f06f3fab3
+2025-04-08 23:13:22,447 - article_scraper - INFO -   Successfully scraped: 11 Easter gifts you can give that aren't candy...
+2025-04-08 23:13:24,937 - article_scraper - INFO - Scraping article 37/5: https://www.foxnews.com/entertainment/sydney-sweeney-turns-heads-flash-lacy-lingerie-after-reportedly-calling-off-wedding
+2025-04-08 23:13:24,938 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/sydney-sweeney-turns-heads-flash-lacy-lingerie-after-reportedly-calling-off-wedding
+2025-04-08 23:13:29,750 - article_scraper - INFO - Saved perspective to database: 7da585b2-0602-4608-8bc0-8f45c12e4aed
+2025-04-08 23:13:29,751 - article_scraper - INFO -   Successfully scraped: Sydney Sweeney turns heads with flash of lacy ling...
+2025-04-08 23:13:32,206 - article_scraper - INFO - Scraping article 38/5: https://www.foxnews.com/entertainment/christie-brinkley-71-channels-former-sports-illustrated-swim-persona-red-bikini
+2025-04-08 23:13:32,207 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/christie-brinkley-71-channels-former-sports-illustrated-swim-persona-red-bikini
+2025-04-08 23:13:36,727 - article_scraper - INFO - Saved perspective to database: 0d59878e-b191-40e4-b533-69de5796a702
+2025-04-08 23:13:36,728 - article_scraper - INFO -   Successfully scraped: Christie Brinkley, 71, channels former Sports Illu...
+2025-04-08 23:13:37,927 - article_scraper - INFO - Scraping article 39/5: https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 23:13:37,927 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/jake-tappers-book-is-a-slap-in-the-face-to-anyone-who-questioned-bidens-fitness-for-office-lindy-li-says
+2025-04-08 23:13:42,343 - article_scraper - INFO - Saved perspective to database: 2df97818-419a-492d-9573-93d31f9185ea
+2025-04-08 23:13:42,344 - article_scraper - INFO -   Successfully scraped: Jake Tapper's book is 'a slap in the face' to anyo...
+2025-04-08 23:13:44,018 - article_scraper - INFO - Scraping article 40/5: https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 23:13:44,019 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals: 'www.foxbusiness.com'
+2025-04-08 23:13:44,020 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/economy/economist-says-trumps-tariffs-win-win-strategy-negotiate-trade-deals
+2025-04-08 23:13:45,311 - article_scraper - INFO - Scraping article 41/5: https://www.foxnews.com/sports/mariners-victor-robles-fractures-shoulder-after-slamming-wall-during-highlight-reel-catch
+2025-04-08 23:13:45,311 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/mariners-victor-robles-fractures-shoulder-after-slamming-wall-during-highlight-reel-catch
+2025-04-08 23:13:49,605 - article_scraper - INFO - Saved perspective to database: a62f87d9-9ce8-4ca4-96f1-ddd935ca1fe9
+2025-04-08 23:13:49,606 - article_scraper - INFO -   Successfully scraped: Mariners' Victor Robles fractures shoulder after s...
+2025-04-08 23:13:51,599 - article_scraper - INFO - Scraping article 42/5: https://www.foxnews.com/entertainment/madonna-confronts-elton-john-over-decades-long-feud
+2025-04-08 23:13:51,600 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/madonna-confronts-elton-john-over-decades-long-feud
+2025-04-08 23:13:56,661 - article_scraper - INFO - Saved perspective to database: c3216235-ccf7-44ea-954c-6307360e1f14
+2025-04-08 23:13:56,662 - article_scraper - INFO -   Successfully scraped: Madonna confronts Elton John over decades-long feu...
+2025-04-08 23:13:58,244 - article_scraper - INFO - Scraping article 43/5: https://www.foxnews.com/sports/illinois-school-faces-criminal-doj-referral-after-allegations-forcing-girls-change-trans-student
+2025-04-08 23:13:58,244 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/illinois-school-faces-criminal-doj-referral-after-allegations-forcing-girls-change-trans-student
+2025-04-08 23:14:03,020 - article_scraper - INFO - Saved perspective to database: 708944a9-0ff9-4029-85c7-84883cbf70c4
+2025-04-08 23:14:03,021 - article_scraper - INFO -   Successfully scraped: Illinois school faces criminal DOJ referral after ...
+2025-04-08 23:14:04,111 - article_scraper - INFO - Scraping article 44/5: https://www.foxnews.com/entertainment/prince-harry-king-charles-dodge-each-other-ahead-court-appeal-security-expert
+2025-04-08 23:14:04,111 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/prince-harry-king-charles-dodge-each-other-ahead-court-appeal-security-expert
+2025-04-08 23:14:08,708 - article_scraper - INFO - Saved perspective to database: b4792889-0e15-4284-8e29-41dc4bbfe4b7
+2025-04-08 23:14:08,709 - article_scraper - INFO -   Successfully scraped: Prince Harry and King Charles dodge each other ahe...
+2025-04-08 23:14:09,774 - article_scraper - INFO - Scraping article 45/5: https://www.foxnews.com/media/movie-star-rejects-changing-characters-satisfy-diversity-goals-instead-wants-new-original-characters
+2025-04-08 23:14:09,775 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/movie-star-rejects-changing-characters-satisfy-diversity-goals-instead-wants-new-original-characters
+2025-04-08 23:14:14,357 - article_scraper - INFO - Saved perspective to database: 3ebd2c48-82c2-4b04-8810-e02377d6113b
+2025-04-08 23:14:14,358 - article_scraper - INFO -   Successfully scraped: Movie star rejects changing characters to satisfy ...
+2025-04-08 23:14:16,871 - article_scraper - INFO - Scraping article 46/5: https://www.foxnews.com/sports/houstons-kelvin-sampson-final-possession-title-loss-youve-gotta-get-shot
+2025-04-08 23:14:16,872 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/houstons-kelvin-sampson-final-possession-title-loss-youve-gotta-get-shot
+2025-04-08 23:14:21,358 - article_scraper - INFO - Saved perspective to database: 5bb750b5-01f4-40a9-ab2c-c2eaff3e395c
+2025-04-08 23:14:21,359 - article_scraper - INFO -   Successfully scraped: Houston's Kelvin Sampson on final possession in ti...
+2025-04-08 23:14:23,362 - article_scraper - INFO - Scraping article 47/5: https://www.foxnews.com/health/diabetes-rewires-brain-surprising-way-study-finds
+2025-04-08 23:14:23,362 - article_scraper - INFO - Scraping article: https://www.foxnews.com/health/diabetes-rewires-brain-surprising-way-study-finds
+2025-04-08 23:14:29,108 - article_scraper - INFO - Saved perspective to database: 84bff322-b575-4b4d-a136-06478af5a1ff
+2025-04-08 23:14:29,110 - article_scraper - INFO -   Successfully scraped: Diabetes 'rewires' the brain in surprising way, st...
+2025-04-08 23:14:30,737 - article_scraper - INFO - Scraping article 48/5: https://www.foxnews.com/sports/nhl-first-round-pick-retires-age-21-due-tissue-disorder-diagnosis
+2025-04-08 23:14:30,739 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/nhl-first-round-pick-retires-age-21-due-tissue-disorder-diagnosis
+2025-04-08 23:14:35,398 - article_scraper - INFO - Saved perspective to database: 6ee99f5a-bb19-418b-8eb7-e9d19564b60a
+2025-04-08 23:14:35,398 - article_scraper - INFO -   Successfully scraped: NHL first-round pick retires at age 21 due to tiss...
+2025-04-08 23:14:37,693 - article_scraper - INFO - Scraping article 49/5: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-08 23:14:37,694 - article_scraper - INFO - Scraping article: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-08 23:14:39,952 - article_scraper - ERROR - Error scraping https://www.foxnews.com/category/topic/anti-semitism: list index out of range
+2025-04-08 23:14:39,952 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-08 23:14:42,254 - article_scraper - INFO - Scraping article 50/5: https://www.foxnews.com/travel/man-woman-walking-beach-stumble-ancient-weapon-discovery-secrets-past
+2025-04-08 23:14:42,255 - article_scraper - INFO - Scraping article: https://www.foxnews.com/travel/man-woman-walking-beach-stumble-ancient-weapon-discovery-secrets-past
+2025-04-08 23:14:46,623 - article_scraper - INFO - Saved perspective to database: 2d759b00-aaf7-4f51-a121-c54a29e0400d
+2025-04-08 23:14:46,623 - article_scraper - INFO -   Successfully scraped: Beach walk by man, woman yields ancient weapon dis...
+2025-04-08 23:14:48,352 - article_scraper - INFO - Scraping article 51/5: https://www.foxweather.com/earth-space/3d-scans-titanic-sinking-anniversary
+2025-04-08 23:14:48,353 - article_scraper - ERROR - Error scraping https://www.foxweather.com/earth-space/3d-scans-titanic-sinking-anniversary: 'www.foxweather.com'
+2025-04-08 23:14:48,353 - article_scraper - WARNING -   Failed to extract content from: https://www.foxweather.com/earth-space/3d-scans-titanic-sinking-anniversary
+2025-04-08 23:14:49,645 - article_scraper - INFO - Scraping article 52/5: https://www.foxbusiness.com/media/hooters-axes-bikini-nights-embraces-charity-work-post-bankruptcy-overhaul
+2025-04-08 23:14:49,645 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/media/hooters-axes-bikini-nights-embraces-charity-work-post-bankruptcy-overhaul: 'www.foxbusiness.com'
+2025-04-08 23:14:49,645 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/media/hooters-axes-bikini-nights-embraces-charity-work-post-bankruptcy-overhaul
+2025-04-08 23:14:51,029 - article_scraper - INFO - Scraping article 53/5: https://www.foxnews.com/politics/a-great-tribute-trump-touts-record-fundraising-from-national-republican-congressional-committee
+2025-04-08 23:14:51,030 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/a-great-tribute-trump-touts-record-fundraising-from-national-republican-congressional-committee
+2025-04-08 23:14:55,147 - article_scraper - INFO - Saved perspective to database: 6c8e3a00-0151-4f6c-91ef-8efa1a03b2a8
+2025-04-08 23:14:55,148 - article_scraper - INFO -   Successfully scraped: 'A great tribute': Trump touts 'record' fundraisin...
+2025-04-08 23:14:56,353 - article_scraper - INFO - Scraping article 54/5: https://www.outkick.com/sports/everyone-just-finding-out-lady-who-helped-tanked-bud-light-works-liv-golf-now
+2025-04-08 23:14:56,354 - article_scraper - ERROR - Error scraping https://www.outkick.com/sports/everyone-just-finding-out-lady-who-helped-tanked-bud-light-works-liv-golf-now: 'www.outkick.com'
+2025-04-08 23:14:56,354 - article_scraper - WARNING -   Failed to extract content from: https://www.outkick.com/sports/everyone-just-finding-out-lady-who-helped-tanked-bud-light-works-liv-golf-now
+2025-04-08 23:14:58,484 - article_scraper - INFO - Scraping article 55/5: https://www.foxnews.com/media/karoline-leavitt-democrats-have-officially-become-party-crazy
+2025-04-08 23:14:58,485 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/karoline-leavitt-democrats-have-officially-become-party-crazy
+2025-04-08 23:15:03,478 - article_scraper - INFO - Saved perspective to database: fef152c3-ff95-400f-8858-2eea6e75b0db
+2025-04-08 23:15:03,479 - article_scraper - INFO -   Successfully scraped: Karoline Leavitt responds to 'Hands Off' protests:...
+2025-04-08 23:15:05,013 - article_scraper - INFO - Scraping article 56/5: https://www.foxnews.com/us/former-new-mexico-college-football-player-faces-possible-life-prison-after-drug-trafficking-conviction
+2025-04-08 23:15:05,013 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/former-new-mexico-college-football-player-faces-possible-life-prison-after-drug-trafficking-conviction
+2025-04-08 23:15:10,013 - article_scraper - INFO - Saved perspective to database: c4466192-cce5-4b00-92fa-30e966e2144e
+2025-04-08 23:15:10,013 - article_scraper - INFO -   Successfully scraped: Former New Mexico college football player faces po...
+2025-04-08 23:15:12,228 - article_scraper - INFO - Scraping article 57/5: https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-08 23:15:12,229 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/economy/us-national-debt-tracker: 'www.foxbusiness.com'
+2025-04-08 23:15:12,229 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-08 23:15:14,299 - article_scraper - INFO - Scraping article 58/5: https://www.foxbusiness.com/video/6370978203112
+2025-04-08 23:15:14,300 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/video/6370978203112: 'www.foxbusiness.com'
+2025-04-08 23:15:14,301 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/video/6370978203112
+2025-04-08 23:15:16,477 - article_scraper - INFO - Scraping article 59/5: https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-08 23:15:16,477 - article_scraper - ERROR - Error scraping https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light: 'www.foxbusiness.com'
+2025-04-08 23:15:16,478 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-08 23:15:17,551 - article_scraper - INFO - Scraping article 60/5: https://www.foxnews.com/media/part-2-martin-scorseses-saints-returns-fox-nation-easter-season
+2025-04-08 23:15:17,552 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/part-2-martin-scorseses-saints-returns-fox-nation-easter-season
+2025-04-08 23:15:21,603 - article_scraper - INFO - Saved perspective to database: ea5f6675-e4c4-49fc-9d52-699809354568
+2025-04-08 23:15:21,604 - article_scraper - INFO -   Successfully scraped: Part 2 of 'Martin Scorsese Presents: The Saints' r...
+2025-04-08 23:15:24,234 - article_scraper - INFO - Scraping article 61/5: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-08 23:15:24,235 - article_scraper - INFO - Scraping article: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-08 23:15:28,049 - article_scraper - ERROR - Error scraping https://www.foxnews.com/category/tech/artificial-intelligence: list index out of range
+2025-04-08 23:15:28,050 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-08 23:15:30,798 - article_scraper - INFO - Scraping article 62/5: https://www.foxnews.com/food-drink
+2025-04-08 23:15:30,799 - article_scraper - INFO - Scraping article: https://www.foxnews.com/food-drink
+2025-04-08 23:15:33,043 - article_scraper - ERROR - Error scraping https://www.foxnews.com/food-drink: list index out of range
+2025-04-08 23:15:33,044 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/food-drink
+2025-04-08 23:15:34,911 - article_scraper - INFO - Scraping article 63/5: https://www.foxnews.com/travel
+2025-04-08 23:15:34,912 - article_scraper - INFO - Scraping article: https://www.foxnews.com/travel
+2025-04-08 23:15:38,043 - article_scraper - ERROR - Error scraping https://www.foxnews.com/travel: list index out of range
+2025-04-08 23:15:38,043 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/travel
+2025-04-08 23:15:39,844 - article_scraper - INFO - Scraping article 64/5: https://www.foxnews.com/health
+2025-04-08 23:15:39,844 - article_scraper - INFO - Scraping article: https://www.foxnews.com/health
+2025-04-08 23:15:42,734 - article_scraper - ERROR - Error scraping https://www.foxnews.com/health: list index out of range
+2025-04-08 23:15:42,735 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/health
+2025-04-08 23:15:44,902 - article_scraper - INFO - Scraping article 65/5: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-08 23:15:44,903 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-08 23:15:47,785 - article_scraper - ERROR - Error scraping https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop: list index out of range
+2025-04-08 23:15:47,786 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-08 23:15:50,120 - article_scraper - INFO - Scraping article 66/5: https://www.foxnews.com/deals/amazon-haul-trending-products?intcmp=hp1r_deals_obtest
+2025-04-08 23:15:50,122 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/amazon-haul-trending-products?intcmp=hp1r_deals_obtest
+2025-04-08 23:15:52,370 - article_scraper - INFO - Saved perspective to database: 9b478001-2dcf-405a-a8dc-795653b48e95
+2025-04-08 23:15:52,371 - article_scraper - INFO -   Successfully scraped: Amazon launches Haul, its new affordable shopping ...
+2025-04-08 23:15:55,242 - article_scraper - INFO - Scraping article 67/5: https://bit.ly/4hTv27u
+2025-04-08 23:15:55,243 - article_scraper - ERROR - Error scraping https://bit.ly/4hTv27u: 'bit.ly'
+2025-04-08 23:15:55,243 - article_scraper - WARNING -   Failed to extract content from: https://bit.ly/4hTv27u
+2025-04-08 23:16:01,622 - article_scraper - INFO - Browser session and database connection closed

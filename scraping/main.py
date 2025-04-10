@@ -1,6 +1,5 @@
 import os
 import time
-import json
 import random
 import logging
 import uuid
@@ -30,16 +29,41 @@ NEON_DB_URL = os.environ["NEON_DB_URL"]
 # News sources configuration
 sources = [
     # Right-Leaning
-    # {
-    #     "url": "https://www.foxnews.com",
-    #     "source": "Fox News",
-    #     "community": "right"
-    # },
+    {
+        "url": "https://www.foxnews.com",
+        "source": "Fox News",
+        "community": "right"
+    },
     # Left-Leaning
     {
         "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
         "source": "New York Times",
         "community": "left"
+    },
+    {
+        "url": "https://www.newsweek.com",
+        "source": "Newsweek",
+        "community": "left"
+    },
+    {
+        "url": "https://www.nypost.com",
+        "source": "New York Post",
+        "community": "right"
+    },
+    {
+        "url": "https://www.theguardian.com/uk/rss",
+        "source": "The Guardian",
+        "community": "left"
+    },
+    {
+        "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362",
+        "source": "CNBC",
+        "community": "center"
+    },
+    {
+        "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+        "source": "Wall Street Journal",
+        "community": "right"
     }
 ]
 
@@ -53,21 +77,33 @@ selectors = {
     "rss.nytimes.com": {
         "rss": True,
         "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-    }
-}
-
-# Social media platforms configuration
-social_platforms = {
-    "reddit": {
-        "base_url": "https://www.reddit.com",
-        "subreddits": ["politics", "worldnews", "conservative", "news"],
-        "sort": ["hot", "new", "top"],
-        "time": ["day", "week", "month"]
     },
-    "twitter": {
-        "base_url": "https://twitter.com",
-        "accounts": ["CNN", "FoxNews", "BBCWorld", "Reuters", "AP"],
-        "hashtags": ["news", "politics", "worldnews"]
+    "www.theguardian.com": {
+        "rss": True,
+        "url": "https://www.theguardian.com/uk/rss"
+    },
+    "search.cnbc.com": {
+        "rss": True,
+        "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362"
+    },
+    "feeds.content.dowjones.io": {
+        "rss": True,
+        "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews"
+    },
+    "www.newsweek.com": {
+        "articles": "article.article-card",
+        "title": "header.article-header h1",
+        "content": "div.article-body.article-real-content.v_text"
+    },
+    "www.nypost.com": {
+        "articles": "div.story a[href*='/2025/']",
+        "title": "h1.headline",
+        "content": "div.single__content"
+    },
+     "nypost.com": {
+        "articles": "div.story a[href*='/2025/']",
+        "title": "h1.headline",
+        "content": "div.single__content"
     }
 }
 
@@ -97,13 +133,16 @@ class ArticleScraper:
 
     def teardown(self):
         """Close browser and session"""
-        if self.context:
-            self.context.close()
-        if self.browser:
-            self.browser.close()
-        if self.db_conn:
-            self.db_conn.close()
-        logger.info("Browser session and database connection closed")
+        try:
+            if self.context:
+                self.context.close()
+            if self.browser:
+                self.browser.close()
+            if self.db_conn:
+                self.db_conn.close()
+            logger.info("Browser session and database connection closed")
+        except Exception as e:
+            logger.error(f"Error during teardown: {str(e)}")
     
     def get_domain(self, url: str) -> str:
         """Extract domain from URL"""
@@ -172,61 +211,103 @@ class ArticleScraper:
     
     def scrape_article(self, url: str, source_name: str, community: str) -> Optional[Dict[str, Any]]:
         """Scrape a single article page and format as Perspective"""
+        article_page = None
         try:
+            # Validate URL
+            if not url.startswith(('http://', 'https://')):
+                logger.warning(f"Invalid URL format: {url}")
+                return None
+            
             domain = self.get_domain(url)
             site_selectors = self.get_selectors(domain)
+            
+            if not site_selectors:
+                logger.warning(f"No selectors found for domain: {domain}")
+                return None
             
             logger.info(f"Scraping article: {url}")
             
             # Create a new page for each article to avoid connection issues
             article_page = self.context.new_page()
-            try:
-                article_page.goto(url, wait_until="networkidle", timeout=30000)
-                self.random_delay()
-                
-                title = None
-                title_element = article_page.query_selector(site_selectors["title"])
-                if title_element:
-                    title = title_element.text_content().strip()
-                
-                # If still no title, use page title or extract from URL
-                if not title:
-                    title = self.get_title_from_url(url)
-                
-                # Extract content text
-                content_elements = article_page.query_selector_all(site_selectors["content"])
-                content_text = " ".join([el.text_content().strip() for el in content_elements]) if content_elements else ""
-
-
-                print(content_text)
-                sentiment_score = self.analyze_sentiment(content_text)
-                
-                quote = content_elements[0].text_content().strip() if content_elements and len(content_elements) > 0 else ""
-                
-                article_url = url
             
-                perspective = {
-                    "id": str(uuid.uuid4()),
-                    "title": title,
-                    "source": source_name,
-                    "community": community,
-                    "quote": quote,
-                    "sentiment": sentiment_score,
-                    "url": article_url,
-                    "date": datetime.now().isoformat(),
-                    "scraped_at": datetime.now().isoformat()
-                }
-                
-                return perspective
-            finally:
-                article_page.close()
-                
-        except PlaywrightTimeoutError:
-            logger.error(f"Timeout while scraping {url}")
-            return None
+            # Set a longer timeout and handle network errors
+            try:
+                article_page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                self.random_delay()
+            except PlaywrightTimeoutError:
+                logger.error(f"Timeout while loading {url}")
+                return None
+            except Exception as e:
+                logger.error(f"Error loading {url}: {str(e)}")
+                return None
+            
+            # Wait for content to be available
+            try:
+                article_page.wait_for_selector(site_selectors["title"], timeout=10000)
+            except PlaywrightTimeoutError:
+                logger.warning(f"Title selector not found for {url}")
+            
+            title = None
+            title_element = article_page.query_selector(site_selectors["title"])
+            if title_element:
+                title = title_element.text_content().strip()
+                logger.info(f"Found title: {title}")
+            
+            # If still no title, use page title or extract from URL
+            if not title:
+                title = self.get_title_from_url(url)
+                logger.info(f"Using URL-based title: {title}")
+            
+            # Extract content text with error handling
+            content_text = ""
+            content_elements = []
+            try:
+                content_elements = article_page.query_selector_all(site_selectors["content"])
+                if content_elements:
+                    content_text = " ".join([el.text_content().strip() for el in content_elements])
+                    logger.info(f"Found content length: {len(content_text)}")
+                else:
+                    logger.warning(f"No content elements found for {url}")
+                    # Try to get any text content from the page as a fallback
+                    body_text = article_page.query_selector("body")
+                    if body_text:
+                        content_text = body_text.text_content().strip()
+                        logger.info(f"Using fallback body text, length: {len(content_text)}")
+            except Exception as e:
+                logger.error(f"Error extracting content: {str(e)}")
+            
+            sentiment_score = self.analyze_sentiment(content_text)
+            quote = content_elements[0].text_content().strip() if content_elements and len(content_elements) > 0 else ""
+            
+            # If we have no content, don't save this article
+            if not content_text:
+                logger.warning(f"No content found for {url}, skipping")
+                return None
+            
+            perspective = {
+                "id": str(uuid.uuid4()),
+                "title": title,
+                "source": source_name,
+                "community": community,
+                "quote": quote,
+                "sentiment": sentiment_score,
+                "url": url,
+                "date": datetime.now().isoformat(),
+                "scraped_at": datetime.now().isoformat()
+            }
+            
+            print(perspective)
+            return perspective
+            
         except Exception as e:
-            logger.error(f"Error scraping {url}: {str(e)}")
+            logger.error(f"Unexpected error scraping {url}: {str(e)}")
             return None
+        finally:
+            if article_page:
+                try:
+                    article_page.close()
+                except Exception as e:
+                    logger.error(f"Error closing article page: {str(e)}")
     
     def scrape_rss_feed(self, url: str, source_name: str, community: str) -> List[Dict[str, Any]]:
         """Scrape articles from an RSS feed"""
@@ -246,6 +327,11 @@ class ArticleScraper:
                 try:
                     title = entry.title
                     link = entry.link
+                    
+                    # Skip newsletter signups and other non-article content
+                    if self._is_newsletter_or_non_article(title, link):
+                        logger.info(f"  Skipping non-article entry: {title[:50]}...")
+                        continue
                     
                     # Extract content or summary
                     content = ""
@@ -287,6 +373,33 @@ class ArticleScraper:
         except Exception as e:
             logger.error(f"Error parsing RSS feed {url}: {str(e)}")
             return perspectives
+    
+    def _is_newsletter_or_non_article(self, title: str, url: str) -> bool:
+        """Check if an RSS entry is a newsletter signup or other non-article content"""
+        # Keywords that indicate newsletter signups or non-article content
+        newsletter_keywords = [
+            "sign up for", "newsletter", "subscribe", "email", "signup", 
+            "sign-up", "sign up", "subscribe to", "get our", "join our"
+        ]
+        
+        # Check if title contains any of the newsletter keywords
+        title_lower = title.lower()
+        for keyword in newsletter_keywords:
+            if keyword in title_lower:
+                return True
+                
+        # Check URL patterns that might indicate non-article content
+        url_lower = url.lower()
+        non_article_patterns = [
+            "/info/", "/about/", "/help/", "/support/", "/contact/", 
+            "/subscribe/", "/newsletter/", "/email/", "/signup/"
+        ]
+        
+        for pattern in non_article_patterns:
+            if pattern in url_lower:
+                return True
+                
+        return False
     
     def save_to_database(self, perspective: Dict[str, Any]):
         """Save perspective to Neon database"""
@@ -337,7 +450,7 @@ class ArticleScraper:
         domain = self.get_domain(url)
         site_selectors = self.get_selectors(domain)
 
-        print(f"Extracted domain: {domain}")
+        logger.info(f"Extracted domain: {domain}")
         
         perspectives = []
         
@@ -367,9 +480,10 @@ class ArticleScraper:
             
             # Find article links - use more specific selectors for each site
             article_selector = site_selectors.get("articles")
-            print(article_selector)
+            logger.info(f"Using article selector: {article_selector}")
             article_elements = self.page.query_selector_all(article_selector)
             article_links = []
+            seen_urls = set()  # Track URLs we've already seen
             
             logger.info(f"Found {len(article_elements)} potential article elements on {source_name}")
             
@@ -389,6 +503,12 @@ class ArticleScraper:
                         if href.startswith("/"):
                             parsed_url = urlparse(url)
                             href = f"{parsed_url.scheme}://{parsed_url.netloc}{href}"
+                        
+                        # Skip if we've already seen this URL
+                        if href in seen_urls:
+                            continue
+                        
+                        seen_urls.add(href)
                         article_links.append(href)
                         
                         # Log article title if available
@@ -412,12 +532,12 @@ class ArticleScraper:
             # Scrape each article
             for i, link in enumerate(article_links):  
                 try:
-                    logger.info(f"Scraping article {i+1}/{min(5, len(article_links))}: {link}")
+                    logger.info(f"Scraping article {i+1}/{len(article_links)}: {link}")
                     perspective = self.scrape_article(link, source_name, community)
                     if perspective:
                         perspectives.append(perspective)
-                        self.save_to_database(perspective)
                         logger.info(f"  Successfully scraped: {perspective['title'][:50]}...")
+                        self.save_to_database(perspective)
                     else:
                         logger.warning(f"  Failed to extract content from: {link}")
                     self.random_delay()
@@ -436,17 +556,16 @@ class ArticleScraper:
             
         return perspectives
     
-    
     def run(self):
         """Main execution method"""
         try:
             self.setup()
             
-            # Scrape news sites
             for source in sources:
                 try:
                     logger.info(f"Scraping {source['source']}")
-                    self.scrape_news_site(source)
+                    perspectives = self.scrape_news_site(source)
+                    logger.info(f"Successfully scraped {len(perspectives)} articles from {source['source']}")
                     self.random_delay(3.0, 6.0)  # Longer delay between sites
                 except Exception as e:
                     logger.error(f"Error processing {source['source']}: {str(e)}")
@@ -456,21 +575,6 @@ class ArticleScraper:
                         self.teardown()
                         self.setup()
                     continue
-            
-            # Scrape Reddit
-            # for subreddit in social_platforms["reddit"]["subreddits"]:
-            #     try:
-            #         logger.info(f"Scraping Reddit r/{subreddit}")
-            #         self.scrape_reddit(subreddit)
-            #         self.random_delay(3.0, 6.0)
-            #     except Exception as e:
-            #         logger.error(f"Error processing Reddit r/{subreddit}: {str(e)}")
-            #         # Check if browser is still connected, if not, reconnect
-            #         if not self.browser.is_connected():
-            #             logger.info("Browser disconnected, reconnecting...")
-            #             self.teardown()
-            #             self.setup()
-            #         continue
                     
         finally:
             self.teardown()

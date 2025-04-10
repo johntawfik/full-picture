@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Filter, X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -31,13 +31,29 @@ export function FilterControls({ onFilterChange, availableSources }: FilterContr
     { value: "social", label: "Social Media" },
   ]
 
+  // Define the mapping from source to community
+  const sourceCommunityMap: Record<SourceType, CommunityType> = {
+    "Fox News": "right",
+    "New York Times": "left",
+    "Newsweek": "left",
+    "New York Post": "right",
+    "The Guardian": "left",
+    "CNBC": "center",
+    "Wall Street Journal": "right",
+    // Add other sources and their communities if needed
+  }
+
   const handleCommunityChange = (community: CommunityType) => {
     setSelectedCommunities((prev) => {
       const newSelection = prev.includes(community) ? prev.filter((c) => c !== community) : [...prev, community]
 
+      // Clear selected sources when community changes
+      const newSelectedSources: SourceType[] = []
+      setSelectedSources(newSelectedSources)
+
       onFilterChange({
         communities: newSelection,
-        sources: selectedSources,
+        sources: newSelectedSources, // Pass cleared sources
       })
 
       return newSelection
@@ -62,6 +78,17 @@ export function FilterControls({ onFilterChange, availableSources }: FilterContr
     setSelectedSources([])
     onFilterChange({ communities: [], sources: [] })
   }
+
+  // Filter sources based on selected communities
+  const filteredSources = useMemo(() => {
+    if (selectedCommunities.length === 0) {
+      return availableSources // Show all if no community is selected
+    }
+    return availableSources.filter((source) => {
+      const community = sourceCommunityMap[source]
+      return community && selectedCommunities.includes(community)
+    })
+  }, [selectedCommunities, availableSources, sourceCommunityMap])
 
   const hasActiveFilters = selectedCommunities.length > 0 || selectedSources.length > 0
 
@@ -119,7 +146,7 @@ export function FilterControls({ onFilterChange, availableSources }: FilterContr
           <div className="space-y-4">
             <h4 className="font-medium">Filter by source</h4>
             <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2">
-              {availableSources.map((source) => (
+              {filteredSources.map((source) => (
                 <div key={source} className="flex items-center space-x-2">
                   <Checkbox
                     id={`source-${source}`}

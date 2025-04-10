@@ -1,0 +1,43 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.log
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.cache/
+
+# dotenv
+*.env
+.env.*
+
+# SQLite or local DB
+*.sqlite3
+*.db
+
+# === macOS ===
+.DS_Store
+
+# === Windows ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Node / Next.js ===
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === VSCode / JetBrains / misc ===
+.vscode/
+.idea/

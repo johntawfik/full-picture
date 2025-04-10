@@ -1,20 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 import { FilterControls, type CommunityType, type SourceType } from "@/components/filter-controls"
-import { getMockPerspectives, getAvailableSources, filterPerspectives } from "@/lib/mock-data"
+import { getPerspectives, getAvailableSources, filterPerspectives, Perspective } from "@/lib/api"
 
 interface ResultsListProps {
   query: string
 }
 
 export function ResultsList({ query }: ResultsListProps) {
-  const allPerspectives = getMockPerspectives(query)
-  const availableSources = getAvailableSources(query)
+  const [allPerspectives, setAllPerspectives] = useState<Perspective[]>([])
+  const [availableSources, setAvailableSources] = useState<string[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   const [filters, setFilters] = useState<{
     communities: CommunityType[]
@@ -23,6 +25,28 @@ export function ResultsList({ query }: ResultsListProps) {
     communities: [],
     sources: [],
   })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true)
+      setError(null)
+      
+      try {
+        const perspectives = await getPerspectives(query)
+        const sources = await getAvailableSources(query)
+        
+        setAllPerspectives(perspectives)
+        setAvailableSources(sources)
+      } catch (err) {
+        console.error("Error fetching data:", err)
+        setError("Failed to load perspectives. Please try again later.")
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    
+    fetchData()
+  }, [query])
 
   const filteredPerspectives = filterPerspectives(allPerspectives, filters)
 
@@ -38,7 +62,15 @@ export function ResultsList({ query }: ResultsListProps) {
     <div className="space-y-6">
       <FilterControls onFilterChange={setFilters} availableSources={availableSources} />
 
-      {filteredPerspectives.length === 0 ? (
+      {isLoading ? (
+        <div className="text-center py-12 text-[#8B949E]">
+          <p className="text-lg">Loading perspectives...</p>
+        </div>
+      ) : error ? (
+        <div className="text-center py-12 text-[#8B949E]">
+          <p className="text-lg">{error}</p>
+        </div>
+      ) : filteredPerspectives.length === 0 ? (
         <div className="text-center py-12 text-[#8B949E]">
           <p className="text-lg">No perspectives match your current filters.</p>
           <p className="mt-2">Try adjusting your filters to see more results.</p>

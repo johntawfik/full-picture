@@ -336,7 +336,7 @@ Summary:"""
                 logger.warning(f"No content found for {url}, skipping")
                 return None
             
-            if domain == "www.newsweek.com":
+            if url == "https://www.newsweek.com":
                 if title.split(" ")[-1].isnumeric():
                     title = title.split(" ")[:-1]
                     title = " ".join(title)

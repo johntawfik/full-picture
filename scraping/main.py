@@ -10,6 +10,8 @@ from typing import Dict, List, Any, Optional
 from urllib.parse import urlparse
 from dotenv import load_dotenv
 from textblob import TextBlob
+from bs4 import BeautifulSoup
+import anthropic
 from playwright.sync_api import Playwright, sync_playwright, TimeoutError as PlaywrightTimeoutError
 
 logging.basicConfig(
@@ -26,15 +28,12 @@ load_dotenv()
 
 NEON_DB_URL = os.environ["NEON_DB_URL"]
 
-# News sources configuration
 sources = [
-    # Right-Leaning
     {
         "url": "https://www.foxnews.com",
         "source": "Fox News",
         "community": "right"
     },
-    # Left-Leaning
     {
         "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
         "source": "New York Times",
@@ -121,6 +120,32 @@ class ArticleScraper:
             logger.info("Connected to Neon database")
         except Exception as e:
             logger.error(f"Error connecting to Neon database: {str(e)}")
+    
+    def clean_html(self, html_content: str) -> str:
+        """Remove HTML tags, script, and style elements from text."""
+        try:
+            if not html_content:
+                return ""
+            soup = BeautifulSoup(html_content, 'html.parser')
+            
+            # Remove script and style elements
+            for script_or_style in soup(["script", "style"]):
+                script_or_style.decompose() # Remove the tag
+            
+            # Get text
+            text = soup.get_text()
+            
+            # Break into lines and remove leading/trailing space on each
+            lines = (line.strip() for line in text.splitlines())
+            # Break multi-headlines into a line each
+            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+            # Drop blank lines
+            text = '\n'.join(chunk for chunk in chunks if chunk)
+            
+            return text
+        except Exception as e:
+            logger.error(f"Error cleaning HTML: {str(e)}")
+            return html_content # Return original content on error
     
     def setup(self):
         """Initialize the browser session"""
@@ -209,6 +234,35 @@ class ArticleScraper:
             logger.error(f"Error extracting title from URL: {str(e)}")
             return "Untitled Article"
     
+    def summarize_with_anthropic(self, content: str) -> str:
+        """Summarize content using Anthropic's Claude API in a maximum of 3 sentences"""
+        try:
+            client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+            
+            prompt = f"""Please summarize the following article content in a maximum of 3 sentences, focusing on the key points:
+
+{content}
+
+Summary:"""
+            
+            response = client.messages.create(
+                model="claude-3-5-haiku-latest",
+                max_tokens=150,
+                temperature=0.3,
+                system="You are a helpful assistant that summarizes news articles concisely.",
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            
+            summary = response.content[0].text.strip()
+            logger.info(f"Successfully generated summary of length: {len(summary)}")
+            return summary
+            
+        except Exception as e:
+            logger.error(f"Error summarizing with Anthropic: {str(e)}")
+            return content 
+    
     def scrape_article(self, url: str, source_name: str, community: str) -> Optional[Dict[str, Any]]:
         """Scrape a single article page and format as Perspective"""
         article_page = None
@@ -258,7 +312,6 @@ class ArticleScraper:
                 title = self.get_title_from_url(url)
                 logger.info(f"Using URL-based title: {title}")
             
-            # Extract content text with error handling
             content_text = ""
             content_elements = []
             try:
@@ -268,18 +321,17 @@ class ArticleScraper:
                     logger.info(f"Found content length: {len(content_text)}")
                 else:
                     logger.warning(f"No content elements found for {url}")
-                    # Try to get any text content from the page as a fallback
-                    body_text = article_page.query_selector("body")
-                    if body_text:
-                        content_text = body_text.text_content().strip()
-                        logger.info(f"Using fallback body text, length: {len(content_text)}")
             except Exception as e:
                 logger.error(f"Error extracting content: {str(e)}")
+                return None
             
+            content_text = self.clean_html(content_text)
             sentiment_score = self.analyze_sentiment(content_text)
-            quote = content_elements[0].text_content().strip() if content_elements and len(content_elements) > 0 else ""
             
-            # If we have no content, don't save this article
+
+            quote = self.summarize_with_anthropic(content_text)
+
+            
             if not content_text:
                 logger.warning(f"No content found for {url}, skipping")
                 return None
@@ -289,7 +341,7 @@ class ArticleScraper:
                 "title": title,
                 "source": source_name,
                 "community": community,
-                "quote": quote,
+                "quote": self.clean_html(quote),
                 "sentiment": sentiment_score,
                 "url": url,
                 "date": datetime.now().isoformat(),
@@ -333,21 +385,21 @@ class ArticleScraper:
                         logger.info(f"  Skipping non-article entry: {title[:50]}...")
                         continue
                     
-                    # Extract content or summary
                     content = ""
                     if hasattr(entry, 'content') and entry.content:
                         content = entry.content[0].value
                     elif hasattr(entry, 'summary'):
                         content = entry.summary
+                    elif hasattr(entry, 'description'):
+                        content = entry.description
                         
-                    # Calculate sentiment using both title and content
                     combined_text = title + ". " + content if content else title
                     sentiment_score = self.analyze_sentiment(combined_text)
                     
-                    # Extract a quote (first paragraph or sentence)
-                    quote = content.split('.')[0] if content else ""
-                    if len(quote) > 200:
-                        quote = quote[:197] + "..."
+                    quote = self.clean_html(content)
+
+                    if source_name == "The Guardian" and quote.endswith(" Continue reading..."):
+                        quote = quote[:-len(" Continue reading...")].strip()
                     
                     perspective = {
                         "id": str(uuid.uuid4()),
@@ -411,19 +463,12 @@ class ArticleScraper:
             cursor = self.db_conn.cursor()
             
             
-            # Insert perspective data
             cursor.execute("""
                 INSERT INTO perspectives 
                 (id, title, source, community, quote, sentiment, url, scraped_at)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                ON CONFLICT (id) DO UPDATE SET
-                title = EXCLUDED.title,
-                source = EXCLUDED.source,
-                community = EXCLUDED.community,
-                quote = EXCLUDED.quote,
-                sentiment = EXCLUDED.sentiment,
-                url = EXCLUDED.url,
-                scraped_at = EXCLUDED.scraped_at
+                ON CONFLICT (url) DO UPDATE SET
+                    quote = EXCLUDED.quote
             """, (
                 perspective["id"],
                 perspective["title"],

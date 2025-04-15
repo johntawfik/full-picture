@@ -6,28 +6,8 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
-# TODO: Import your actual embedding generation library
-# from sentence_transformers import SentenceTransformer 
 
 load_dotenv()
-
-# TODO: Initialize your embedding model (e.g., model = SentenceTransformer('all-MiniLM-L6-v2'))
-# model = None 
-
-# TODO: Implement or import your actual embedding generation function
-def get_embedding(text: str) -> List[float]:
-    """Placeholder function to generate text embeddings."""
-    # Replace this with your actual embedding generation logic
-    # Example using sentence-transformers:
-    # if model:
-    #     return model.encode(text).tolist()
-    # else:
-    #     raise NotImplementedError("Embedding model not initialized")
-    # For now, returning a dummy vector
-    dimension = 384 # Example dimension, adjust to your model
-    logging.warning("Using placeholder embedding function!")
-    return [0.0] * dimension
-
 
 logging.basicConfig(
     level=logging.INFO,
@@ -66,9 +46,6 @@ class Perspective(BaseModel):
     date: str
     url: str
 
-class TimelinePerspective(BaseModel):
-    date: str
-    perspectives: List[Perspective]
 
 @app.get("/api/perspectives", response_model=List[Perspective])
 async def get_perspectives(
@@ -83,10 +60,7 @@ async def get_perspectives(
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        # Use 'english' text search configuration. Adjust if needed.
-        # Create a tsvector from title and quote, and a tsquery from the input query.
-        # The @@ operator checks for matches.
-        # Use ts_rank_cd for relevance ranking (covers density).
+
         sql = """
             SELECT 
                 id, title, source, community, quote, sentiment, 

@@ -1,0 +1,54 @@
+.searchWrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  .fakeInput {
+    background-color: #4a4a46;
+    background-image: linear-gradient(145deg, #4f4f4b, #45453f);
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    box-shadow:
+      0 4px 14px rgba(0, 0, 0, 0.1),
+      0 8px 0 #333330;
+    font-family: "Special Gothic", sans-serif;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    height: 3.2rem;
+  }
+
+  .fakeInput:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.2),
+      0 12px 0 #333330,
+      2.7px 14px 0 2px #d97656;
+  }
+  
+  .fixed {
+    color: #cfcfcf;
+    white-space: nowrap;
+  }
+  
+  .cycle {
+    display: inline-block;
+    color: #d97656;
+    transition: all 0.4s ease;
+  }
+  
+  .fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fadeOut {
+    opacity: 0;
+    transform: translateY(1.2em);
+  }
+  

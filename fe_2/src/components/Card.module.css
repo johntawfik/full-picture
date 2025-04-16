@@ -1,0 +1,66 @@
+.card {
+  background-color: #4a4a46;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.1),
+    0 8px 0 #333330;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  background-image: linear-gradient(145deg, #4f4f4b, #45453f);
+}
+
+
+/* Add this to create a subtle highlight on top */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 4px; /* Pull it down a bit */
+  left: 4px;
+  right: 4px;
+  height: 6px;
+  border-radius: 0.75rem 0.75rem 0 0;
+  z-index: 0; /* ensure it's behind content but still above background */
+  pointer-events: none;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: white;
+  font-weight: normal;
+
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cardText {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-family: "Special Gothic", sans-serif;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 3em;
+  /* Give the image some depth too */
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+}
+
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.2),
+    0 12px 0 #333330,
+    2.7px 14px 0 2px #d97656;
+    
+}
+

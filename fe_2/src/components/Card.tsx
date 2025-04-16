@@ -15,6 +15,7 @@ export default function Card({ title, content, imageUrl, altText }: CardProps) {
         <img src={imageUrl} alt={title} className={styles.cardImage} />
       )}
       <h2 className={styles.cardTitle}>{title}</h2>
+      
       {content.map((text, idx) => (
         <p key={idx} className={styles.cardText}>
           {text}

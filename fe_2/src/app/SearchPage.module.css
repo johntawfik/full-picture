@@ -1,0 +1,47 @@
+.page {
+    padding: 2rem;
+    background-color: #262624;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Special Gothic Expanded One", sans-serif;
+  }
+  
+  .toggleBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #4a4a46;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Special Gothic", sans-serif;
+    transition: background-color 0.3s;
+  }
+  
+  .toggleBtn:hover {
+    background-color: #5e5e5a;
+  }
+  
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  

@@ -7,10 +7,10 @@ import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 
 const cardData = [
-  [1, "Dog", "Title", "Content 1", "Content 2", "Content 3"],
-  [2, "Beach", "Title", "Content 1", "Content 2", "Content 3"],
-  [3, "USA", "Title", "Content 1", "Content 2", "Content 3"],
-  [4, "China", "Title", "Content 1", "Content 2", "Content 3"],
+  [1, "China", "Title", "Content 1", "Content 2", "Content 3"],
+  [2, "Gaza War", "Title", "Content 1", "Content 2", "Content 3"],
+  [3, "US Tariffs", "Title", "Content 1", "Content 2", "Content 3"],
+  [4, "Ukraine War", "Title", "Content 1", "Content 2", "Content 3"],
 ];
 
 export default function Home() {

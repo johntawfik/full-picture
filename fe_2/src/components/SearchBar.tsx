@@ -1,17 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
   showPromptText?: boolean;
 }
 
-const prompts = ["dog rescues", "China updates", "beach weather", "US politics"];
+const prompts = ["China", "Gaza", "Tariffs", "Ukraine"];
 
 export default function SearchBar({ showPromptText = true }: SearchBarProps) {
   const [index, setIndex] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const [inputText, setInputText] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,17 +27,37 @@ export default function SearchBar({ showPromptText = true }: SearchBarProps) {
     return () => clearInterval(interval);
   }, []);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && inputText.trim() !== "") {
+      router.push(`/search?q=${encodeURIComponent(inputText.trim())}`);
+    }
+  };
+
   return (
     <div className={styles.searchWrapper}>
       <div className={styles.fakeInput}>
-        <span className={styles.fixed}>
-          Search up news like{" "}
-          {showPromptText && (
-            <span className={`${styles.cycle} ${fadeOut ? styles.fadeOut : styles.fadeIn}`}>
-              {prompts[index]}
-            </span>
-          )}
-        </span>
+        <input
+          type="text"
+          className={styles.realInput}
+          value={inputText}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          placeholder=""
+        />
+        {inputText === "" && (
+          <span className={styles.fixed}>
+            Search up news like{" "}
+            {showPromptText && (
+              <span className={`${styles.cycle} ${fadeOut ? styles.fadeOut : styles.fadeIn}`}>
+                {prompts[index]}
+              </span>
+            )}
+          </span>
+        )}
       </div>
     </div>
   );

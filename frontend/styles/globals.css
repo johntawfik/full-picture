@@ -92,3 +92,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.font-special {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+}

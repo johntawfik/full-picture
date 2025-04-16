@@ -1,0 +1,7 @@
+asyncpg
+fastapi
+pydantic
+python-dotenv
+fastapi-cache2[redis]
+redis
+uvicorn[standard]

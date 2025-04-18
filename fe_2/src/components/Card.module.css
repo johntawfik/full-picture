@@ -1,15 +1,44 @@
 .card {
-  background-color: #4a4a46;
-  padding: 2rem;
+  background-color: #333230;
   border-radius: 1rem;
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.1),
-    0 8px 0 #333330;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  perspective: 1000px;
-  background-image: linear-gradient(145deg, #4f4f4b, #45453f);
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.cardText {
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.expandText {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+  display: inline-block;
+  text-align: right;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 
@@ -38,7 +67,7 @@
 }
 
 .cardText {
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
   color: white;
   font-family: "Special Gothic", sans-serif;
@@ -63,4 +92,70 @@
     2.7px 14px 0 2px #d97656;
     
 }
+
+.communityBadge {
+  display: inline-block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-family: "Special Gothic", sans-serif;
+  color: white;
+  width: fit-content;
+}
+
+.leftBadge {
+  background-color: #3b82f6; /* Blue */
+}
+
+.rightBadge {
+  background-color: #ef4444; /* Red */
+}
+
+.centerBadge {
+  background-color: #f59e0b; /* Amber */
+}
+
+.neutralBadge {
+  background-color: gray;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.sentimentBubble {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+
+.cardText {
+  transition: max-height 0.3s ease;
+}
+
+.externalLink {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #4a90e2;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease, color 0.2s ease;
+}
+
+.externalLink:hover {
+  text-decoration: underline;
+  color: #2d6cdf;
+}
+
+
+
 

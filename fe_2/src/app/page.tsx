@@ -1,33 +1,88 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchImage } from "@/utils/fetchImage";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 
-const cardData = [
-  [1, "China", "Title", "Content 1", "Content 2", "Content 3"],
-  [2, "Gaza War", "Title", "Content 1", "Content 2", "Content 3"],
-  [3, "US Tariffs", "Title", "Content 1", "Content 2", "Content 3"],
-  [4, "Ukraine War", "Title", "Content 1", "Content 2", "Content 3"],
-];
+interface Perspective {
+  id: string;
+  title: string;
+  source: string;
+  community: string;
+  quote: string;
+  sentiment: number;
+  date: string;
+  url: string;
+}
 
 export default function Home() {
-  const [images, setImages] = useState<Record<number, string>>({});
+  const [perspectives, setPerspectives] = useState<Perspective[]>([]);
+  const [query, setQuery] = useState<string | null>(null);
+
+
+
+  const fetchPerspectivesByQuery = async (queries: string[], restrict = true) => {
+    setPerspectives([]);
+    const seenIds = new Set<string>();
+    const fetched: Perspective[] = [];
+
+    for (const q of queries) {
+      try {
+        const res = await fetch(
+          `https://full-picture-production.up.railway.app/api/perspectives?query=${encodeURIComponent(q)}`,
+          {
+            headers: { Accept: "application/json" },
+          }
+        );
+        const data: Perspective[] = await res.json();
+
+        const toUse = restrict
+        ? (() => {
+            const perspectivePool: Record<"left" | "right" | "center", Perspective[]> = {
+              left: [],
+              right: [],
+              center: [],
+            };
+            for (const p of data) {
+              const lean = p.community.toLowerCase();
+              if (["left", "right", "center"].includes(lean)) {
+                perspectivePool[lean as "left" | "right" | "center"].push(p);
+              }
+            }
+            return [
+              ...perspectivePool.right.slice(0, 2),
+              ...perspectivePool.center.slice(0, 1),
+              ...perspectivePool.left.slice(0, 1),
+            ];
+          })()
+        : data;
+
+        for (const p of toUse) {
+          if (!seenIds.has(p.id)) {
+            fetched.push(p);
+            seenIds.add(p.id);
+          }
+        }
+      } catch (err) {
+        console.error(`Error fetching for query "${q}"`, err);
+      }
+    }
+
+    setPerspectives(fetched);
+  };
+
+  const defaultQueries = ["Ukraine", "Gaza", "Tariffs", "China"];
 
   useEffect(() => {
-    const fetchAllImages = async () => {
-      const newImages: Record<number, string> = {};
-      for (const [id, keyword] of cardData.map(([id, k]) => [id, k])) {
-        const url = await fetchImage(keyword as string);
-        if (url) newImages[id as number] = url;
-      }
-      setImages(newImages);
-    };
-
-    fetchAllImages();
+    fetchPerspectivesByQuery(defaultQueries, true);
   }, []);
+
+  useEffect(() => {
+    if (query && query.trim() !== "") {
+      fetchPerspectivesByQuery([query], false);
+    }
+  }, [query]);
 
   return (
     <div className={styles.page}>
@@ -50,15 +105,17 @@ export default function Home() {
             </svg>
           </span>
         </h1>
-        <SearchBar showPromptText={true} />
+        <SearchBar showPromptText={true} onSearch={(val) => setQuery(val)} />
         <div className={styles.cardGrid}>
-          {cardData.map(([id, img, title, ...content]) => (
+          {perspectives.map((p) => (
             <Card
-              key={Number(id)}
-              title={String(title) + String(id)}
-              imageUrl={images[id as number] || `https://via.placeholder.com/400x200?text=${img}`}
-              content={content as Array<string>}
-            />
+            key={p.id}
+            title={p.title}
+            community={p.community}
+            sentiment={p.sentiment}
+            quote={p.quote}
+            url={p.url}
+          />
           ))}
         </div>
       </main>

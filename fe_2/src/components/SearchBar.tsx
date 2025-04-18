@@ -6,11 +6,13 @@ import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
   showPromptText?: boolean;
+  onSearch?: (query: string) => void;
 }
+
 
 const prompts = ["China", "Gaza", "Tariffs", "Ukraine"];
 
-export default function SearchBar({ showPromptText = true }: SearchBarProps) {
+export default function SearchBar({ showPromptText = true, onSearch }: SearchBarProps) {
   const [index, setIndex] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
   const [inputText, setInputText] = useState("");
@@ -32,8 +34,9 @@ export default function SearchBar({ showPromptText = true }: SearchBarProps) {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && inputText.trim() !== "") {
-      router.push(`/search?q=${encodeURIComponent(inputText.trim())}`);
+    if (e.key === "Enter" && inputText.trim()) {
+      console.log("Searching for:", inputText); // ✅ add this
+      onSearch?.(inputText.trim());
     }
   };
 

@@ -20,7 +20,7 @@ export default function Home() {
   const [perspectives, setPerspectives] = useState<Perspective[]>([]);
   const [query, setQuery] = useState<string | null>(null);
   const [windowWidth, setWindowWidth] = useState<number>(0);
-
+  const apiUrl = process.env.NEXT_PUBLIC_PERSPECTIVES_URL;
   // Update window width on resize and initial load
   useEffect(() => {
     const handleResize = () => {
@@ -42,7 +42,7 @@ export default function Home() {
     for (const q of queries) {
       try {
         const res = await fetch(
-          `https://full-picture-production.up.railway.app/api/perspectives?query=${encodeURIComponent(q)}`,
+          `${apiUrl}${encodeURIComponent(q)}`,
           {
             headers: { Accept: "application/json" },
           }
@@ -157,6 +157,7 @@ export default function Home() {
             sentiment={p.sentiment}
             quote={p.quote}
             url={p.url}
+            date={p.date}
           />
           ))}
         </div>

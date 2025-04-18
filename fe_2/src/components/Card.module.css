@@ -154,5 +154,12 @@
 }
 
 
-
-
+.dateBadge {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  background-color: #444;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+}

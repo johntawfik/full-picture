@@ -9,6 +9,7 @@ interface CardProps {
   community: string;
   sentiment?: number;
   url: string;
+  date: string;
 }
 
 const pillColor = (community: string) => {
@@ -30,6 +31,7 @@ export default function Card({
   imageUrl,
   community,
   url,
+  date
 }: CardProps) {
   const [expanded, setExpanded] = useState(false);
 
@@ -60,12 +62,17 @@ export default function Card({
       )}
       <h2 className={styles.cardTitle}>{title}</h2>
       <div className={styles.badgeRow}>
-        <div
-          className={`${styles.communityBadge} ${styles[pillColor(community)]}`}
-        >
-          {community.charAt(0).toUpperCase() + community.slice(1)}
-        </div>
-      </div>
+  <div className={`${styles.communityBadge} ${styles[pillColor(community)]}`}>
+    {community.charAt(0).toUpperCase() + community.slice(1)}
+  </div>
+  <div className={styles.dateBadge}>
+    {new Date(date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })}
+  </div>
+</div>
       <p className={`${styles.cardText} ${expanded ? styles.expanded : ''}`}>{displayText}</p>
 
       <a

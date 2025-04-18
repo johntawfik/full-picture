@@ -7,7 +7,6 @@ interface CardProps {
   id: string;
   title: string;
   quote: string;
-  imageUrl?: string;
   community: string;
   sentiment?: number;
   url: string;
@@ -31,7 +30,6 @@ export default function Card({
   id,
   title,
   quote,
-  imageUrl,
   community,
   url,
   date
@@ -85,9 +83,6 @@ export default function Card({
       onClick={isTruncated ? toggleExpanded : undefined}
       style={{ cursor: isTruncated ? "pointer" : "default" }}
     >
-      {imageUrl && (
-        <img src={imageUrl} alt={title} className={styles.cardImage} />
-      )}
       <h2 className={styles.cardTitle}>{title}</h2>
       <div className={styles.badgeRow}>
         <div className={`${styles.communityBadge} ${styles[pillColor(community)]}`}>

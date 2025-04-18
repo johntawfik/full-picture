@@ -51,7 +51,7 @@ export default function SearchPage() {
     fetchResults();
   }, [query]);
 
-  const handleSearch = (newQuery: string) => {
+  const handleSearch = () => {
     // Search is handled by the SearchBar's router.push now
     // This is just for backward compatibility
   };

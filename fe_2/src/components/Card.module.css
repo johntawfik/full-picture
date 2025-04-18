@@ -60,13 +60,6 @@
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-.cardImage {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: cover;
-}
-
 /* Add this to create a subtle highlight on top */
 .card::before {
   content: '';

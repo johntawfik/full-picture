@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";

@@ -96,6 +96,10 @@ class CommentCreate(BaseModel):
     content: str = Field(..., min_length=1, max_length=500)
 
 
+class CommentCountResponse(BaseModel):
+    count: int
+
+
 @app.get("/api/perspectives", response_model=List[Perspective])
 @cache(expire=300) 
 async def get_perspectives(
@@ -205,6 +209,38 @@ async def get_comments(perspective_id: str):
     except Exception as e:
         logger.error(f"Error fetching comments: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error fetching comments: {str(e)}")
+
+
+@app.get("/api/perspectives/{perspective_id}/comments/count", response_model=CommentCountResponse)
+async def get_comment_count(perspective_id: str):
+    """
+    Get the count of comments for a specific perspective
+    """
+    try:
+        async with app.state.pool.acquire() as conn:
+            # Check if perspective exists (optional but good practice)
+            perspective_exists = await conn.fetchval(
+                "SELECT EXISTS (SELECT 1 FROM perspectives WHERE id = $1)",
+                perspective_id
+            )
+            if not perspective_exists:
+                raise HTTPException(status_code=404, detail="Perspective not found")
+
+            # Get the count
+            sql = """
+                SELECT COUNT(*) FROM comments WHERE perspective_id = $1
+            """
+            count = await conn.fetchval(sql, perspective_id)
+            return {"count": count or 0}
+    
+    except asyncpg.PostgresError as e:
+        logger.error(f"Database query error getting comment count: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Database query error: {str(e)}")
+    except HTTPException as e: # Re-raise HTTPExceptions (like 404)
+        raise e
+    except Exception as e:
+        logger.error(f"Error fetching comment count: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error fetching comment count: {str(e)}")
 
 
 @app.post("/api/perspectives/{perspective_id}/comments", response_model=Comment)

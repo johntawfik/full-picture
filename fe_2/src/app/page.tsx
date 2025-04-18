@@ -85,19 +85,11 @@ export default function Home() {
     if (fetched.length === 0) {
       console.warn("No perspectives found for the given queries");
     } else {
-      // For screens wider than 700px, ensure we have a multiple of 4 cards
       if (windowWidth > 700) {
-        // Determine how many cards to add to make it a multiple of 4
-        const remainder = fetched.length % 4;
+        const remainder = fetched.length % 3;
         if (remainder !== 0) {
-          // If we don't have enough for a multiple of 4, duplicate some cards to fill the grid
-          const cardsNeeded = 4 - remainder;
-          for (let i = 0; i < cardsNeeded; i++) {
-            // Use modulo to cycle through available cards if we need more than we have
-            const indexToDuplicate = i % fetched.length;
-            const duplicateCard = { ...fetched[indexToDuplicate], id: `${fetched[indexToDuplicate].id}-dup-${i}` };
-            fetched.push(duplicateCard);
-          }
+          const cardsNeeded = 3 - remainder;
+          fetched = [...fetched, ...fetched.slice(0, cardsNeeded)];
         }
       }
     }

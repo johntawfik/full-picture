@@ -1,6 +1,5 @@
-// components/Card.tsx
 import styles from "./Card.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CommentSection from "./CommentSection";
 import { FaRegComment } from "react-icons/fa";
 
@@ -41,6 +40,25 @@ export default function Card({
   const [showComments, setShowComments] = useState(false);
   const [commentCount, setCommentCount] = useState<number | null>(null);
 
+  
+  useEffect(() => {
+    const fetchCount = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_COMMENTS_URL}/api/perspectives/${id}/comments/count`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch comment count');
+        }
+        const data = await response.json();
+        setCommentCount(data.count);
+      } catch (err) {
+        console.error('Error fetching comment count:', err);
+        setCommentCount(0); // Set to 0 on error?
+      }
+    };
+
+    fetchCount();
+  }, [id]);
+
   const toggleExpanded = () => {
     setExpanded((prev) => !prev);
   };
@@ -48,10 +66,6 @@ export default function Card({
   const toggleComments = (e: React.MouseEvent) => {
     e.stopPropagation();
     setShowComments((prev) => !prev);
-  };
-
-  const handleCommentCountChange = (count: number) => {
-    setCommentCount(count);
   };
 
   const truncateWords = (text: string, wordLimit: number) => {
@@ -115,7 +129,6 @@ export default function Card({
       <CommentSection 
         perspectiveId={id} 
         isOpen={showComments} 
-        onCountChange={handleCommentCountChange} 
       />
     </div>
   );

@@ -11,44 +11,47 @@ interface Comment {
 interface CommentSectionProps {
   perspectiveId: string;
   isOpen: boolean;
-  onCountChange?: (count: number) => void;
 }
 
-export default function CommentSection({ perspectiveId, isOpen, onCountChange }: CommentSectionProps) {
+export default function CommentSection({ perspectiveId, isOpen }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hasFetched, setHasFetched] = useState(false);
 
-  // API base URL - using localhost:8000 for backend
-  const API_BASE_URL = 'http://localhost:8000';
 
-  // Fetch comments when component mounts or perspectiveId changes
+
+  // Fetch comments only when isOpen becomes true for the first time, or if perspectiveId changes while open
   useEffect(() => {
-    fetchComments();
-  }, [perspectiveId]);
+    // Only fetch if the section is open AND we haven't fetched yet for this perspectiveId
+    if (isOpen && !hasFetched) {
+      fetchComments();
+    }
+    // Reset fetch status if perspectiveId changes
+    if (perspectiveId) { // Added guard for perspectiveId
+      setHasFetched(false);
+      setComments([]); // Clear old comments if ID changes
+      setError(null);
+    }
+
+  }, [isOpen, perspectiveId, hasFetched]); // Added isOpen and hasFetched to dependencies
 
   const fetchComments = async () => {
+    if (!perspectiveId) return; // Don't fetch if ID is missing
     setLoading(true);
     setError(null);
+    setHasFetched(true); // Mark as fetched (or attempting)
     try {
-      const response = await fetch(`${API_BASE_URL}/api/perspectives/${perspectiveId}/comments`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_COMMENTS_URL}/api/perspectives/${perspectiveId}/comments`);
       if (!response.ok) {
         throw new Error('Failed to fetch comments');
       }
       const data = await response.json();
       setComments(data);
-      // Report count back to parent
-      if (onCountChange) {
-        onCountChange(data.length);
-      }
     } catch (err) {
       setError('Error loading comments. Please try again later.');
       console.error('Error fetching comments:', err);
-      // Report count as 0 or null in case of error? Let's report 0
-      if (onCountChange) {
-        onCountChange(0);
-      }
     } finally {
       setLoading(false);
     }
@@ -56,14 +59,14 @@ export default function CommentSection({ perspectiveId, isOpen, onCountChange }:
 
   const handleSubmitComment = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newComment.trim()) {
+    if (!newComment.trim() || !perspectiveId) {
       return;
     }
 
-    setLoading(true);
+    setLoading(true); // Consider a different loading state for posting?
     setError(null);
     try {
-      const response = await fetch(`${API_BASE_URL}/api/perspectives/${perspectiveId}/comments`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_COMMENTS_URL}/api/perspectives/${perspectiveId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,10 +82,6 @@ export default function CommentSection({ perspectiveId, isOpen, onCountChange }:
       const updatedComments = [data, ...comments];
       setComments(updatedComments);
       setNewComment('');
-      // Report updated count
-      if (onCountChange) {
-        onCountChange(updatedComments.length);
-      }
     } catch (err) {
       setError('Error posting comment. Please try again later.');
       console.error('Error posting comment:', err);
@@ -122,6 +121,10 @@ export default function CommentSection({ perspectiveId, isOpen, onCountChange }:
       <div className={styles.commentList}>
         {loading ? (
           <p className={styles.loading}>Loading comments...</p>
+        ) : error ? (
+          <p className={styles.errorMessage}>{error}</p>
+        ) : comments.length === 0 ? (
+          <p className={styles.noComments}>No comments yet.</p>
         ) : (
           comments.map((comment) => (
             <div key={comment.id} className={styles.comment}>

@@ -1,0 +1,13 @@
+asyncpg
+beautifulsoup4==4.12.2
+fastapi==0.104.1
+fastapi-cache2[redis]
+feedparser==6.0.10
+playwright==1.48.0
+psycopg2-binary==2.9.9
+pydantic==2.4.2
+python-dotenv==1.0.1
+redis
+textblob==0.15.3
+uvicorn==0.23.2
+uvicorn[standard] 

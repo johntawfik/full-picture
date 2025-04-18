@@ -24,16 +24,6 @@ const pillColor = (community: string) => {
   }
 };
 
-const getSentimentColor = (value: number) => {
-  const clamp = (v: number, min: number, max: number) =>
-    Math.min(Math.max(v, min), max);
-  const ratio = (clamp(value, -1, 1) + 1) / 2; // scale to [0, 1]
-
-  const red = Math.round(255 * (1 - ratio));
-  const green = Math.round(255 * ratio);
-  return `rgb(${red}, ${green}, 100)`; // fixed blue tone for consistency
-};
-
 export default function Card({
   title,
   quote,
@@ -57,8 +47,7 @@ export default function Card({
   const wordLimit = 30;
   const words = quote.split(" ");
   const isTruncated = words.length > wordLimit;
-  const displayText =
-    expanded || !isTruncated ? quote : truncateWords(quote, wordLimit);
+  const displayText = expanded ? quote : (isTruncated ? truncateWords(quote, wordLimit) : quote);
 
   return (
     <div
@@ -77,7 +66,7 @@ export default function Card({
           {community.charAt(0).toUpperCase() + community.slice(1)}
         </div>
       </div>
-      <p className={styles.cardText}>{displayText}</p>
+      <p className={`${styles.cardText} ${expanded ? styles.expanded : ''}`}>{displayText}</p>
 
       <a
       href={url}

@@ -53,33 +53,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
 }
 
 .title {
   font-size: 4rem;
   text-align: center;
-  margin-bottom: 3rem;
   color: white;
   font-weight: normal;
 }
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
-  align-items: start;
+  grid-auto-flow: row;
+  padding: 1rem;
+  align-items: flex-start;
 }
 
-
-@media (max-width: 1224px) {
+/* Add masonry-like layout support */
+@supports (grid-template-rows: masonry) {
   .cardGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1400px) {
   .cardGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .main {
+    max-width: 95%;
   }
 }
 

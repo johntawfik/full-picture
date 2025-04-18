@@ -1,7 +1,7 @@
 .searchWrapper {
     width: 100%;
     max-width: 70%;
-    margin: 4rem auto;
+    margin: 3rem auto;
   }
   
   .fakeInput {
@@ -13,7 +13,7 @@
       0 4px 14px rgba(0, 0, 0, 0.1),
       0 8px 0 #333330;
     font-family: "Special Gothic", sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: white;
     display: flex;
     align-items: center;
@@ -83,8 +83,8 @@
     background: transparent;
     color: white;
     border: none;
-    font-size: 1rem;
-    font-family: "Special Gothic", sans-serif;
+    font-size: 1.5rem;
+    font-family: "Special Gothic Expanded One", sans-serif;
     z-index: 3;
     padding: 1rem 1.25rem;
     caret-color: #d97656;

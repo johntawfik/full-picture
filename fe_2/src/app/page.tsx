@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
@@ -19,13 +19,25 @@ interface Perspective {
 export default function Home() {
   const [perspectives, setPerspectives] = useState<Perspective[]>([]);
   const [query, setQuery] = useState<string | null>(null);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
-
+  // Update window width on resize and initial load
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   const fetchPerspectivesByQuery = async (queries: string[], restrict = true) => {
     setPerspectives([]);
     const seenIds = new Set<string>();
-    const fetched: Perspective[] = [];
+    let fetched: Perspective[] = [];
 
     for (const q of queries) {
       try {
@@ -69,6 +81,27 @@ export default function Home() {
       }
     }
 
+    // Ensure we have at least one card
+    if (fetched.length === 0) {
+      console.warn("No perspectives found for the given queries");
+    } else {
+      // For screens wider than 700px, ensure we have a multiple of 4 cards
+      if (windowWidth > 700) {
+        // Determine how many cards to add to make it a multiple of 4
+        const remainder = fetched.length % 4;
+        if (remainder !== 0) {
+          // If we don't have enough for a multiple of 4, duplicate some cards to fill the grid
+          const cardsNeeded = 4 - remainder;
+          for (let i = 0; i < cardsNeeded; i++) {
+            // Use modulo to cycle through available cards if we need more than we have
+            const indexToDuplicate = i % fetched.length;
+            const duplicateCard = { ...fetched[indexToDuplicate], id: `${fetched[indexToDuplicate].id}-dup-${i}` };
+            fetched.push(duplicateCard);
+          }
+        }
+      }
+    }
+
     setPerspectives(fetched);
   };
 
@@ -83,6 +116,15 @@ export default function Home() {
       fetchPerspectivesByQuery([query], false);
     }
   }, [query]);
+
+  // Refetch when window width changes to adjust card count
+  useEffect(() => {
+    if (query && query.trim() !== "") {
+      fetchPerspectivesByQuery([query], false);
+    } else {
+      fetchPerspectivesByQuery(defaultQueries, true);
+    }
+  }, [windowWidth]);
 
   return (
     <div className={styles.page}>

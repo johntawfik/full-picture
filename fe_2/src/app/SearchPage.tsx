@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
+import SearchBar from "@/components/SearchBar";
 import styles from "./SearchPage.module.css";
 import { useSearchParams } from "next/navigation";
 
@@ -18,7 +19,7 @@ interface Perspective {
 
 export default function SearchPage() {
   const [perspectives, setPerspectives] = useState<Perspective[]>([]);
-  const [isGridView, setIsGridView] = useState(false);
+  const [isGridView, setIsGridView] = useState(true);
   const [loading, setLoading] = useState(true);
 
   const searchParams = useSearchParams();
@@ -30,7 +31,12 @@ export default function SearchPage() {
     const fetchResults = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+        const res = await fetch(
+          `https://full-picture-production.up.railway.app/api/perspectives?query=${encodeURIComponent(query)}`,
+          {
+            headers: { Accept: "application/json" },
+          }
+        );
         const data = await res.json();
         setPerspectives(data);
       } catch (err) {
@@ -43,8 +49,14 @@ export default function SearchPage() {
     fetchResults();
   }, [query]);
 
+  const handleSearch = (newQuery: string) => {
+    // Search is handled by the SearchBar's router.push now
+    // This is just for backward compatibility
+  };
+
   return (
     <div className={styles.page}>
+      <SearchBar showPromptText={true} onSearch={handleSearch} />
       <div className={styles.header}>
         <h1 className={styles.title}>
           {loading ? "Loading..." : `Results for "${query}"`}
@@ -59,15 +71,10 @@ export default function SearchPage() {
           <Card
             key={p.id}
             title={p.title}
-            content={[
-              `Source: ${p.source}`,
-              `Community: ${p.community}`,
-              `Sentiment: ${p.sentiment.toFixed(2)}`,
-              `Date: ${new Date(p.date).toLocaleDateString()}`,
-              `"${p.quote}"`,
-            ]}
-            imageUrl={`https://via.placeholder.com/400x200?text=${encodeURIComponent(p.source)}`}
-            altText={p.title}
+            community={p.community}
+            sentiment={p.sentiment}
+            quote={p.quote}
+            url={p.url}
           />
         ))}
       </div>

@@ -6410,3 +6410,869 @@ Browser logs:
 2025-04-09 20:41:32,583 - article_scraper - INFO -   Processed RSS entry 56: Australia to Boost Defense Spending Amid U.S.-Chin...
 2025-04-09 20:41:32,584 - article_scraper - INFO - Successfully scraped 56 articles from Wall Street Journal
 2025-04-09 20:41:38,362 - article_scraper - INFO - Browser session and database connection closed
+2025-04-18 00:00:06,624 - article_scraper - INFO - Connected to Neon database
+2025-04-18 00:00:13,718 - article_scraper - INFO - Browser session initialized
+2025-04-18 00:00:13,720 - article_scraper - INFO - Scraping Fox News
+2025-04-18 00:00:13,720 - article_scraper - INFO - Extracted domain: www.foxnews.com
+2025-04-18 00:00:13,720 - article_scraper - INFO - Visiting https://www.foxnews.com
+2025-04-18 00:00:19,161 - article_scraper - INFO - Using article selector: article.article[class*='story-']
+2025-04-18 00:00:21,218 - article_scraper - INFO - Found 67 potential article elements on Fox News
+2025-04-18 00:00:24,196 - article_scraper - INFO -   Article 1: Dem Senator Meets Shakes Hands Abrego Garcia El Sa... (from URL) - https://www.foxnews.com/politics/dem-senator-meets-shakes-hands-abrego-garcia-el-salvador-says-inmate-remain-custody
+2025-04-18 00:00:25,338 - article_scraper - INFO -   Article 2: Fsu Shooter Identified Used Sheriff Deputy Moms We... (from URL) - https://www.foxnews.com/us/fsu-shooter-identified-used-sheriff-deputy-moms-weapon-killing-police
+2025-04-18 00:00:27,113 - article_scraper - INFO -   Article 3: Mass Surveillance Conservatives Sound Alarm Over T... (from URL) - https://www.foxnews.com/politics/mass-surveillance-conservatives-sound-alarm-over-trump-admins-real-id-rollout
+2025-04-18 00:00:27,698 - article_scraper - INFO -   Article 4: Texas Press Conference Austin Metcalf Killing Devo... (from URL) - https://www.foxnews.com/us/texas-press-conference-austin-metcalf-killing-devolves-chaos-over-track-meet-stabbing
+2025-04-18 00:00:28,355 - article_scraper - INFO -   Article 5: Letitia James Reaps What She Sows After Leveling L... (from URL) - https://www.foxnews.com/politics/letitia-james-reaps-what-she-sows-after-leveling-laughable-case-trump-expert
+2025-04-18 00:00:28,406 - article_scraper - INFO -   Article 6: Mark Cuban Backs Trumps Health Care Executive Orde... (from URL) - https://www.foxbusiness.com/politics/mark-cuban-backs-trumps-health-care-executive-order-prescription-drugs
+2025-04-18 00:00:28,643 - article_scraper - INFO -   Article 7: Justice Kagan Denies Emergency Appeal Halt Deporta... (from URL) - https://www.foxnews.com/politics/justice-kagan-denies-emergency-appeal-halt-deportation-mexican-nationals-claiming-asylum-from-cartel
+2025-04-18 00:00:28,765 - article_scraper - INFO -   Article 8: Haley Cavinder Gets Engaged Cowboys Star Shortly A... (from URL) - https://www.foxnews.com/sports/haley-cavinder-gets-engaged-cowboys-star-shortly-after-sisters-rumored-breakup-carson-beck
+2025-04-18 00:00:29,018 - article_scraper - INFO -   Article 9: Wheres Beef Beloved Fast Food Chain Refuses Apolog... (from URL) - https://www.foxbusiness.com/media/wheres-beef-beloved-fast-food-chain-refuses-apologize-online-burn-katy-perrys-space-voyage
+2025-04-18 00:00:29,390 - article_scraper - INFO -   Article 10: Smartphone Use Could Reduce Dementia Risk Older Ad... (from URL) - https://www.foxnews.com/health/smartphone-use-could-reduce-dementia-risk-older-adults-study-finds
+2025-04-18 00:00:29,461 - article_scraper - INFO -   Article 11: foxweather.com... (from URL) - https://www.foxweather.com/
+2025-04-18 00:00:29,551 - article_scraper - INFO -   Article 12: 3fovsu0... (from URL) - https://fxn.ws/3FOVsu0
+2025-04-18 00:00:29,677 - article_scraper - INFO -   Article 13: Lee Corso Hanging Up Headgear Even Though Its Time... (from URL) - https://www.outkick.com/sports/lee-corso-hanging-up-headgear-even-though-its-time-still-hurts
+2025-04-18 00:00:29,716 - article_scraper - INFO -   Article 14: Utbwh1j... (from URL) - https://trib.al/utbwH1j
+2025-04-18 00:00:29,757 - article_scraper - INFO -   Article 15: Kids Easter Subscription Services... (from URL) - https://www.foxnews.com/deals/kids-easter-subscription-services
+2025-04-18 00:00:29,793 - article_scraper - INFO -   Article 16: 5614615980001... (from URL) - https://www.foxnews.com/video/5614615980001
+2025-04-18 00:00:29,819 - article_scraper - INFO -   Article 17: Photos Gop Delegation Provides Inside Look Controv... (from URL) - https://www.foxnews.com/politics/photos-gop-delegation-provides-inside-look-controversial-el-salvador-prison-housing-u-s-deportees
+2025-04-18 00:00:29,860 - article_scraper - INFO -   Article 18: James Carville Calls David Hoggs Plan Primary Inef... (from URL) - https://www.foxnews.com/media/james-carville-calls-david-hoggs-plan-primary-ineffective-dems-most-insane-thing-hes-ever-heard
+2025-04-18 00:00:29,883 - article_scraper - INFO -   Article 19: Flashback Democrats Defend Elite Schools From Lega... (from URL) - https://www.foxnews.com/politics/flashback-democrats-defend-elite-schools-from-legal-precedent-once-championed
+2025-04-18 00:00:29,904 - article_scraper - INFO -   Article 20: 6371619214112... (from URL) - https://www.foxnews.com/video/6371619214112
+2025-04-18 00:00:29,923 - article_scraper - INFO -   Article 21: Supreme Court Poised Make Major Decision Limits Po... (from URL) - https://www.foxnews.com/politics/supreme-court-poised-make-major-decision-limits-power-district-judges
+2025-04-18 00:00:29,952 - article_scraper - INFO -   Article 22: Middle School Students Injured South Carolina Scho... (from URL) - https://www.foxnews.com/us/middle-school-students-injured-south-carolina-school-bus-flips-highway
+2025-04-18 00:00:29,985 - article_scraper - INFO -   Article 23: 6371614768112... (from URL) - https://www.foxnews.com/video/6371614768112
+2025-04-18 00:00:30,006 - article_scraper - INFO -   Article 24: Games... (from URL) - https://www.foxnews.com/games
+2025-04-18 00:00:30,026 - article_scraper - INFO -   Article 25: Sixth Sense Star Haley Joel Osment Arrested Califo... (from URL) - https://www.foxnews.com/entertainment/sixth-sense-star-haley-joel-osment-arrested-california-ski-resort
+2025-04-18 00:00:30,092 - article_scraper - INFO -   Article 26: Ufo Footage Captured Us Navy Shows Mysterious Airc... (from URL) - https://www.foxnews.com/us/ufo-footage-captured-us-navy-shows-mysterious-aircraft-launching-from-sea-expert-says
+2025-04-18 00:00:30,120 - article_scraper - INFO -   Article 27: President Donald Trump Addresses Whether Jill Bide... (from URL) - https://www.foxnews.com/media/president-donald-trump-addresses-whether-jill-biden-joes-autopen-ran-white-house
+2025-04-18 00:00:30,140 - article_scraper - INFO -   Article 28: Appeals Court Denies Doj Bid Block Return Kilmar A... (from URL) - https://www.foxnews.com/politics/appeals-court-denies-doj-bid-block-return-kilmar-abrego-garcia-el-salvador-prison
+2025-04-18 00:00:30,186 - article_scraper - INFO -   Article 29: Pga Star Signs Womans Leg After Hitting Errant Tee... (from URL) - https://www.foxnews.com/sports/pga-star-signs-womans-leg-after-hitting-errant-tee-shot
+2025-04-18 00:00:30,204 - article_scraper - INFO -   Article 30: Bill Belichick Nabs 4 Star Receiver Unc Who Set Pl... (from URL) - https://www.foxnews.com/sports/bill-belichick-nabs-4-star-receiver-unc-who-set-play-deion-sanders-colorado
+2025-04-18 00:00:30,243 - article_scraper - INFO -   Article 31: Trumptransition... (from URL) - https://foxnews.com/trumptransition
+2025-04-18 00:00:30,269 - article_scraper - INFO -   Article 32: Politics Cartoons Slideshow... (from URL) - https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:00:30,292 - article_scraper - INFO -   Article 33: Anthropologie Furniture Decor Spring Discounts... (from URL) - https://www.foxnews.com/deals/anthropologie-furniture-decor-spring-discounts
+2025-04-18 00:00:30,361 - article_scraper - INFO -   Article 34: Picky Eater Food Allergies Told Shes Childish Need... (from URL) - https://www.foxnews.com/food-drink/picky-eater-food-allergies-told-shes-childish-needs-get-over-this
+2025-04-18 00:00:30,404 - article_scraper - INFO -   Article 35: American Culture Quiz Test Yourself Screen Stars G... (from URL) - https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-screen-stars-garden-greatness-founding-fathers
+2025-04-18 00:00:30,422 - article_scraper - INFO -   Article 36: Glassesusa Easter Sale Prescription Glasses Sungla... (from URL) - https://www.foxnews.com/deals/glassesusa-easter-sale-prescription-glasses-sunglasses-contacts
+2025-04-18 00:00:30,442 - article_scraper - INFO -   Article 37: Louisiana Child Killer Spared Biden Faces Death Pe... (from URL) - https://www.foxnews.com/us/louisiana-child-killer-spared-biden-faces-death-penalty-again-after-outrageous-commutation-da
+2025-04-18 00:00:30,457 - article_scraper - INFO -   Article 38: Trump Says 100 Chance Us Strike Trade Deal Europe ... (from URL) - https://www.foxbusiness.com/politics/trump-says-100-chance-us-strike-trade-deal-europe-meloni-visits-dc
+2025-04-18 00:00:30,475 - article_scraper - INFO -   Article 39: Dc Matchmaker Says Political Polarization On Stero... (from URL) - https://www.foxnews.com/media/dc-matchmaker-says-political-polarization-on-steroids-liberals-refuse-date-trump-voters-tesla-owners
+2025-04-18 00:00:30,498 - article_scraper - INFO -   Article 40: Brother Man Nearly Decapitated Arizona Bus Stop Ha... (from URL) - https://www.foxnews.com/us/brother-man-nearly-decapitated-arizona-bus-stop-hatchet-wielding-suspect-speaks-out
+2025-04-18 00:00:30,516 - article_scraper - INFO -   Article 41: Aaron Rodgers Addresses Bulls Offseason Rumors Rev... (from URL) - https://www.foxnews.com/sports/aaron-rodgers-addresses-bulls-offseason-rumors-reveals-major-factor-decision-play-2025
+2025-04-18 00:00:30,544 - article_scraper - INFO -   Article 42: Florida Spring Break Destination Done College Crow... (from URL) - https://www.foxnews.com/us/florida-spring-break-destination-done-college-crowds-time-over
+2025-04-18 00:00:30,573 - article_scraper - INFO -   Article 43: Pollster Nate Silver Calls Ocasio Cortez Most Like... (from URL) - https://www.foxnews.com/media/pollster-nate-silver-calls-ocasio-cortez-most-likely-2028-democratic-presidential-nominee
+2025-04-18 00:00:30,595 - article_scraper - INFO -   Article 44: Trump Says Minerals Deal Ukraine Signed Next Thurs... (from URL) - https://www.foxbusiness.com/fox-news-world/trump-says-minerals-deal-ukraine-signed-next-thursday
+2025-04-18 00:00:30,611 - article_scraper - INFO -   Article 45: Ohio Man Arrested After Investigators Discover Ied... (from URL) - https://www.foxnews.com/us/ohio-man-arrested-after-investigators-discover-ied-videos-photos-bomb-making-materials
+2025-04-18 00:00:30,633 - article_scraper - INFO -   Article 46: Bill Maher Declares Himself Hero Confronting Trump... (from URL) - https://www.foxnews.com/media/bill-maher-declares-himself-hero-confronting-trump-white-house-meeting
+2025-04-18 00:00:30,652 - article_scraper - INFO -   Article 47: Accused Ceo Assassin Luigi Mangione Indicted Feder... (from URL) - https://www.foxnews.com/us/accused-ceo-assassin-luigi-mangione-indicted-federal-charges
+2025-04-18 00:00:30,668 - article_scraper - INFO -   Article 48: Top Nfl Draft Prospect Ashton Jeanty Blunt Why Tea... (from URL) - https://www.foxnews.com/sports/top-nfl-draft-prospect-ashton-jeanty-blunt-why-teams-should-take-him-id-draft-guy-cant-tackle
+2025-04-18 00:00:30,685 - article_scraper - INFO -   Article 49: Anti Semitism... (from URL) - https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:00:30,700 - article_scraper - INFO -   Article 50: Temu Shein Raise Prices Us Consumers Starting Next... (from URL) - https://www.foxbusiness.com/retail/temu-shein-raise-prices-us-consumers-starting-next-week-trump-administration-closes-tariff-loophole
+2025-04-18 00:00:30,720 - article_scraper - INFO -   Article 51: Arizona Toddler Missing Found Cattle Dog... (from URL) - https://www.foxweather.com/lifestyle/arizona-toddler-missing-found-cattle-dog
+2025-04-18 00:00:30,740 - article_scraper - INFO -   Article 52: Us National Debt Tracker... (from URL) - https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-18 00:00:30,758 - article_scraper - INFO -   Article 53: 6371574550112... (from URL) - https://www.foxnews.com/video/6371574550112
+2025-04-18 00:00:30,784 - article_scraper - INFO -   Article 54: Angler Lands World Record Breaking Alligator Gar T... (from URL) - https://www.outkick.com/culture/angler-lands-world-record-breaking-alligator-gar-texas-lake
+2025-04-18 00:00:30,803 - article_scraper - INFO -   Article 55: Christie Brinkley 71 Cosmetic Procedures Dabbled... (from URL) - https://www.foxnews.com/entertainment/christie-brinkley-71-cosmetic-procedures-dabbled
+2025-04-18 00:00:30,841 - article_scraper - INFO -   Article 56: Jesus Bus Bursts Flames Following Massive Explosio... (from URL) - https://www.foxnews.com/us/jesus-bus-bursts-flames-following-massive-explosion-video
+2025-04-18 00:00:30,859 - article_scraper - INFO -   Article 57: 7 Wwe Stars Who Should Next Years Wrestlemania Car... (from URL) - https://www.foxnews.com/sports/7-wwe-stars-who-should-next-years-wrestlemania-card
+2025-04-18 00:00:30,882 - article_scraper - INFO -   Article 58: Erik And Lyle Menendez Resentencing Hearing To Beg... (from URL) - https://www.foxnews.com/live-news/erik-and-lyle-menendez-resentencing-hearing-to-begin-in-los-angeles
+2025-04-18 00:00:30,900 - article_scraper - INFO -   Article 59: Trump Administration Shames Cnn Msnbc Not Airing R... (from URL) - https://www.foxnews.com/media/trump-administration-shames-cnn-msnbc-not-airing-rachel-morins-appeal-journalists-white-house
+2025-04-18 00:00:30,916 - article_scraper - INFO -   Article 60: Sandwich Hurt Credit Score Hidden Dangers Buy Now ... (from URL) - https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-18 00:00:30,933 - article_scraper - INFO -   Article 61: Artificial Intelligence... (from URL) - https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:00:30,949 - article_scraper - INFO -   Article 62: Food Drink... (from URL) - https://www.foxnews.com/food-drink
+2025-04-18 00:00:30,966 - article_scraper - INFO -   Article 63: Travel... (from URL) - https://www.foxnews.com/travel
+2025-04-18 00:00:30,983 - article_scraper - INFO -   Article 64: Health... (from URL) - https://www.foxnews.com/health
+2025-04-18 00:00:31,001 - article_scraper - INFO -   Article 65: Fun Facts Animal Most Eyes World Scallop... (from URL) - https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:00:31,019 - article_scraper - INFO -   Article 66: Amazon Selling Cars... (from URL) - https://www.foxnews.com/deals/amazon-selling-cars?intcmp=hp1r_deals_obtest
+2025-04-18 00:00:31,037 - article_scraper - INFO -   Article 67: 4htv27u... (from URL) - https://bit.ly/4hTv27u
+2025-04-18 00:00:31,037 - article_scraper - INFO - Successfully extracted 67 article links from Fox News
+2025-04-18 00:00:31,037 - article_scraper - INFO - Scraping article 1/67: https://www.foxnews.com/politics/dem-senator-meets-shakes-hands-abrego-garcia-el-salvador-says-inmate-remain-custody
+2025-04-18 00:00:31,039 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/dem-senator-meets-shakes-hands-abrego-garcia-el-salvador-says-inmate-remain-custody
+2025-04-18 00:00:37,631 - article_scraper - INFO - Found title: Dem Senator Van Hollen meets, shakes hands with Abrego Garcia; El Salvador says inmate will remain in custody
+2025-04-18 00:00:48,383 - article_scraper - INFO - Found content length: 5663
+2025-04-18 00:00:56,106 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:00:56,131 - article_scraper - INFO - Successfully generated summary of length: 569
+2025-04-18 00:00:56,231 - article_scraper - INFO -   Successfully scraped: Dem Senator Van Hollen meets, shakes hands with Ab...
+2025-04-18 00:00:56,341 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:00:58,530 - article_scraper - INFO - Scraping article 2/67: https://www.foxnews.com/us/fsu-shooter-identified-used-sheriff-deputy-moms-weapon-killing-police
+2025-04-18 00:00:58,530 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/fsu-shooter-identified-used-sheriff-deputy-moms-weapon-killing-police
+2025-04-18 00:01:04,897 - article_scraper - INFO - Found title: FSU shooter identified, used sheriff deputy mom's weapon in killing: police
+2025-04-18 00:01:12,244 - article_scraper - INFO - Found content length: 8528
+2025-04-18 00:01:23,737 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:01:23,852 - article_scraper - INFO - Successfully generated summary of length: 532
+2025-04-18 00:01:23,982 - article_scraper - INFO -   Successfully scraped: FSU shooter identified, used sheriff deputy mom's ...
+2025-04-18 00:01:24,124 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:01:26,908 - article_scraper - INFO - Scraping article 3/67: https://www.foxnews.com/politics/mass-surveillance-conservatives-sound-alarm-over-trump-admins-real-id-rollout
+2025-04-18 00:01:26,908 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/mass-surveillance-conservatives-sound-alarm-over-trump-admins-real-id-rollout
+2025-04-18 00:01:32,222 - article_scraper - INFO - Found title: 'Mass surveillance': Conservatives sound alarm over Trump admin's REAL ID rollout
+2025-04-18 00:01:39,833 - article_scraper - INFO - Found content length: 6595
+2025-04-18 00:01:53,420 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:01:53,451 - article_scraper - INFO - Successfully generated summary of length: 599
+2025-04-18 00:01:53,619 - article_scraper - INFO -   Successfully scraped: 'Mass surveillance': Conservatives sound alarm ove...
+2025-04-18 00:01:53,745 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:01:56,058 - article_scraper - INFO - Scraping article 4/67: https://www.foxnews.com/us/texas-press-conference-austin-metcalf-killing-devolves-chaos-over-track-meet-stabbing
+2025-04-18 00:01:56,059 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/texas-press-conference-austin-metcalf-killing-devolves-chaos-over-track-meet-stabbing
+2025-04-18 00:02:01,832 - article_scraper - INFO - Found title: Texas press conference in Austin Metcalf killing devolves into chaos over track meet stabbing
+2025-04-18 00:02:08,079 - article_scraper - INFO - Found content length: 9979
+2025-04-18 00:02:16,587 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:02:16,602 - article_scraper - INFO - Successfully generated summary of length: 612
+2025-04-18 00:02:16,732 - article_scraper - INFO -   Successfully scraped: Texas press conference in Austin Metcalf killing d...
+2025-04-18 00:02:16,858 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:02:18,443 - article_scraper - INFO - Scraping article 5/67: https://www.foxnews.com/politics/letitia-james-reaps-what-she-sows-after-leveling-laughable-case-trump-expert
+2025-04-18 00:02:18,443 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/letitia-james-reaps-what-she-sows-after-leveling-laughable-case-trump-expert
+2025-04-18 00:02:25,951 - article_scraper - INFO - Found title: Letitia James reaps what she sows after leveling 'laughable' case at Trump: expert
+2025-04-18 00:02:37,928 - article_scraper - INFO - Found content length: 12259
+2025-04-18 00:02:44,830 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:02:44,840 - article_scraper - INFO - Successfully generated summary of length: 757
+2025-04-18 00:02:44,912 - article_scraper - INFO -   Successfully scraped: Letitia James reaps what she sows after leveling '...
+2025-04-18 00:02:45,002 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:02:48,026 - article_scraper - INFO - Scraping article 6/67: https://www.foxbusiness.com/politics/mark-cuban-backs-trumps-health-care-executive-order-prescription-drugs
+2025-04-18 00:02:48,027 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:02:48,027 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/politics/mark-cuban-backs-trumps-health-care-executive-order-prescription-drugs
+2025-04-18 00:02:50,997 - article_scraper - INFO - Scraping article 7/67: https://www.foxnews.com/politics/justice-kagan-denies-emergency-appeal-halt-deportation-mexican-nationals-claiming-asylum-from-cartel
+2025-04-18 00:02:50,999 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/justice-kagan-denies-emergency-appeal-halt-deportation-mexican-nationals-claiming-asylum-from-cartel
+2025-04-18 00:02:57,931 - article_scraper - INFO - Found title: Justice Kagan denies emergency appeal to halt deportation of Mexican nationals claiming asylum from cartel
+2025-04-18 00:03:05,385 - article_scraper - INFO - Found content length: 3127
+2025-04-18 00:03:16,839 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:03:16,900 - article_scraper - INFO - Successfully generated summary of length: 499
+2025-04-18 00:03:17,149 - article_scraper - INFO -   Successfully scraped: Justice Kagan denies emergency appeal to halt depo...
+2025-04-18 00:03:17,278 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:03:20,038 - article_scraper - INFO - Scraping article 8/67: https://www.foxnews.com/sports/haley-cavinder-gets-engaged-cowboys-star-shortly-after-sisters-rumored-breakup-carson-beck
+2025-04-18 00:03:20,050 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/haley-cavinder-gets-engaged-cowboys-star-shortly-after-sisters-rumored-breakup-carson-beck
+2025-04-18 00:03:26,918 - article_scraper - INFO - Found title: Haley Cavinder gets engaged to Cowboys star shortly after her sister's rumored breakup with Carson Beck
+2025-04-18 00:03:27,121 - article_scraper - INFO - Found content length: 3043
+2025-04-18 00:03:36,627 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:03:36,638 - article_scraper - INFO - Successfully generated summary of length: 441
+2025-04-18 00:03:36,747 - article_scraper - INFO -   Successfully scraped: Haley Cavinder gets engaged to Cowboys star shortl...
+2025-04-18 00:03:36,842 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:03:39,244 - article_scraper - INFO - Scraping article 9/67: https://www.foxbusiness.com/media/wheres-beef-beloved-fast-food-chain-refuses-apologize-online-burn-katy-perrys-space-voyage
+2025-04-18 00:03:39,244 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:03:39,245 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/media/wheres-beef-beloved-fast-food-chain-refuses-apologize-online-burn-katy-perrys-space-voyage
+2025-04-18 00:03:40,310 - article_scraper - INFO - Scraping article 10/67: https://www.foxnews.com/health/smartphone-use-could-reduce-dementia-risk-older-adults-study-finds
+2025-04-18 00:03:40,333 - article_scraper - INFO - Scraping article: https://www.foxnews.com/health/smartphone-use-could-reduce-dementia-risk-older-adults-study-finds
+2025-04-18 00:03:48,133 - article_scraper - INFO - Found title: Smartphone use could reduce dementia risk in older adults, study finds
+2025-04-18 00:03:55,372 - article_scraper - INFO - Found content length: 4230
+2025-04-18 00:04:04,237 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:04:04,253 - article_scraper - INFO - Successfully generated summary of length: 567
+2025-04-18 00:04:04,516 - article_scraper - INFO -   Successfully scraped: Smartphone use could reduce dementia risk in older...
+2025-04-18 00:04:04,620 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:04:07,126 - article_scraper - INFO - Scraping article 11/67: https://www.foxweather.com/
+2025-04-18 00:04:07,128 - article_scraper - WARNING - No selectors found for domain: www.foxweather.com
+2025-04-18 00:04:07,128 - article_scraper - WARNING -   Failed to extract content from: https://www.foxweather.com/
+2025-04-18 00:04:08,849 - article_scraper - INFO - Scraping article 12/67: https://fxn.ws/3FOVsu0
+2025-04-18 00:04:08,850 - article_scraper - WARNING - No selectors found for domain: fxn.ws
+2025-04-18 00:04:08,850 - article_scraper - WARNING -   Failed to extract content from: https://fxn.ws/3FOVsu0
+2025-04-18 00:04:10,125 - article_scraper - INFO - Scraping article 13/67: https://www.outkick.com/sports/lee-corso-hanging-up-headgear-even-though-its-time-still-hurts
+2025-04-18 00:04:10,126 - article_scraper - WARNING - No selectors found for domain: www.outkick.com
+2025-04-18 00:04:10,126 - article_scraper - WARNING -   Failed to extract content from: https://www.outkick.com/sports/lee-corso-hanging-up-headgear-even-though-its-time-still-hurts
+2025-04-18 00:04:12,125 - article_scraper - INFO - Scraping article 14/67: https://trib.al/utbwH1j
+2025-04-18 00:04:12,125 - article_scraper - WARNING - No selectors found for domain: trib.al
+2025-04-18 00:04:12,126 - article_scraper - WARNING -   Failed to extract content from: https://trib.al/utbwH1j
+2025-04-18 00:04:14,993 - article_scraper - INFO - Scraping article 15/67: https://www.foxnews.com/deals/kids-easter-subscription-services
+2025-04-18 00:04:15,010 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/kids-easter-subscription-services
+2025-04-18 00:04:23,170 - article_scraper - INFO - Found title: 7 subscription services perfect for Easter gifting
+2025-04-18 00:04:24,047 - article_scraper - INFO - Found content length: 4174
+2025-04-18 00:04:34,176 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:04:34,189 - article_scraper - INFO - Successfully generated summary of length: 610
+2025-04-18 00:04:34,286 - article_scraper - INFO -   Successfully scraped: 7 subscription services perfect for Easter gifting...
+2025-04-18 00:04:34,416 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:04:36,434 - article_scraper - INFO - Scraping article 16/67: https://www.foxnews.com/video/5614615980001
+2025-04-18 00:04:36,434 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/5614615980001
+2025-04-18 00:04:49,729 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/video/5614615980001
+2025-04-18 00:04:49,737 - article_scraper - INFO - Using URL-based title: 5614615980001
+2025-04-18 00:04:49,747 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/video/5614615980001
+2025-04-18 00:04:51,532 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:04:51,558 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:04:51,558 - article_scraper - WARNING - No content found for https://www.foxnews.com/video/5614615980001, skipping
+2025-04-18 00:04:51,647 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/5614615980001
+2025-04-18 00:04:54,118 - article_scraper - INFO - Scraping article 17/67: https://www.foxnews.com/politics/photos-gop-delegation-provides-inside-look-controversial-el-salvador-prison-housing-u-s-deportees
+2025-04-18 00:04:54,124 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/photos-gop-delegation-provides-inside-look-controversial-el-salvador-prison-housing-u-s-deportees
+2025-04-18 00:05:02,250 - article_scraper - INFO - Found title: PHOTOS: GOP delegation provides inside look at controversial El Salvador prison housing U.S. deportees
+2025-04-18 00:05:11,430 - article_scraper - INFO - Found content length: 4776
+2025-04-18 00:05:23,041 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:05:23,091 - article_scraper - INFO - Successfully generated summary of length: 573
+2025-04-18 00:05:23,376 - article_scraper - INFO -   Successfully scraped: PHOTOS: GOP delegation provides inside look at con...
+2025-04-18 00:05:23,622 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:05:26,220 - article_scraper - INFO - Scraping article 18/67: https://www.foxnews.com/media/james-carville-calls-david-hoggs-plan-primary-ineffective-dems-most-insane-thing-hes-ever-heard
+2025-04-18 00:05:26,222 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/james-carville-calls-david-hoggs-plan-primary-ineffective-dems-most-insane-thing-hes-ever-heard
+2025-04-18 00:05:35,958 - article_scraper - INFO - Found title: James Carville calls David Hogg's plan to primary 'ineffective' Dems the 'most insane thing' he's ever heard
+2025-04-18 00:05:46,740 - article_scraper - INFO - Found content length: 2657
+2025-04-18 00:05:54,640 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:05:54,675 - article_scraper - INFO - Successfully generated summary of length: 536
+2025-04-18 00:05:54,806 - article_scraper - INFO -   Successfully scraped: James Carville calls David Hogg's plan to primary ...
+2025-04-18 00:05:54,914 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:05:57,002 - article_scraper - INFO - Scraping article 19/67: https://www.foxnews.com/politics/flashback-democrats-defend-elite-schools-from-legal-precedent-once-championed
+2025-04-18 00:05:57,047 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/flashback-democrats-defend-elite-schools-from-legal-precedent-once-championed
+2025-04-18 00:06:08,817 - article_scraper - INFO - Found title: FLASHBACK: Liberals are fine with Harvard getting a tax break but were against it for a Christian college
+2025-04-18 00:06:20,524 - article_scraper - INFO - Found content length: 4840
+2025-04-18 00:06:30,779 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:06:31,914 - article_scraper - INFO - Successfully generated summary of length: 670
+2025-04-18 00:06:33,784 - article_scraper - INFO -   Successfully scraped: FLASHBACK: Liberals are fine with Harvard getting ...
+2025-04-18 00:06:34,126 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:06:36,059 - article_scraper - INFO - Scraping article 20/67: https://www.foxnews.com/video/6371619214112
+2025-04-18 00:06:36,089 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371619214112
+2025-04-18 00:06:55,268 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/video/6371619214112
+2025-04-18 00:06:55,439 - article_scraper - INFO - Using URL-based title: 6371619214112
+2025-04-18 00:06:55,555 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/video/6371619214112
+2025-04-18 00:06:56,953 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:06:56,970 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:06:56,970 - article_scraper - WARNING - No content found for https://www.foxnews.com/video/6371619214112, skipping
+2025-04-18 00:06:57,155 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371619214112
+2025-04-18 00:06:59,554 - article_scraper - INFO - Scraping article 21/67: https://www.foxnews.com/politics/supreme-court-poised-make-major-decision-limits-power-district-judges
+2025-04-18 00:06:59,555 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/supreme-court-poised-make-major-decision-limits-power-district-judges
+2025-04-18 00:07:10,799 - article_scraper - INFO - Found title: Supreme Court poised to make major decision that could set limits on the power of district judges
+2025-04-18 00:07:15,595 - article_scraper - INFO - Found content length: 3185
+2025-04-18 00:07:22,891 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:07:23,091 - article_scraper - INFO - Successfully generated summary of length: 541
+2025-04-18 00:07:23,229 - article_scraper - INFO -   Successfully scraped: Supreme Court poised to make major decision that c...
+2025-04-18 00:07:23,500 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:07:26,180 - article_scraper - INFO - Scraping article 22/67: https://www.foxnews.com/us/middle-school-students-injured-south-carolina-school-bus-flips-highway
+2025-04-18 00:07:26,183 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/middle-school-students-injured-south-carolina-school-bus-flips-highway
+2025-04-18 00:07:35,755 - article_scraper - INFO - Found title: At least 1 person killed, several injured after school bus flips on South Carolina highway
+2025-04-18 00:07:48,003 - article_scraper - INFO - Found content length: 2329
+2025-04-18 00:08:06,277 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 "
+2025-04-18 00:08:06,305 - anthropic._base_client - INFO - Retrying request to /v1/messages in 0.464389 seconds
+2025-04-18 00:08:18,527 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:08:18,564 - article_scraper - INFO - Successfully generated summary of length: 445
+2025-04-18 00:08:19,156 - article_scraper - INFO -   Successfully scraped: At least 1 person killed, several injured after sc...
+2025-04-18 00:08:19,365 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:08:21,906 - article_scraper - INFO - Scraping article 23/67: https://www.foxnews.com/video/6371614768112
+2025-04-18 00:08:21,908 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371614768112
+2025-04-18 00:08:34,989 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/video/6371614768112
+2025-04-18 00:08:35,027 - article_scraper - INFO - Using URL-based title: 6371614768112
+2025-04-18 00:08:35,038 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/video/6371614768112
+2025-04-18 00:08:36,421 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:08:36,458 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:08:36,458 - article_scraper - WARNING - No content found for https://www.foxnews.com/video/6371614768112, skipping
+2025-04-18 00:08:36,507 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371614768112
+2025-04-18 00:08:39,086 - article_scraper - INFO - Scraping article 24/67: https://www.foxnews.com/games
+2025-04-18 00:08:39,088 - article_scraper - INFO - Scraping article: https://www.foxnews.com/games
+2025-04-18 00:08:52,161 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/games
+2025-04-18 00:08:52,180 - article_scraper - INFO - Using URL-based title: Games
+2025-04-18 00:08:52,189 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/games
+2025-04-18 00:08:53,747 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:08:53,761 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:08:53,761 - article_scraper - WARNING - No content found for https://www.foxnews.com/games, skipping
+2025-04-18 00:08:53,869 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/games
+2025-04-18 00:08:55,864 - article_scraper - INFO - Scraping article 25/67: https://www.foxnews.com/entertainment/sixth-sense-star-haley-joel-osment-arrested-california-ski-resort
+2025-04-18 00:08:55,865 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/sixth-sense-star-haley-joel-osment-arrested-california-ski-resort
+2025-04-18 00:09:00,250 - article_scraper - INFO - Found title: 'Sixth Sense' star Haley Joel Osment arrested at California ski resort
+2025-04-18 00:09:11,659 - article_scraper - INFO - Found content length: 4546
+2025-04-18 00:09:21,860 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:09:21,878 - article_scraper - INFO - Successfully generated summary of length: 483
+2025-04-18 00:09:22,034 - article_scraper - INFO -   Successfully scraped: 'Sixth Sense' star Haley Joel Osment arrested at C...
+2025-04-18 00:09:22,171 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:09:24,475 - article_scraper - INFO - Scraping article 26/67: https://www.foxnews.com/us/ufo-footage-captured-us-navy-shows-mysterious-aircraft-launching-from-sea-expert-says
+2025-04-18 00:09:24,475 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/ufo-footage-captured-us-navy-shows-mysterious-aircraft-launching-from-sea-expert-says
+2025-04-18 00:09:31,147 - article_scraper - INFO - Found title: UFO footage captured by US Navy shows mysterious aircraft launching from sea, expert says
+2025-04-18 00:09:40,037 - article_scraper - INFO - Found content length: 4569
+2025-04-18 00:09:50,565 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:09:50,575 - article_scraper - INFO - Successfully generated summary of length: 569
+2025-04-18 00:09:50,684 - article_scraper - INFO -   Successfully scraped: UFO footage captured by US Navy shows mysterious a...
+2025-04-18 00:09:50,777 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:09:52,267 - article_scraper - INFO - Scraping article 27/67: https://www.foxnews.com/media/president-donald-trump-addresses-whether-jill-biden-joes-autopen-ran-white-house
+2025-04-18 00:09:52,273 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/president-donald-trump-addresses-whether-jill-biden-joes-autopen-ran-white-house
+2025-04-18 00:09:58,688 - article_scraper - INFO - Found title: President Donald Trump addresses whether Jill Biden was Joe's 'autopen,' ran the White House
+2025-04-18 00:10:05,970 - article_scraper - INFO - Found content length: 2780
+2025-04-18 00:10:17,378 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:10:17,423 - article_scraper - INFO - Successfully generated summary of length: 511
+2025-04-18 00:10:17,545 - article_scraper - INFO -   Successfully scraped: President Donald Trump addresses whether Jill Bide...
+2025-04-18 00:10:17,644 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:10:20,395 - article_scraper - INFO - Scraping article 28/67: https://www.foxnews.com/politics/appeals-court-denies-doj-bid-block-return-kilmar-abrego-garcia-el-salvador-prison
+2025-04-18 00:10:20,398 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/appeals-court-denies-doj-bid-block-return-kilmar-abrego-garcia-el-salvador-prison
+2025-04-18 00:10:28,269 - article_scraper - INFO - Found title: Appeals court denies DOJ bid to block return of Kilmar Abrego Garcia from El Salvador prison
+2025-04-18 00:10:38,776 - article_scraper - INFO - Found content length: 3243
+2025-04-18 00:10:50,749 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:10:50,767 - article_scraper - INFO - Successfully generated summary of length: 621
+2025-04-18 00:10:50,874 - article_scraper - INFO -   Successfully scraped: Appeals court denies DOJ bid to block return of Ki...
+2025-04-18 00:10:51,006 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:10:53,096 - article_scraper - INFO - Scraping article 29/67: https://www.foxnews.com/sports/pga-star-signs-womans-leg-after-hitting-errant-tee-shot
+2025-04-18 00:10:53,097 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/pga-star-signs-womans-leg-after-hitting-errant-tee-shot
+2025-04-18 00:11:01,163 - article_scraper - INFO - Found title: PGA star signs woman's leg after hitting it with errant tee shot
+2025-04-18 00:11:16,049 - article_scraper - INFO - Found content length: 2112
+2025-04-18 00:11:25,722 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:11:25,734 - article_scraper - INFO - Successfully generated summary of length: 440
+2025-04-18 00:11:26,093 - article_scraper - INFO -   Successfully scraped: PGA star signs woman's leg after hitting it with e...
+2025-04-18 00:11:26,230 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:11:28,894 - article_scraper - INFO - Scraping article 30/67: https://www.foxnews.com/sports/bill-belichick-nabs-4-star-receiver-unc-who-set-play-deion-sanders-colorado
+2025-04-18 00:11:28,899 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/bill-belichick-nabs-4-star-receiver-unc-who-set-play-deion-sanders-colorado
+2025-04-18 00:11:33,547 - article_scraper - INFO - Found title: Bill Belichick nabs 4-star receiver for UNC who was going to play for Deion Sanders at Colorado
+2025-04-18 00:11:43,555 - article_scraper - INFO - Found content length: 2605
+2025-04-18 00:11:49,521 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:11:49,544 - article_scraper - INFO - Successfully generated summary of length: 507
+2025-04-18 00:11:49,646 - article_scraper - INFO -   Successfully scraped: Bill Belichick nabs 4-star receiver for UNC who wa...
+2025-04-18 00:11:49,746 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:11:52,190 - article_scraper - INFO - Scraping article 31/67: https://foxnews.com/trumptransition
+2025-04-18 00:11:52,214 - article_scraper - WARNING - No selectors found for domain: foxnews.com
+2025-04-18 00:11:52,215 - article_scraper - WARNING -   Failed to extract content from: https://foxnews.com/trumptransition
+2025-04-18 00:11:55,230 - article_scraper - INFO - Scraping article 32/67: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:11:55,232 - article_scraper - INFO - Scraping article: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:12:10,757 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:12:10,772 - article_scraper - INFO - Using URL-based title: Politics Cartoons Slideshow
+2025-04-18 00:12:10,808 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:12:12,202 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:12:12,205 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:12:12,205 - article_scraper - WARNING - No content found for https://www.foxnews.com/politics/politics-cartoons-slideshow, skipping
+2025-04-18 00:12:12,289 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/politics/politics-cartoons-slideshow
+2025-04-18 00:12:14,800 - article_scraper - INFO - Scraping article 33/67: https://www.foxnews.com/deals/anthropologie-furniture-decor-spring-discounts
+2025-04-18 00:12:14,802 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/anthropologie-furniture-decor-spring-discounts
+2025-04-18 00:12:20,158 - article_scraper - INFO - Found title: Get 30% off Anthropologie: Limited-time deals on furniture, decor, bedding and more
+2025-04-18 00:12:22,378 - article_scraper - INFO - Found content length: 6613
+2025-04-18 00:12:31,582 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:12:31,599 - article_scraper - INFO - Successfully generated summary of length: 508
+2025-04-18 00:12:31,668 - article_scraper - INFO -   Successfully scraped: Get 30% off Anthropologie: Limited-time deals on f...
+2025-04-18 00:12:31,764 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:12:33,501 - article_scraper - INFO - Scraping article 34/67: https://www.foxnews.com/food-drink/picky-eater-food-allergies-told-shes-childish-needs-get-over-this
+2025-04-18 00:12:33,502 - article_scraper - INFO - Scraping article: https://www.foxnews.com/food-drink/picky-eater-food-allergies-told-shes-childish-needs-get-over-this
+2025-04-18 00:12:40,989 - article_scraper - INFO - Found title: 'Picky eater' with food allergies is told she's 'childish' and 'needs to get over this'
+2025-04-18 00:12:54,605 - article_scraper - INFO - Found content length: 6358
+2025-04-18 00:13:01,373 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:13:01,420 - article_scraper - INFO - Successfully generated summary of length: 535
+2025-04-18 00:13:01,528 - article_scraper - INFO -   Successfully scraped: 'Picky eater' with food allergies is told she's 'c...
+2025-04-18 00:13:01,678 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:13:03,372 - article_scraper - INFO - Scraping article 35/67: https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-screen-stars-garden-greatness-founding-fathers
+2025-04-18 00:13:03,373 - article_scraper - INFO - Scraping article: https://www.foxnews.com/lifestyle/american-culture-quiz-test-yourself-screen-stars-garden-greatness-founding-fathers
+2025-04-18 00:13:11,791 - article_scraper - INFO - Found title: American Culture Quiz: Test yourself on screen stars, garden greatness and our Founding Fathers
+2025-04-18 00:13:16,219 - article_scraper - INFO - Found content length: 759
+2025-04-18 00:13:18,331 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:13:18,342 - article_scraper - INFO - Successfully generated summary of length: 307
+2025-04-18 00:13:18,456 - article_scraper - INFO -   Successfully scraped: American Culture Quiz: Test yourself on screen sta...
+2025-04-18 00:13:18,558 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:13:20,796 - article_scraper - INFO - Scraping article 36/67: https://www.foxnews.com/deals/glassesusa-easter-sale-prescription-glasses-sunglasses-contacts
+2025-04-18 00:13:20,799 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/glassesusa-easter-sale-prescription-glasses-sunglasses-contacts
+2025-04-18 00:13:29,433 - article_scraper - INFO - Found title: GlassesUSA is running its Easter sale: get up to 20% off sunglasses and 30% off prescription glasses
+2025-04-18 00:13:31,611 - article_scraper - INFO - Found content length: 6368
+2025-04-18 00:13:40,597 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:13:40,630 - article_scraper - INFO - Successfully generated summary of length: 480
+2025-04-18 00:13:40,706 - article_scraper - INFO -   Successfully scraped: GlassesUSA is running its Easter sale: get up to 2...
+2025-04-18 00:13:40,807 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:13:42,952 - article_scraper - INFO - Scraping article 37/67: https://www.foxnews.com/us/louisiana-child-killer-spared-biden-faces-death-penalty-again-after-outrageous-commutation-da
+2025-04-18 00:13:42,954 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/louisiana-child-killer-spared-biden-faces-death-penalty-again-after-outrageous-commutation-da
+2025-04-18 00:13:50,998 - article_scraper - INFO - Found title: Louisiana child killer spared by Biden faces death penalty again after ‘outrageous’ commutation: DA
+2025-04-18 00:14:00,367 - article_scraper - INFO - Found content length: 4899
+2025-04-18 00:14:11,249 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:14:11,263 - article_scraper - INFO - Successfully generated summary of length: 618
+2025-04-18 00:14:11,366 - article_scraper - INFO -   Successfully scraped: Louisiana child killer spared by Biden faces death...
+2025-04-18 00:14:11,513 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:14:14,146 - article_scraper - INFO - Scraping article 38/67: https://www.foxbusiness.com/politics/trump-says-100-chance-us-strike-trade-deal-europe-meloni-visits-dc
+2025-04-18 00:14:14,147 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:14:14,147 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/politics/trump-says-100-chance-us-strike-trade-deal-europe-meloni-visits-dc
+2025-04-18 00:14:16,036 - article_scraper - INFO - Scraping article 39/67: https://www.foxnews.com/media/dc-matchmaker-says-political-polarization-on-steroids-liberals-refuse-date-trump-voters-tesla-owners
+2025-04-18 00:14:16,037 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/dc-matchmaker-says-political-polarization-on-steroids-liberals-refuse-date-trump-voters-tesla-owners
+2025-04-18 00:14:24,221 - article_scraper - INFO - Found title: DC matchmaker says political polarization 'on steroids' as liberals refuse to date Trump voters, Tesla owners
+2025-04-18 00:14:35,862 - article_scraper - INFO - Found content length: 3426
+2025-04-18 00:14:40,453 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:14:40,459 - article_scraper - INFO - Successfully generated summary of length: 560
+2025-04-18 00:14:40,554 - article_scraper - INFO -   Successfully scraped: DC matchmaker says political polarization 'on ster...
+2025-04-18 00:14:40,652 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:14:42,138 - article_scraper - INFO - Scraping article 40/67: https://www.foxnews.com/us/brother-man-nearly-decapitated-arizona-bus-stop-hatchet-wielding-suspect-speaks-out
+2025-04-18 00:14:42,159 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/brother-man-nearly-decapitated-arizona-bus-stop-hatchet-wielding-suspect-speaks-out
+2025-04-18 00:14:49,696 - article_scraper - INFO - Found title: Brother of man nearly decapitated at Arizona bus stop by hatchet wielding suspect speaks out
+2025-04-18 00:14:59,979 - article_scraper - INFO - Found content length: 7376
+2025-04-18 00:15:07,556 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:15:07,572 - article_scraper - INFO - Successfully generated summary of length: 510
+2025-04-18 00:15:07,713 - article_scraper - INFO -   Successfully scraped: Brother of man nearly decapitated at Arizona bus s...
+2025-04-18 00:15:07,862 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:15:10,157 - article_scraper - INFO - Scraping article 41/67: https://www.foxnews.com/sports/aaron-rodgers-addresses-bulls-offseason-rumors-reveals-major-factor-decision-play-2025
+2025-04-18 00:15:10,157 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/aaron-rodgers-addresses-bulls-offseason-rumors-reveals-major-factor-decision-play-2025
+2025-04-18 00:15:16,528 - article_scraper - INFO - Found title: Aaron Rodgers addresses ‘bulls---' offseason rumors, reveals major factor in decision to play in 2025
+2025-04-18 00:15:23,926 - article_scraper - INFO - Found content length: 3208
+2025-04-18 00:15:34,357 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:15:34,879 - article_scraper - INFO - Successfully generated summary of length: 497
+2025-04-18 00:15:35,163 - article_scraper - INFO -   Successfully scraped: Aaron Rodgers addresses ‘bulls---' offseason rumor...
+2025-04-18 00:15:35,310 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:15:37,081 - article_scraper - INFO - Scraping article 42/67: https://www.foxnews.com/us/florida-spring-break-destination-done-college-crowds-time-over
+2025-04-18 00:15:37,082 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/florida-spring-break-destination-done-college-crowds-time-over
+2025-04-18 00:15:44,309 - article_scraper - INFO - Found title: Florida spring break destination town done with college crowds: 'That time is over'
+2025-04-18 00:15:57,670 - article_scraper - INFO - Found content length: 3857
+2025-04-18 00:16:06,273 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:16:06,303 - article_scraper - INFO - Successfully generated summary of length: 572
+2025-04-18 00:16:06,420 - article_scraper - INFO -   Successfully scraped: Florida spring break destination town done with co...
+2025-04-18 00:16:06,527 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:16:09,582 - article_scraper - INFO - Scraping article 43/67: https://www.foxnews.com/media/pollster-nate-silver-calls-ocasio-cortez-most-likely-2028-democratic-presidential-nominee
+2025-04-18 00:16:09,582 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/pollster-nate-silver-calls-ocasio-cortez-most-likely-2028-democratic-presidential-nominee
+2025-04-18 00:16:17,571 - article_scraper - INFO - Found title: Pollster Nate Silver calls Ocasio-Cortez most likely to be 2028 Democratic presidential nominee
+2025-04-18 00:16:25,210 - article_scraper - INFO - Found content length: 3903
+2025-04-18 00:16:35,479 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:16:35,502 - article_scraper - INFO - Successfully generated summary of length: 526
+2025-04-18 00:16:35,601 - article_scraper - INFO -   Successfully scraped: Pollster Nate Silver calls Ocasio-Cortez most like...
+2025-04-18 00:16:35,692 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:16:37,536 - article_scraper - INFO - Scraping article 44/67: https://www.foxbusiness.com/fox-news-world/trump-says-minerals-deal-ukraine-signed-next-thursday
+2025-04-18 00:16:37,537 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:16:37,537 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/fox-news-world/trump-says-minerals-deal-ukraine-signed-next-thursday
+2025-04-18 00:16:39,662 - article_scraper - INFO - Scraping article 45/67: https://www.foxnews.com/us/ohio-man-arrested-after-investigators-discover-ied-videos-photos-bomb-making-materials
+2025-04-18 00:16:39,676 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/ohio-man-arrested-after-investigators-discover-ied-videos-photos-bomb-making-materials
+2025-04-18 00:16:47,530 - article_scraper - INFO - Found title: Ohio man arrested after investigators discover IED, videos, photos of bomb-making materials
+2025-04-18 00:16:57,399 - article_scraper - INFO - Found content length: 5945
+2025-04-18 00:17:07,364 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:17:07,398 - article_scraper - INFO - Successfully generated summary of length: 559
+2025-04-18 00:17:07,523 - article_scraper - INFO -   Successfully scraped: Ohio man arrested after investigators discover IED...
+2025-04-18 00:17:07,635 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:17:10,366 - article_scraper - INFO - Scraping article 46/67: https://www.foxnews.com/media/bill-maher-declares-himself-hero-confronting-trump-white-house-meeting
+2025-04-18 00:17:10,368 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/bill-maher-declares-himself-hero-confronting-trump-white-house-meeting
+2025-04-18 00:17:18,412 - article_scraper - INFO - Found title: Bill Maher declares himself a 'hero' for confronting Trump at White House meeting
+2025-04-18 00:17:30,817 - article_scraper - INFO - Found content length: 3273
+2025-04-18 00:17:38,866 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:17:38,880 - article_scraper - INFO - Successfully generated summary of length: 532
+2025-04-18 00:17:39,045 - article_scraper - INFO -   Successfully scraped: Bill Maher declares himself a 'hero' for confronti...
+2025-04-18 00:17:39,165 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:17:41,184 - article_scraper - INFO - Scraping article 47/67: https://www.foxnews.com/us/accused-ceo-assassin-luigi-mangione-indicted-federal-charges
+2025-04-18 00:17:41,190 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/accused-ceo-assassin-luigi-mangione-indicted-federal-charges
+2025-04-18 00:17:47,340 - article_scraper - INFO - Found title: Accused CEO assassin Luigi Mangione indicted on federal charges
+2025-04-18 00:17:55,129 - article_scraper - INFO - Found content length: 3705
+2025-04-18 00:18:05,456 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:18:05,487 - article_scraper - INFO - Successfully generated summary of length: 622
+2025-04-18 00:18:05,616 - article_scraper - INFO -   Successfully scraped: Accused CEO assassin Luigi Mangione indicted on fe...
+2025-04-18 00:18:05,729 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:18:07,433 - article_scraper - INFO - Scraping article 48/67: https://www.foxnews.com/sports/top-nfl-draft-prospect-ashton-jeanty-blunt-why-teams-should-take-him-id-draft-guy-cant-tackle
+2025-04-18 00:18:07,435 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/top-nfl-draft-prospect-ashton-jeanty-blunt-why-teams-should-take-him-id-draft-guy-cant-tackle
+2025-04-18 00:18:15,695 - article_scraper - INFO - Found title: Top NFL Draft prospect Ashton Jeanty blunt on why teams should take him: 'I’d draft the guy they can’t tackle'
+2025-04-18 00:18:28,095 - article_scraper - INFO - Found content length: 5107
+2025-04-18 00:18:37,227 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:18:37,247 - article_scraper - INFO - Successfully generated summary of length: 577
+2025-04-18 00:18:37,359 - article_scraper - INFO -   Successfully scraped: Top NFL Draft prospect Ashton Jeanty blunt on why ...
+2025-04-18 00:18:37,489 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:18:38,680 - article_scraper - INFO - Scraping article 49/67: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:18:38,680 - article_scraper - INFO - Scraping article: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:18:54,130 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:18:54,143 - article_scraper - INFO - Using URL-based title: Anti Semitism
+2025-04-18 00:18:54,153 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:18:55,506 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:18:55,522 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:18:55,522 - article_scraper - WARNING - No content found for https://www.foxnews.com/category/topic/anti-semitism, skipping
+2025-04-18 00:18:55,639 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/category/topic/anti-semitism
+2025-04-18 00:18:56,913 - article_scraper - INFO - Scraping article 50/67: https://www.foxbusiness.com/retail/temu-shein-raise-prices-us-consumers-starting-next-week-trump-administration-closes-tariff-loophole
+2025-04-18 00:18:56,914 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:18:56,914 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/retail/temu-shein-raise-prices-us-consumers-starting-next-week-trump-administration-closes-tariff-loophole
+2025-04-18 00:18:58,274 - article_scraper - INFO - Scraping article 51/67: https://www.foxweather.com/lifestyle/arizona-toddler-missing-found-cattle-dog
+2025-04-18 00:18:58,281 - article_scraper - WARNING - No selectors found for domain: www.foxweather.com
+2025-04-18 00:18:58,281 - article_scraper - WARNING -   Failed to extract content from: https://www.foxweather.com/lifestyle/arizona-toddler-missing-found-cattle-dog
+2025-04-18 00:19:01,040 - article_scraper - INFO - Scraping article 52/67: https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-18 00:19:01,042 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:19:01,042 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/economy/us-national-debt-tracker
+2025-04-18 00:19:03,302 - article_scraper - INFO - Scraping article 53/67: https://www.foxnews.com/video/6371574550112
+2025-04-18 00:19:03,303 - article_scraper - INFO - Scraping article: https://www.foxnews.com/video/6371574550112
+2025-04-18 00:19:16,727 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/video/6371574550112
+2025-04-18 00:19:16,753 - article_scraper - INFO - Using URL-based title: 6371574550112
+2025-04-18 00:19:16,808 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/video/6371574550112
+2025-04-18 00:19:18,261 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:19:18,327 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:19:18,328 - article_scraper - WARNING - No content found for https://www.foxnews.com/video/6371574550112, skipping
+2025-04-18 00:19:18,475 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/video/6371574550112
+2025-04-18 00:19:21,356 - article_scraper - INFO - Scraping article 54/67: https://www.outkick.com/culture/angler-lands-world-record-breaking-alligator-gar-texas-lake
+2025-04-18 00:19:21,357 - article_scraper - WARNING - No selectors found for domain: www.outkick.com
+2025-04-18 00:19:21,357 - article_scraper - WARNING -   Failed to extract content from: https://www.outkick.com/culture/angler-lands-world-record-breaking-alligator-gar-texas-lake
+2025-04-18 00:19:23,688 - article_scraper - INFO - Scraping article 55/67: https://www.foxnews.com/entertainment/christie-brinkley-71-cosmetic-procedures-dabbled
+2025-04-18 00:19:23,730 - article_scraper - INFO - Scraping article: https://www.foxnews.com/entertainment/christie-brinkley-71-cosmetic-procedures-dabbled
+2025-04-18 00:19:29,680 - article_scraper - INFO - Found title: Christie Brinkley, 71, admits which cosmetic procedures she’s ‘dabbled with’
+2025-04-18 00:19:38,646 - article_scraper - INFO - Found content length: 4186
+2025-04-18 00:19:48,506 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:19:48,527 - article_scraper - INFO - Successfully generated summary of length: 509
+2025-04-18 00:19:48,650 - article_scraper - INFO -   Successfully scraped: Christie Brinkley, 71, admits which cosmetic proce...
+2025-04-18 00:19:48,738 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:19:50,207 - article_scraper - INFO - Scraping article 56/67: https://www.foxnews.com/us/jesus-bus-bursts-flames-following-massive-explosion-video
+2025-04-18 00:19:50,207 - article_scraper - INFO - Scraping article: https://www.foxnews.com/us/jesus-bus-bursts-flames-following-massive-explosion-video
+2025-04-18 00:19:55,633 - article_scraper - INFO - Found title: 'Jesus' bus bursts into flames following massive explosion: video
+2025-04-18 00:20:00,829 - article_scraper - INFO - Found content length: 2500
+2025-04-18 00:20:08,525 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:20:08,595 - article_scraper - INFO - Successfully generated summary of length: 465
+2025-04-18 00:20:08,678 - article_scraper - INFO -   Successfully scraped: 'Jesus' bus bursts into flames following massive e...
+2025-04-18 00:20:08,765 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:20:10,924 - article_scraper - INFO - Scraping article 57/67: https://www.foxnews.com/sports/7-wwe-stars-who-should-next-years-wrestlemania-card
+2025-04-18 00:20:10,925 - article_scraper - INFO - Scraping article: https://www.foxnews.com/sports/7-wwe-stars-who-should-next-years-wrestlemania-card
+2025-04-18 00:20:17,488 - article_scraper - INFO - Found title: 7 WWE stars who should be on next year's WrestleMania card
+2025-04-18 00:20:28,312 - article_scraper - INFO - Found content length: 6371
+2025-04-18 00:20:38,621 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:20:38,658 - article_scraper - INFO - Successfully generated summary of length: 482
+2025-04-18 00:20:38,905 - article_scraper - INFO -   Successfully scraped: 7 WWE stars who should be on next year's WrestleMa...
+2025-04-18 00:20:39,076 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:20:40,382 - article_scraper - INFO - Scraping article 58/67: https://www.foxnews.com/live-news/erik-and-lyle-menendez-resentencing-hearing-to-begin-in-los-angeles
+2025-04-18 00:20:40,383 - article_scraper - INFO - Scraping article: https://www.foxnews.com/live-news/erik-and-lyle-menendez-resentencing-hearing-to-begin-in-los-angeles
+2025-04-18 00:20:54,866 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/live-news/erik-and-lyle-menendez-resentencing-hearing-to-begin-in-los-angeles
+2025-04-18 00:20:54,943 - article_scraper - INFO - Using URL-based title: Erik And Lyle Menendez Resentencing Hearing To Begin In Los Angeles
+2025-04-18 00:20:56,026 - article_scraper - INFO - Found content length: 15587
+2025-04-18 00:21:05,525 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:21:05,559 - article_scraper - INFO - Successfully generated summary of length: 625
+2025-04-18 00:21:05,684 - article_scraper - INFO -   Successfully scraped: Erik And Lyle Menendez Resentencing Hearing To Beg...
+2025-04-18 00:21:05,771 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:21:08,559 - article_scraper - INFO - Scraping article 59/67: https://www.foxnews.com/media/trump-administration-shames-cnn-msnbc-not-airing-rachel-morins-appeal-journalists-white-house
+2025-04-18 00:21:08,560 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/trump-administration-shames-cnn-msnbc-not-airing-rachel-morins-appeal-journalists-white-house
+2025-04-18 00:21:16,608 - article_scraper - INFO - Found title: Trump administration excoriates CNN, MSNBC for not airing Patty Morin’s appeal to journalists at White House
+2025-04-18 00:21:24,398 - article_scraper - INFO - Found content length: 4059
+2025-04-18 00:21:33,606 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:21:33,614 - article_scraper - INFO - Successfully generated summary of length: 523
+2025-04-18 00:21:33,725 - article_scraper - INFO -   Successfully scraped: Trump administration excoriates CNN, MSNBC for not...
+2025-04-18 00:21:33,833 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:21:36,945 - article_scraper - INFO - Scraping article 60/67: https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-18 00:21:36,945 - article_scraper - WARNING - No selectors found for domain: www.foxbusiness.com
+2025-04-18 00:21:36,945 - article_scraper - WARNING -   Failed to extract content from: https://www.foxbusiness.com/personal-finance/sandwich-hurt-credit-score-hidden-dangers-buy-now-pay-later-apps-finally-coming-light
+2025-04-18 00:21:38,035 - article_scraper - INFO - Scraping article 61/67: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:21:38,036 - article_scraper - INFO - Scraping article: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:21:53,423 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:21:53,439 - article_scraper - INFO - Using URL-based title: Artificial Intelligence
+2025-04-18 00:21:53,460 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:21:54,771 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:21:54,777 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:21:54,777 - article_scraper - WARNING - No content found for https://www.foxnews.com/category/tech/artificial-intelligence, skipping
+2025-04-18 00:21:54,860 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/category/tech/artificial-intelligence
+2025-04-18 00:21:57,806 - article_scraper - INFO - Scraping article 62/67: https://www.foxnews.com/food-drink
+2025-04-18 00:21:57,808 - article_scraper - INFO - Scraping article: https://www.foxnews.com/food-drink
+2025-04-18 00:22:14,498 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/food-drink
+2025-04-18 00:22:14,536 - article_scraper - INFO - Using URL-based title: Food Drink
+2025-04-18 00:22:14,550 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/food-drink
+2025-04-18 00:22:15,890 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:22:15,900 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:22:15,900 - article_scraper - WARNING - No content found for https://www.foxnews.com/food-drink, skipping
+2025-04-18 00:22:16,000 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/food-drink
+2025-04-18 00:22:17,472 - article_scraper - INFO - Scraping article 63/67: https://www.foxnews.com/travel
+2025-04-18 00:22:17,472 - article_scraper - INFO - Scraping article: https://www.foxnews.com/travel
+2025-04-18 00:22:31,525 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/travel
+2025-04-18 00:22:31,583 - article_scraper - INFO - Using URL-based title: Travel
+2025-04-18 00:22:31,594 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/travel
+2025-04-18 00:22:32,862 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:22:32,875 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:22:32,875 - article_scraper - WARNING - No content found for https://www.foxnews.com/travel, skipping
+2025-04-18 00:22:32,986 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/travel
+2025-04-18 00:22:35,502 - article_scraper - INFO - Scraping article 64/67: https://www.foxnews.com/health
+2025-04-18 00:22:35,503 - article_scraper - INFO - Scraping article: https://www.foxnews.com/health
+2025-04-18 00:22:50,073 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/health
+2025-04-18 00:22:50,120 - article_scraper - INFO - Using URL-based title: Health
+2025-04-18 00:22:50,151 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/health
+2025-04-18 00:22:51,408 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:22:51,862 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:22:51,863 - article_scraper - WARNING - No content found for https://www.foxnews.com/health, skipping
+2025-04-18 00:22:52,166 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/health
+2025-04-18 00:22:53,746 - article_scraper - INFO - Scraping article 65/67: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:22:53,747 - article_scraper - INFO - Scraping article: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:23:10,339 - article_scraper - WARNING - Title selector not found for https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:23:10,354 - article_scraper - INFO - Using URL-based title: Fun Facts Animal Most Eyes World Scallop
+2025-04-18 00:23:10,366 - article_scraper - WARNING - No content elements found for https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:23:11,620 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:23:11,641 - article_scraper - INFO - Successfully generated summary of length: 210
+2025-04-18 00:23:11,641 - article_scraper - WARNING - No content found for https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop, skipping
+2025-04-18 00:23:11,712 - article_scraper - WARNING -   Failed to extract content from: https://www.foxnews.com/media/fun-facts-animal-most-eyes-world-scallop
+2025-04-18 00:23:12,788 - article_scraper - INFO - Scraping article 66/67: https://www.foxnews.com/deals/amazon-selling-cars?intcmp=hp1r_deals_obtest
+2025-04-18 00:23:12,788 - article_scraper - INFO - Scraping article: https://www.foxnews.com/deals/amazon-selling-cars?intcmp=hp1r_deals_obtest
+2025-04-18 00:23:18,706 - article_scraper - INFO - Found title: Amazon will give you $2,300 to buy your next car online
+2025-04-18 00:23:20,575 - article_scraper - INFO - Found content length: 3425
+2025-04-18 00:23:29,658 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:23:29,668 - article_scraper - INFO - Successfully generated summary of length: 537
+2025-04-18 00:23:29,765 - article_scraper - INFO -   Successfully scraped: Amazon will give you $2,300 to buy your next car o...
+2025-04-18 00:23:29,862 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:31,526 - article_scraper - INFO - Scraping article 67/67: https://bit.ly/4hTv27u
+2025-04-18 00:23:31,527 - article_scraper - WARNING - No selectors found for domain: bit.ly
+2025-04-18 00:23:31,527 - article_scraper - WARNING -   Failed to extract content from: https://bit.ly/4hTv27u
+2025-04-18 00:23:32,831 - article_scraper - INFO - Successfully scraped 40 articles from Fox News
+2025-04-18 00:23:36,188 - article_scraper - INFO - Scraping New York Times
+2025-04-18 00:23:36,211 - article_scraper - INFO - Extracted domain: rss.nytimes.com
+2025-04-18 00:23:36,211 - article_scraper - INFO - Parsing RSS feed: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+2025-04-18 00:23:36,500 - article_scraper - INFO - Found 22 entries in RSS feed
+2025-04-18 00:23:36,588 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:36,637 - article_scraper - INFO -   Processed RSS entry 1: Dual Orders Over Trump Deportations Edge Courts Cl...
+2025-04-18 00:23:36,708 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:36,744 - article_scraper - INFO -   Processed RSS entry 2: Supreme Court to Hear Arguments on Trump Plan to E...
+2025-04-18 00:23:36,817 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:36,853 - article_scraper - INFO -   Processed RSS entry 3: What to Know About the Court Cases Challenging Tru...
+2025-04-18 00:23:36,945 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:36,981 - article_scraper - INFO -   Processed RSS entry 4: At Least 2 Killed and 6 Injured in Florida State U...
+2025-04-18 00:23:37,062 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,103 - article_scraper - INFO -   Processed RSS entry 5: What We Know About the Gunman in the Florida State...
+2025-04-18 00:23:37,182 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,219 - article_scraper - INFO -   Processed RSS entry 6: Trump Administration Says It Will Take Over Renova...
+2025-04-18 00:23:37,299 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,331 - article_scraper - INFO -   Processed RSS entry 7: Senator Lisa Murkowski Makes Startling Admission a...
+2025-04-18 00:23:37,413 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,451 - article_scraper - INFO -   Processed RSS entry 8: Harvard’s Stand Against Trump Is Helping It Raise ...
+2025-04-18 00:23:37,523 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,559 - article_scraper - INFO -   Processed RSS entry 9: Pride and Dread in Harvard Yard as Trump Wars With...
+2025-04-18 00:23:37,631 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,667 - article_scraper - INFO -   Processed RSS entry 10: After Harvard, Liberal Donors and Groups Fear New ...
+2025-04-18 00:23:37,747 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,788 - article_scraper - INFO -   Processed RSS entry 11: Katie Perry Is Suing Katy Perry in Australia. Wait...
+2025-04-18 00:23:37,868 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:37,903 - article_scraper - INFO -   Processed RSS entry 12: School Vouchers Won in Texas. Next Up, the Nation....
+2025-04-18 00:23:37,985 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,017 - article_scraper - INFO -   Processed RSS entry 13: U.S. Is Withdrawing Hundreds of Troops From Syria...
+2025-04-18 00:23:38,097 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,134 - article_scraper - INFO -   Processed RSS entry 14: Elaine Wynn, Who Built Wynn Resorts Empire in Las ...
+2025-04-18 00:23:38,218 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,251 - article_scraper - INFO -   Processed RSS entry 15: Measles Outbreaks in Canada and Mexico Bring Grim ...
+2025-04-18 00:23:38,332 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,372 - article_scraper - INFO -   Processed RSS entry 16: Overlooked No More: Ethel Lina White, Master of Su...
+2025-04-18 00:23:38,457 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,494 - article_scraper - INFO -   Processed RSS entry 17: What’s Happening Is Not Normal. America Needs an U...
+2025-04-18 00:23:38,565 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,601 - article_scraper - INFO -   Processed RSS entry 18: A Judge Ruled That Google Acted Illegally to Domin...
+2025-04-18 00:23:38,675 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,707 - article_scraper - INFO -   Processed RSS entry 19: Ukraine and U.S. Sign Agreement in Lead-Up to Full...
+2025-04-18 00:23:38,792 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,832 - article_scraper - INFO -   Processed RSS entry 20: Judge Delays a Resentencing Hearing for the Menend...
+2025-04-18 00:23:38,911 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:38,950 - article_scraper - INFO -   Processed RSS entry 21: Nino Tempo, Who Topped the Charts With ‘Deep Purpl...
+2025-04-18 00:23:39,025 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:23:39,071 - article_scraper - INFO -   Processed RSS entry 22: Columbia Activists Are Being Detained. Protesters ...
+2025-04-18 00:23:39,072 - article_scraper - INFO - Successfully scraped 22 articles from New York Times
+2025-04-18 00:23:42,238 - article_scraper - INFO - Scraping Newsweek
+2025-04-18 00:23:42,252 - article_scraper - INFO - Extracted domain: www.newsweek.com
+2025-04-18 00:23:42,252 - article_scraper - INFO - Visiting https://www.newsweek.com
+2025-04-18 00:23:45,857 - article_scraper - INFO - Using article selector: article.article-card
+2025-04-18 00:23:45,923 - article_scraper - INFO - Found 58 potential article elements on Newsweek
+2025-04-18 00:23:45,966 - article_scraper - INFO -   Article 1: Us... (from URL) - us
+2025-04-18 00:23:46,007 - article_scraper - INFO -   Article 3: Politics... (from URL) - politics
+2025-04-18 00:23:46,029 - article_scraper - INFO -   Article 4: World... (from URL) - world
+2025-04-18 00:23:46,064 - article_scraper - INFO -   Article 5: Fsu Student Recounts Shooting Suspect Phoenix Ikne... (from URL) - https://www.newsweek.com/fsu-student-recounts-shooting-suspect-phoenix-ikner-2061321
+2025-04-18 00:23:46,081 - article_scraper - INFO -   Article 6: Luigi Mangione Hit Federal Charges Putting Death P... (from URL) - https://www.newsweek.com/luigi-mangione-hit-federal-charges-putting-death-penalty-table-2061315
+2025-04-18 00:23:46,098 - article_scraper - INFO -   Article 7: Anti Ice Protests Immigration Trump 2061125... (from URL) - https://www.newsweek.com/anti-ice-protests-immigration-trump-2061125
+2025-04-18 00:23:46,119 - article_scraper - INFO -   Article 8: Phoenix Ikner Mom Warned Disciplining Kids Faceboo... (from URL) - https://www.newsweek.com/phoenix-ikner-mom-warned-disciplining-kids-facebook-2061312
+2025-04-18 00:23:46,140 - article_scraper - INFO -   Article 9: Map Nebraska Iowa Storm Warnings Severe Weather 20... (from URL) - https://www.newsweek.com/map-nebraska-iowa-storm-warnings-severe-weather-2061168
+2025-04-18 00:23:46,170 - article_scraper - INFO -   Article 10: Doge Cuts Thousands Disasters Let Go 2061012... (from URL) - https://www.newsweek.com/doge-cuts-thousands-disasters-let-go-2061012
+2025-04-18 00:23:46,187 - article_scraper - INFO -   Article 11: Trump Admin Kilmar Abrego Garcia Wife Child Safer ... (from URL) - https://www.newsweek.com/trump-admin-kilmar-abrego-garcia-wife-child-safer-2060825
+2025-04-18 00:23:46,205 - article_scraper - INFO -   Article 12: Trump Admin Tells Afghan Refugees Who Fled Taliban... (from URL) - https://www.newsweek.com/trump-admin-tells-afghan-refugees-who-fled-taliban-self-deportreport-2061049
+2025-04-18 00:23:46,226 - article_scraper - INFO -   Article 13: Iran Builds Ties Us Ally Regional War Fears Grow 2... (from URL) - https://www.newsweek.com/iran-builds-ties-us-ally-regional-war-fears-grow-2060974
+2025-04-18 00:23:46,279 - article_scraper - INFO -   Article 14: Finland Russia Military Building Vesa Virtanen Nat... (from URL) - https://www.newsweek.com/finland-russia-military-building-vesa-virtanen-nato-western-military-district-baltic-2060879
+2025-04-18 00:23:46,295 - article_scraper - INFO -   Article 15: Gaza Heads Deepening War Month After Ceasefire Col... (from URL) - https://www.newsweek.com/gaza-heads-deepening-war-month-after-ceasefire-collapse-2060811
+2025-04-18 00:23:46,643 - article_scraper - INFO -   Article 16: Putin Medvedev Nato Peacekeepers Ukraine 2060940... (from URL) - https://www.newsweek.com/putin-medvedev-nato-peacekeepers-ukraine-2060940
+2025-04-18 00:23:46,658 - article_scraper - INFO -   Article 17: China Egypt News Exercise Us Middle East Houthis I... (from URL) - https://www.newsweek.com/china-egypt-news-exercise-us-middle-east-houthis-iran-2060885
+2025-04-18 00:23:46,671 - article_scraper - INFO -   Article 18: Iran Warns Us Over Nuclear Talks 2060795... (from URL) - https://www.newsweek.com/iran-warns-us-over-nuclear-talks-2060795
+2025-04-18 00:23:46,690 - article_scraper - INFO -   Article 19: Us News B 1b Bombers Deploy Japan Pacific Ally 206... (from URL) - https://www.newsweek.com/us-news-b-1b-bombers-deploy-japan-pacific-ally-2060988
+2025-04-18 00:23:46,707 - article_scraper - INFO -   Article 20: Russia Kursk Alexei Smirnov Arrest 2061005... (from URL) - https://www.newsweek.com/russia-kursk-alexei-smirnov-arrest-2061005
+2025-04-18 00:23:46,892 - article_scraper - INFO -   Article 24: News... (from URL) - news
+2025-04-18 00:23:46,907 - article_scraper - INFO -   Article 25: Ai... (from URL) - ai
+2025-04-18 00:23:46,960 - article_scraper - INFO -   Article 28: Health... (from URL) - health
+2025-04-18 00:23:47,034 - article_scraper - INFO -   Article 30: Ransom Canyon Netflix Filming Location Josh Duhame... (from URL) - https://www.newsweek.com/ransom-canyon-netflix-filming-location-josh-duhamel-texas-2061141
+2025-04-18 00:23:47,140 - article_scraper - INFO -   Article 31: Law Order Organized Crime Season 5 Peacock 2060139... (from URL) - https://www.newsweek.com/law-order-organized-crime-season-5-peacock-2060139
+2025-04-18 00:23:47,161 - article_scraper - INFO -   Article 32: Michelle Trachtenberg Cause Death Diabetes 2060809... (from URL) - https://www.newsweek.com/michelle-trachtenberg-cause-death-diabetes-2060809
+2025-04-18 00:23:47,178 - article_scraper - INFO -   Article 33: Scott Jennings Says Kilmar Garcia Shouldnt Have Be... (from URL) - https://www.newsweek.com/scott-jennings-says-kilmar-garcia-shouldnt-have-been-sent-el-salvador-2061334
+2025-04-18 00:23:47,190 - article_scraper - INFO -   Article 34: Steve Bannon Warning Trump Tax Cuts 2061267... (from URL) - https://www.newsweek.com/steve-bannon-warning-trump-tax-cuts-2061267
+2025-04-18 00:23:47,203 - article_scraper - INFO -   Article 35: Birthright Citizenship Donald Trump Supreme Court ... (from URL) - https://www.newsweek.com/birthright-citizenship-donald-trump-supreme-court-plan-2061246
+2025-04-18 00:23:47,216 - article_scraper - INFO -   Article 36: President Aoc Analysts Predict Shes Top 2028 Conte... (from URL) - https://www.newsweek.com/president-aoc-analysts-predict-shes-top-2028-contender-2061111
+2025-04-18 00:23:47,227 - article_scraper - INFO -   Article 37: Lisa Murkowski Donald Trump Retaliation Republican... (from URL) - https://www.newsweek.com/lisa-murkowski-donald-trump-retaliation-republican-2061115
+2025-04-18 00:23:47,239 - article_scraper - INFO -   Article 38: March Retail Sales Donald Trump Tariffs 2060407... (from URL) - https://www.newsweek.com/march-retail-sales-donald-trump-tariffs-2060407
+2025-04-18 00:23:47,299 - article_scraper - INFO -   Article 39: Georgia Tax Refund Direct Payment 2060633... (from URL) - https://www.newsweek.com/georgia-tax-refund-direct-payment-2060633
+2025-04-18 00:23:47,315 - article_scraper - INFO -   Article 40: Trump Media Investment Partnership 2060366... (from URL) - https://www.newsweek.com/trump-media-investment-partnership-2060366
+2025-04-18 00:23:47,329 - article_scraper - INFO -   Article 41: Are Shein Temu Prices Going Amid Trumps Tariffs Wh... (from URL) - https://www.newsweek.com/are-shein-temu-prices-going-amid-trumps-tariffs-what-know-2060762
+2025-04-18 00:23:47,341 - article_scraper - INFO -   Article 42: Us Canada Tourism Boycott 2059927... (from URL) - https://www.newsweek.com/us-canada-tourism-boycott-2059927
+2025-04-18 00:23:47,354 - article_scraper - INFO -   Article 43: Social Security Pressured Give Some Americans More... (from URL) - https://www.newsweek.com/social-security-pressured-give-some-americans-more-payments-2060182
+2025-04-18 00:23:47,368 - article_scraper - INFO -   Article 44: Mercedes Benz Usa Gets New Ceo 2060169... (from URL) - https://www.newsweek.com/mercedes-benz-usa-gets-new-ceo-2060169
+2025-04-18 00:23:47,403 - article_scraper - INFO -   Article 45: Yankees Reject Shunned Mlb Free Agency Gets Call D... (from URL) - https://www.newsweek.com/sports/mlb/yankees-reject-shunned-mlb-free-agency-gets-call-desperate-braves-2061206
+2025-04-18 00:23:47,419 - article_scraper - INFO -   Article 46: Yankees Could Pair Aaron Judge 79 Million All Star... (from URL) - https://www.newsweek.com/sports/mlb/yankees-could-pair-aaron-judge-79-million-all-star-slugger-near-future-2061175
+2025-04-18 00:23:47,433 - article_scraper - INFO -   Article 47: How Watch Manchester United Vs Lyon Live Stream Ue... (from URL) - https://www.newsweek.com/how-watch-manchester-united-vs-lyon-live-stream-uefa-europa-league-tv-channel-2060783
+2025-04-18 00:23:47,446 - article_scraper - INFO -   Article 48: How Watch Ncaa Gymnastics Championship Live Stream... (from URL) - https://www.newsweek.com/how-watch-ncaa-gymnastics-championship-live-stream-womens-college-gymnastics-tv-channel-2060805
+2025-04-18 00:23:47,457 - article_scraper - INFO -   Article 49: Pittsburgh Insider Drops Huge Aaron Rodgers Update... (from URL) - https://www.newsweek.com/sports/nfl/pittsburgh-insider-drops-huge-aaron-rodgers-update-steelers-continue-waiting-2061103
+2025-04-18 00:23:47,469 - article_scraper - INFO -   Article 50: Hubble Space Telescope New Anniversary Image Iconi... (from URL) - https://www.newsweek.com/hubble-space-telescope-new-anniversary-image-iconic-galaxy-2060983
+2025-04-18 00:23:47,483 - article_scraper - INFO -   Article 51: Planet Orbit Astronomers Surprise 2060952... (from URL) - https://www.newsweek.com/planet-orbit-astronomers-surprise-2060952
+2025-04-18 00:23:47,499 - article_scraper - INFO -   Article 52: Dogs Pets Language Understanding Names Human Speec... (from URL) - https://www.newsweek.com/dogs-pets-language-understanding-names-human-speech-2060477
+2025-04-18 00:23:47,518 - article_scraper - INFO -   Article 53: Colossal Squid Nature First Time Footage Live 2060... (from URL) - https://www.newsweek.com/colossal-squid-nature-first-time-footage-live-2060442
+2025-04-18 00:23:47,601 - article_scraper - INFO -   Article 54: Man Unprepared Extra Item Charged 2060917... (from URL) - https://www.newsweek.com/man-unprepared-extra-item-charged-2060917
+2025-04-18 00:23:47,627 - article_scraper - INFO -   Article 55: Best Us National Parks Easter Visit 2060082... (from URL) - https://www.newsweek.com/best-us-national-parks-easter-visit-2060082
+2025-04-18 00:23:47,642 - article_scraper - INFO -   Article 56: Exclusive Abrego Garcias Wife Responds After Restr... (from URL) - https://www.newsweek.com/exclusive-abrego-garcias-wife-responds-after-restraining-order-revealed-2060718
+2025-04-18 00:23:47,657 - article_scraper - INFO -   Article 57: Women Are Choosing Single Life 2059320... (from URL) - https://www.newsweek.com/women-are-choosing-single-life-2059320
+2025-04-18 00:23:47,674 - article_scraper - INFO -   Article 58: Maternity Hospitals Fear Medicaid Squeeze 2060679... (from URL) - https://www.newsweek.com/maternity-hospitals-fear-medicaid-squeeze-2060679
+2025-04-18 00:23:47,674 - article_scraper - INFO - Successfully extracted 51 article links from Newsweek
+2025-04-18 00:23:47,674 - article_scraper - INFO - Scraping article 1/51: us
+2025-04-18 00:23:47,674 - article_scraper - WARNING - Invalid URL format: us
+2025-04-18 00:23:47,674 - article_scraper - WARNING -   Failed to extract content from: us
+2025-04-18 00:23:49,195 - article_scraper - INFO - Scraping article 2/51: politics
+2025-04-18 00:23:49,197 - article_scraper - WARNING - Invalid URL format: politics
+2025-04-18 00:23:49,197 - article_scraper - WARNING -   Failed to extract content from: politics
+2025-04-18 00:23:52,132 - article_scraper - INFO - Scraping article 3/51: world
+2025-04-18 00:23:52,133 - article_scraper - WARNING - Invalid URL format: world
+2025-04-18 00:23:52,133 - article_scraper - WARNING -   Failed to extract content from: world
+2025-04-18 00:23:53,780 - article_scraper - INFO - Scraping article 4/51: https://www.newsweek.com/fsu-student-recounts-shooting-suspect-phoenix-ikner-2061321
+2025-04-18 00:23:53,783 - article_scraper - INFO - Scraping article: https://www.newsweek.com/fsu-student-recounts-shooting-suspect-phoenix-ikner-2061321
+2025-04-18 00:24:00,469 - article_scraper - INFO - Found title: FSU Shooting Witness 'Can't Stop Thinking' About Woman She Saw Get Shot
+2025-04-18 00:24:00,564 - article_scraper - INFO - Found content length: 7574
+2025-04-18 00:24:07,132 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-18 00:24:07,143 - article_scraper - INFO - Successfully generated summary of length: 487
+2025-04-18 00:24:07,379 - article_scraper - INFO -   Successfully scraped: FSU Shooting Witness 'Can't Stop Thinking' About W...
+2025-04-18 00:24:07,458 - article_scraper - ERROR - Error saving to database: column "scraped_at" of relation "perspectives" does not exist
+LINE 3: ... title, source, community, quote, sentiment, url, scraped_at...
+                                                             ^
+
+2025-04-18 00:24:08,886 - article_scraper - INFO - Scraping article 5/51: https://www.newsweek.com/luigi-mangione-hit-federal-charges-putting-death-penalty-table-2061315
+2025-04-18 00:24:08,886 - article_scraper - INFO - Scraping article: https://www.newsweek.com/luigi-mangione-hit-federal-charges-putting-death-penalty-table-2061315

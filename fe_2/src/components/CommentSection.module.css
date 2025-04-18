@@ -1,0 +1,97 @@
+.commentSection {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.commentTitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #d97656;
+  font-family: "Special Gothic", sans-serif;
+}
+
+.commentForm {
+  margin-bottom: 1.5rem;
+}
+
+.commentInput {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: "Special Gothic", sans-serif;
+  font-size: 0.9rem;
+  resize: none;
+  margin-bottom: 0.5rem;
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: #d97656;
+}
+
+.submitBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #d97656;
+  color: white;
+  font-family: "Special Gothic", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #c56546;
+}
+
+.submitBtn:disabled {
+  background-color: #7a5344;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: #ef4444;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.commentList {
+  margin-top: 1rem;
+}
+
+.comment {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 0.75rem;
+}
+
+.commentContent {
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.commentDate {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+}
+
+.noComments {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.loading {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-style: italic;
+} 

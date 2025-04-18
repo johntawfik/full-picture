@@ -10,9 +10,16 @@
   overflow: hidden;
   position: relative;
   min-height: 200px;
-  height: 100%;
+  height: auto;
   break-inside: avoid;
   page-break-inside: avoid;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .cardText {
@@ -21,7 +28,6 @@
   margin-bottom: 2.5rem;
   color: #e0e0e0;
   font-family: "Special Gothic", sans-serif;
-  flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 6;
@@ -78,13 +84,11 @@
 }
 
 .externalLink {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
   font-size: 1rem;
   color: #4a90e2;
   text-decoration: none;
   transition: text-decoration 0.2s ease, color 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .externalLink:hover {
@@ -151,6 +155,38 @@
   margin-bottom: 3em;
   /* Give the image some depth too */
   box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+}
+
+/* Comment section styles */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+.commentButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.commentButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.commentIcon {
+  font-size: 1rem;
 }
 
 

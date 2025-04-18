@@ -40,8 +40,8 @@
   }
   
   .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    column-width: 350px;
+    column-gap: 2rem;
     gap: 2rem;
     padding: 1rem 0;
   }

@@ -2,12 +2,13 @@ import os
 import time
 import logging
 import asyncpg
-from typing import List
-from fastapi import FastAPI, HTTPException, Query
+from typing import List, Optional
+from fastapi import FastAPI, HTTPException, Query, Body
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
+import uuid
 
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
@@ -84,6 +85,17 @@ class Perspective(BaseModel):
     url: str
 
 
+class Comment(BaseModel):
+    id: Optional[str] = None
+    perspective_id: str
+    content: str
+    created_at: Optional[str] = None
+
+
+class CommentCreate(BaseModel):
+    content: str = Field(..., min_length=1, max_length=500)
+
+
 @app.get("/api/perspectives", response_model=List[Perspective])
 @cache(expire=300) 
 async def get_perspectives(
@@ -158,6 +170,88 @@ async def get_perspectives(
     except Exception as e:
         logger.error(f"Error fetching perspectives: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error fetching perspectives: {str(e)}")
+
+
+@app.get("/api/perspectives/{perspective_id}/comments", response_model=List[Comment])
+async def get_comments(perspective_id: str):
+    """
+    Get all comments for a specific perspective
+    """
+    try:
+        async with app.state.pool.acquire() as conn:
+            sql = """
+                SELECT id, perspective_id, content, created_at
+                FROM comments
+                WHERE perspective_id = $1
+                ORDER BY created_at DESC
+            """
+            
+            records = await conn.fetch(sql, perspective_id)
+            
+            comments = [
+                {
+                    "id": str(record["id"]),
+                    "perspective_id": str(record["perspective_id"]),
+                    "content": record["content"],
+                    "created_at": record["created_at"].isoformat() if record["created_at"] else None
+                } for record in records
+            ]
+            
+            return comments
+    
+    except asyncpg.PostgresError as e:
+        logger.error(f"Database query error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Database query error: {str(e)}")
+    except Exception as e:
+        logger.error(f"Error fetching comments: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error fetching comments: {str(e)}")
+
+
+@app.post("/api/perspectives/{perspective_id}/comments", response_model=Comment)
+async def create_comment(perspective_id: str, comment: CommentCreate = Body(...)):
+    """
+    Create a new comment for a specific perspective
+    """
+    try:
+        # Validate that the perspective exists
+        async with app.state.pool.acquire() as conn:
+            perspective = await conn.fetchrow(
+                "SELECT id FROM perspectives WHERE id = $1", perspective_id
+            )
+            
+            if not perspective:
+                raise HTTPException(status_code=404, detail="Perspective not found")
+            
+            # Generate a UUID for the comment
+            comment_id = str(uuid.uuid4())
+            
+            # Insert the comment
+            sql = """
+                INSERT INTO comments (id, perspective_id, content)
+                VALUES ($1, $2, $3)
+                RETURNING id, perspective_id, content, created_at
+            """
+            
+            record = await conn.fetchrow(
+                sql, comment_id, perspective_id, comment.content
+            )
+            
+            return {
+                "id": str(record["id"]),
+                "perspective_id": str(record["perspective_id"]),
+                "content": record["content"],
+                "created_at": record["created_at"].isoformat() if record["created_at"] else None
+            }
+    
+    except asyncpg.PostgresError as e:
+        logger.error(f"Database query error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Database query error: {str(e)}")
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        logger.error(f"Error creating comment: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error creating comment: {str(e)}")
+
 
 if __name__ == "__main__":
     import uvicorn

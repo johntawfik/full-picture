@@ -151,14 +151,15 @@ export default function Home() {
         <div className={styles.cardGrid}>
           {perspectives.map((p) => (
             <Card
-            key={p.id}
-            title={p.title}
-            community={p.community}
-            sentiment={p.sentiment}
-            quote={p.quote}
-            url={p.url}
-            date={p.date}
-          />
+              key={p.id}
+              id={p.id}
+              title={p.title}
+              community={p.community}
+              sentiment={p.sentiment}
+              quote={p.quote}
+              url={p.url}
+              date={p.date}
+            />
           ))}
         </div>
       </main>

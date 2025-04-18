@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 import styles from "./SearchPage.module.css";
+import homeStyles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
 
 interface Perspective {
@@ -56,6 +58,26 @@ export default function SearchPage() {
 
   return (
     <div className={styles.page}>
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <h1 className={`${homeStyles.title} ${homeStyles.expandedFont}`} style={{ marginBottom: '1rem' }}>
+          Get the <span className={homeStyles.spanner}>
+            Full Picture
+            <svg
+              className={homeStyles.underline}
+              viewBox="0 6 200 40"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,20 C50,0 70,40 100,20 
+                   C120,10 120,-10 100,5 
+                   C90,15 130,35 200,20"
+                fill="transparent"
+                strokeWidth="2"
+              />
+            </svg>
+          </span>
+        </h1>
+      </Link>
       <SearchBar showPromptText={true} onSearch={handleSearch} />
       <div className={styles.header}>
         <h1 className={styles.title}>
@@ -70,11 +92,13 @@ export default function SearchPage() {
         {perspectives.map((p) => (
           <Card
             key={p.id}
+            id={p.id}
             title={p.title}
             community={p.community}
             sentiment={p.sentiment}
             quote={p.quote}
             url={p.url}
+            date={p.date}
           />
         ))}
       </div>

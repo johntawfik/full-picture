@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import styles from './CommentSection.module.css';
 
@@ -11,16 +13,21 @@ interface Comment {
 interface CommentSectionProps {
   perspectiveId: string;
   isOpen: boolean;
+  onCommentsLoaded?: (count: number) => void;
+  onCommentAdded?: () => void;
 }
 
-export default function CommentSection({ perspectiveId, isOpen }: CommentSectionProps) {
+export default function CommentSection({ 
+  perspectiveId, 
+  isOpen, 
+  onCommentsLoaded,
+  onCommentAdded 
+}: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hasFetched, setHasFetched] = useState(false);
-
-
 
   // Fetch comments only when isOpen becomes true for the first time, or if perspectiveId changes while open
   useEffect(() => {
@@ -29,29 +36,30 @@ export default function CommentSection({ perspectiveId, isOpen }: CommentSection
       fetchComments();
     }
     // Reset fetch status if perspectiveId changes
-    if (perspectiveId) { // Added guard for perspectiveId
+    if (!isOpen) {
       setHasFetched(false);
-      setComments([]); // Clear old comments if ID changes
+      setComments([]); // Clear old comments when closing
       setError(null);
     }
-
-  }, [isOpen, perspectiveId, hasFetched]); // Added isOpen and hasFetched to dependencies
+  }, [isOpen, perspectiveId, hasFetched]);
 
   const fetchComments = async () => {
-    if (!perspectiveId) return; // Don't fetch if ID is missing
+    if (!perspectiveId) return;
     setLoading(true);
     setError(null);
-    setHasFetched(true); // Mark as fetched (or attempting)
+    setHasFetched(true);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_COMMENTS_URL}/api/perspectives/${perspectiveId}/comments`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/perspectives/${perspectiveId}/comments`);
       if (!response.ok) {
         throw new Error('Failed to fetch comments');
       }
       const data = await response.json();
       setComments(data);
+      onCommentsLoaded?.(data.length);
     } catch (err) {
       setError('Error loading comments. Please try again later.');
       console.error('Error fetching comments:', err);
+      onCommentsLoaded?.(0);
     } finally {
       setLoading(false);
     }
@@ -63,10 +71,10 @@ export default function CommentSection({ perspectiveId, isOpen }: CommentSection
       return;
     }
 
-    setLoading(true); // Consider a different loading state for posting?
+    setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_COMMENTS_URL}/api/perspectives/${perspectiveId}/comments`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/perspectives/${perspectiveId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,6 +90,7 @@ export default function CommentSection({ perspectiveId, isOpen }: CommentSection
       const updatedComments = [data, ...comments];
       setComments(updatedComments);
       setNewComment('');
+      onCommentAdded?.();
     } catch (err) {
       setError('Error posting comment. Please try again later.');
       console.error('Error posting comment:', err);
@@ -99,39 +108,47 @@ export default function CommentSection({ perspectiveId, isOpen }: CommentSection
       <h3 className={styles.commentTitle}>Comments</h3>
       
       <form onSubmit={handleSubmitComment} className={styles.commentForm}>
-        <textarea
+        <input
+          type="text"
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="Add a comment..."
           className={styles.commentInput}
           maxLength={500}
-          rows={3}
         />
         <button 
           type="submit" 
-          className={styles.submitBtn}
+          className={`${styles.submitArrow} ${newComment.trim() ? styles.visible : ''}`}
           disabled={loading || !newComment.trim()}
+          aria-label="Post comment"
         >
-          {loading ? 'Posting...' : 'Post'}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12L20 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M15 7L20 12L15 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </button>
       </form>
       
       {error && <p className={styles.errorMessage}>{error}</p>}
       
       <div className={styles.commentList}>
-        {loading ? (
+        {loading && comments.length === 0 ? (
           <p className={styles.loading}>Loading comments...</p>
-        ) : error ? (
-          <p className={styles.errorMessage}>{error}</p>
         ) : comments.length === 0 ? (
-          <p className={styles.noComments}>No comments yet.</p>
+          <p className={styles.noComments}>No comments yet. Be the first to comment!</p>
         ) : (
           comments.map((comment) => (
             <div key={comment.id} className={styles.comment}>
               <p className={styles.commentContent}>{comment.content}</p>
               {comment.created_at && (
                 <span className={styles.commentDate}>
-                  {new Date(comment.created_at).toLocaleString()}
+                  {new Date(comment.created_at).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "2-digit"
+                  })}
                 </span>
               )}
             </div>

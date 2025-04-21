@@ -83,6 +83,7 @@ class Perspective(BaseModel):
     sentiment: float
     date: str
     url: str
+    comment_count: int = 0
 
 
 class Comment(BaseModel):
@@ -96,10 +97,6 @@ class CommentCreate(BaseModel):
     content: str = Field(..., min_length=1, max_length=500)
 
 
-class CommentCountResponse(BaseModel):
-    count: int
-
-
 @app.get("/api/perspectives", response_model=List[Perspective])
 @cache(expire=300) 
 async def get_perspectives(
@@ -108,40 +105,28 @@ async def get_perspectives(
     """
     Get perspectives based on PostgreSQL Full-Text Search 
     across 'title' and 'quote' fields using asyncpg.
-    Results are ranked by relevance.
+    Results are ranked by relevance and include comment counts.
     """
     try:
-        # Start timing the overall request
-        request_start_time = time.time()
         logger.info(f"Starting request for query: '{query}'")
 
         async with app.state.pool.acquire() as conn:
-            # Start timing the database query
-            db_start_time = time.time()
-            
             sql = """
                 SELECT 
-                    id, title, source, community, quote, sentiment, 
-                    SPLIT_PART(created_at::text, ' ', 1) as date, 
-                    url,
-                    ts_rank_cd(to_tsvector('english', title || ' ' || quote), plainto_tsquery('english', $1)) AS rank
-                FROM perspectives
-                WHERE to_tsvector('english', title || ' ' || quote) @@ plainto_tsquery('english', $1)
+                    p.id, p.title, p.source, p.community, p.quote, p.sentiment, 
+                    SPLIT_PART(p.created_at::text, ' ', 1) as date, 
+                    p.url,
+                    COALESCE(COUNT(c.id), 0) as comment_count,
+                    ts_rank_cd(to_tsvector('english', p.title || ' ' || p.quote), plainto_tsquery('english', $1)) AS rank
+                FROM perspectives p
+                LEFT JOIN comments c ON p.id = c.perspective_id
+                WHERE to_tsvector('english', p.title || ' ' || p.quote) @@ plainto_tsquery('english', $1)
+                GROUP BY p.id, p.title, p.source, p.community, p.quote, p.sentiment, p.created_at, p.url
                 ORDER BY rank DESC
             """
             
-            # Execute the query using conn.fetch
             records = await conn.fetch(sql, query)
             
-            # Log database query time
-            db_end_time = time.time()
-            db_query_time = db_end_time - db_start_time
-            logger.info(f"Database query completed in {db_query_time:.4f} seconds")
-            
-            # Start timing the data processing
-            processing_start_time = time.time()
-            
-            # Map asyncpg.Record objects to dictionaries
             perspectives = [
                 {
                     "id": str(record["id"]),
@@ -151,22 +136,12 @@ async def get_perspectives(
                     "quote": record["quote"],
                     "sentiment": float(record["sentiment"]),
                     "date": record["date"],
-                    "url": record["url"]
+                    "url": record["url"],
+                    "comment_count": int(record["comment_count"])
                 } for record in records
             ]
             
-            # Log data processing time
-            processing_end_time = time.time()
-            processing_time = processing_end_time - processing_start_time
-            logger.info(f"Data processing completed in {processing_time:.4f} seconds")
-            
-            # Log total request time
-            request_end_time = time.time()
-            total_request_time = request_end_time - request_start_time
-            logger.info(f"Total request completed in {total_request_time:.4f} seconds")
-            logger.info(f"Returning {len(perspectives)} perspectives")
-            
-        return perspectives
+            return perspectives
     
     except asyncpg.PostgresError as e:
         logger.error(f"Database query error: {str(e)}")
@@ -209,38 +184,6 @@ async def get_comments(perspective_id: str):
     except Exception as e:
         logger.error(f"Error fetching comments: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error fetching comments: {str(e)}")
-
-
-@app.get("/api/perspectives/{perspective_id}/comments/count", response_model=CommentCountResponse)
-async def get_comment_count(perspective_id: str):
-    """
-    Get the count of comments for a specific perspective
-    """
-    try:
-        async with app.state.pool.acquire() as conn:
-            # Check if perspective exists (optional but good practice)
-            perspective_exists = await conn.fetchval(
-                "SELECT EXISTS (SELECT 1 FROM perspectives WHERE id = $1)",
-                perspective_id
-            )
-            if not perspective_exists:
-                raise HTTPException(status_code=404, detail="Perspective not found")
-
-            # Get the count
-            sql = """
-                SELECT COUNT(*) FROM comments WHERE perspective_id = $1
-            """
-            count = await conn.fetchval(sql, perspective_id)
-            return {"count": count or 0}
-    
-    except asyncpg.PostgresError as e:
-        logger.error(f"Database query error getting comment count: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Database query error: {str(e)}")
-    except HTTPException as e: # Re-raise HTTPExceptions (like 404)
-        raise e
-    except Exception as e:
-        logger.error(f"Error fetching comment count: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Error fetching comment count: {str(e)}")
 
 
 @app.post("/api/perspectives/{perspective_id}/comments", response_model=Comment)
@@ -287,6 +230,63 @@ async def create_comment(perspective_id: str, comment: CommentCreate = Body(...)
     except Exception as e:
         logger.error(f"Error creating comment: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error creating comment: {str(e)}")
+
+
+@app.get("/api/recent", response_model=List[Perspective])
+@cache(expire=300)
+async def get_recent_perspectives():
+    """
+    Get the most recent perspectives from each community (right, center, left)
+    including comment counts
+    """
+    try:
+        logger.info("Starting request for recent perspectives")
+
+        async with app.state.pool.acquire() as conn:
+            sql = """
+                WITH RankedPerspectives AS (
+                    SELECT 
+                        p.id, p.title, p.source, p.community, p.quote, p.sentiment,
+                        SPLIT_PART(p.created_at::text, ' ', 1) as date,
+                        p.url,
+                        COALESCE(COUNT(c.id), 0) as comment_count,
+                        ROW_NUMBER() OVER (PARTITION BY p.community ORDER BY p.created_at DESC) as rn
+                    FROM perspectives p
+                    LEFT JOIN comments c ON p.id = c.perspective_id
+                    WHERE p.community IN ('right', 'center', 'left')
+                    GROUP BY p.id, p.title, p.source, p.community, p.quote, p.sentiment, p.created_at, p.url
+                )
+                SELECT id, title, source, community, quote, sentiment, date, url, comment_count
+                FROM RankedPerspectives
+                WHERE rn <= 4
+                ORDER BY community, date DESC;
+            """
+            
+            records = await conn.fetch(sql)
+            
+            perspectives = [
+                {
+                    "id": str(record["id"]),
+                    "title": record["title"],
+                    "source": record["source"],
+                    "community": record["community"],
+                    "quote": record["quote"],
+                    "sentiment": float(record["sentiment"]),
+                    "date": record["date"],
+                    "url": record["url"],
+                    "comment_count": int(record["comment_count"])
+                } for record in records
+            ]
+            
+            logger.info(f"Returning {len(perspectives)} perspectives")
+            return perspectives
+    
+    except asyncpg.PostgresError as e:
+        logger.error(f"Database query error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Database query error: {str(e)}")
+    except Exception as e:
+        logger.error(f"Error fetching recent perspectives: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error fetching recent perspectives: {str(e)}")
 
 
 if __name__ == "__main__":

@@ -1,132 +1,67 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 import styles from "./SearchPage.module.css";
 import homeStyles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
-import Masonry from 'react-masonry-css';
-
-interface Perspective {
-  id: string;
-  title: string;
-  source: string;
-  community: string;
-  quote: string;
-  sentiment: number;
-  date: string;
-  url: string;
-}
+import { useSearch } from "@/hooks/useSearch";
 
 export default function SearchPage() {
-  const [perspectives, setPerspectives] = useState<Perspective[]>([]);
-  const [isGridView, setIsGridView] = useState(true);
-  const [loading, setLoading] = useState(true);
-
   const searchParams = useSearchParams();
-  const query = searchParams.get("q");
-
-  useEffect(() => {
-    if (!query) return;
-
-    const fetchResults = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `https://full-picture-production.up.railway.app/api/perspectives?query=${encodeURIComponent(query)}`,
-          {
-            headers: { Accept: "application/json" },
-          }
-        );
-        const data = await res.json();
-        setPerspectives(data);
-      } catch (err) {
-        console.error("Failed to fetch search results:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchResults();
-  }, [query]);
-
-  const handleSearch = () => {
-    // Search is handled by the SearchBar's router.push now
-    // This is just for backward compatibility
-  };
+  const initialQuery = searchParams.get("q") || "";
+  const { articles, error, isLoading, setQuery } = useSearch(initialQuery);
 
   return (
     <div className={styles.page}>
-      <Link href="/" style={{ textDecoration: 'none' }}>
-        <h1 className={`${homeStyles.title} ${homeStyles.expandedFont}`} style={{ marginBottom: '1rem' }}>
-          Get the <span className={homeStyles.spanner}>
+      <div className={styles.searchContainer}>
+        <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <h1 className={homeStyles.title} style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
             Full Picture
-            <svg
-              className={homeStyles.underline}
-              viewBox="0 6 200 40"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,20 C50,0 70,40 100,20 
-                   C120,10 120,-10 100,5 
-                   C90,15 130,35 200,20"
-                fill="transparent"
-                strokeWidth="2"
-              />
-            </svg>
-          </span>
-        </h1>
-      </Link>
-      <SearchBar showPromptText={true} onSearch={handleSearch} />
-      <div className={styles.header}>
-        <h1 className={styles.title}>
-          {loading ? "Loading..." : `Results for "${query}"`}
-        </h1>
-        <button onClick={() => setIsGridView((prev) => !prev)} className={styles.toggleBtn}>
-          {isGridView ? "Card View" : "Grid View"}
-        </button>
+          </h1>
+        </Link>
+        <p className={styles.subtitle}>See the angles behind every story</p>
+        
+        <SearchBar initialValue={initialQuery} onSearch={setQuery} />
       </div>
-
-      {isGridView ? (
-        <Masonry
-          breakpointCols={{
-            default: 3,
-            1100: 2,
-            700: 1
-          }}
-          className={styles.masonryGrid}
-          columnClassName={styles.masonryColumn}
-        >
-          {perspectives.map((p) => (
-            <Card
-              key={p.id}
-              id={p.id}
-              title={p.title}
-              community={p.community}
-              sentiment={p.sentiment}
-              quote={p.quote}
-              url={p.url}
-              date={p.date}
-            />
-          ))}
-        </Masonry>
-      ) : (
-        <div className={styles.cardContainer}>
-          {perspectives.map((p) => (
-            <Card
-              key={p.id}
-              id={p.id}
-              title={p.title}
-              community={p.community}
-              sentiment={p.sentiment}
-              quote={p.quote}
-              url={p.url}
-              date={p.date}
-            />
-          ))}
+      
+      {error && (
+        <div className={styles.error}>
+          {error}
         </div>
+      )}
+
+      {isLoading && (
+        <div className={styles.loading}>
+          Loading...
+        </div>
+      )}
+
+      {initialQuery && (
+        <>
+          <div className={styles.header}>
+            <h2 className={styles.title}>
+              Results for "{initialQuery}"
+            </h2>
+          </div>
+
+          <div className={styles.articlesGrid}>
+            {Array.isArray(articles) && articles.map((article) => (
+              <Card
+                key={article.id}
+                id={article.id}
+                title={article.title}
+                community={article.community}
+                sentiment={article.sentiment}
+                quote={article.quote}
+                url={article.url}
+                date={article.date}
+                commentCount={article.comment_count}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

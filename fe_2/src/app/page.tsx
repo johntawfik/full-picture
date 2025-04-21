@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
-import Masonry from 'react-masonry-css';
+import { useRouter } from 'next/navigation';
+import { useSearch } from "@/hooks/useSearch";
 
-interface Perspective {
+interface Article {
   id: string;
   title: string;
   source: string;
@@ -15,155 +16,91 @@ interface Perspective {
   sentiment: number;
   date: string;
   url: string;
+  comment_count: number;
 }
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
 export default function Home() {
-  const [perspectives, setPerspectives] = useState<Perspective[]>([]);
-  const [query, setQuery] = useState<string | null>(null);
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  const apiUrl = process.env.NEXT_PUBLIC_PERSPECTIVES_URL;
-  // Update window width on resize and initial load
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }
-  }, []);
+  const [recentArticles, setRecentArticles] = useState<Article[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const didFetch = useRef(false);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const router = useRouter();
+  const { setQuery, articles: searchResults, isLoading } = useSearch();
 
-  const fetchPerspectivesByQuery = async (queries: string[], restrict = true) => {
-    setPerspectives([]);
-    const seenIds = new Set<string>();
-    let fetched: Perspective[] = [];
-
-    for (const q of queries) {
-      try {
-        const res = await fetch(
-          `${apiUrl}${encodeURIComponent(q)}`,
-          {
-            headers: { Accept: "application/json" },
-          }
-        );
-        const data: Perspective[] = await res.json();
-
-        const toUse = restrict
-        ? (() => {
-            const perspectivePool: Record<"left" | "right" | "center", Perspective[]> = {
-              left: [],
-              right: [],
-              center: [],
-            };
-            for (const p of data) {
-              const lean = p.community.toLowerCase();
-              if (["left", "right", "center"].includes(lean)) {
-                perspectivePool[lean as "left" | "right" | "center"].push(p);
-              }
-            }
-            return [
-              ...perspectivePool.right.slice(0, 2),
-              ...perspectivePool.center.slice(0, 1),
-              ...perspectivePool.left.slice(0, 1),
-            ];
-          })()
-        : data;
-
-        for (const p of toUse) {
-          if (!seenIds.has(p.id)) {
-            fetched.push(p);
-            seenIds.add(p.id);
-          }
-        }
-      } catch (err) {
-        console.error(`Error fetching for query "${q}"`, err);
+  const fetchHomepage = async () => {
+    setRecentArticles([]);
+    setError(null);
+    try {
+      const res = await fetch(`${apiUrl}/api/recent`, {
+        headers: { Accept: "application/json" },
+      });
+      
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
       }
+      
+      const data = await res.json();
+      setRecentArticles(shuffleArray(data));
+    } catch (err) {
+      console.error(`Error fetching homepage articles:`, err);
+      setError(err instanceof Error ? err.message : 'An error occurred while fetching articles');
     }
-
-    // Ensure we have at least one card
-    if (fetched.length === 0) {
-      console.warn("No perspectives found for the given queries");
-    } else {
-      if (windowWidth > 700) {
-        const remainder = fetched.length % 3;
-        if (remainder !== 0) {
-          const cardsNeeded = 3 - remainder;
-          fetched = [...fetched, ...fetched.slice(0, cardsNeeded)];
-        }
-      }
-    }
-
-    setPerspectives(fetched);
   };
 
-  const defaultQueries = ["Ukraine", "Gaza", "Tariffs", "China"];
-
   useEffect(() => {
-    fetchPerspectivesByQuery(defaultQueries, true);
+    if (didFetch.current) return;
+    didFetch.current = true;
+    fetchHomepage();
   }, []);
 
+  // When search results come in, redirect to search page
   useEffect(() => {
-    if (query && query.trim() !== "") {
-      fetchPerspectivesByQuery([query], false);
+    if (searchResults.length > 0) {
+      router.push(`/search?q=${encodeURIComponent(searchResults[0].title)}`);
     }
-  }, [query]);
-
-  // Refetch when window width changes to adjust card count
-  useEffect(() => {
-    if (query && query.trim() !== "") {
-      fetchPerspectivesByQuery([query], false);
-    } else {
-      fetchPerspectivesByQuery(defaultQueries, true);
-    }
-  }, [windowWidth]);
+  }, [searchResults, router]);
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <h1 className={`${styles.title} ${styles.expandedFont}`}>
-          Get the <span className={styles.spanner}>
-            Full Picture
-            <svg
-              className={styles.underline}
-              viewBox="0 6 200 40"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,20 C50,0 70,40 100,20 
-                   C120,10 120,-10 100,5 
-                   C90,15 130,35 200,20"
-                fill="transparent"
-                strokeWidth="2"
-              />
-            </svg>
-          </span>
-        </h1>
-        <SearchBar showPromptText={true} onSearch={(val) => setQuery(val)} />
-        <Masonry
-          breakpointCols={{
-            default: 3,
-            1200: 3,
-            900: 2,
-            600: 1
-          }}
-          className={styles.masonryGrid}
-          columnClassName={styles.masonryColumn}
-        >
-          {perspectives.map((p) => (
+        <h1 className={styles.title}>Full Picture</h1>
+        <h2 className={styles.subtitle}>See the angles behind every story</h2>
+        
+        <div className={styles.searchContainer}>
+          <SearchBar onSearch={setQuery} />
+        </div>
+
+        {error && (
+          <div className={styles.error}>
+            {error}
+          </div>
+        )}
+
+        {isLoading && (
+          <div className={styles.loading}>
+            Loading...
+          </div>
+        )}
+
+        <div className={styles.articlesGrid}>
+          {Array.isArray(recentArticles) && recentArticles.map((article) => (
             <Card
-              key={p.id}
-              id={p.id}
-              title={p.title}
-              community={p.community}
-              sentiment={p.sentiment}
-              quote={p.quote}
-              url={p.url}
-              date={p.date}
+              key={article.id}
+              id={article.id}
+              title={article.title}
+              community={article.community}
+              sentiment={article.sentiment}
+              quote={article.quote}
+              url={article.url}
+              date={article.date}
+              commentCount={article.comment_count}
             />
           ))}
-        </Masonry>
+        </div>
       </main>
     </div>
   );

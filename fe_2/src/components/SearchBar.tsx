@@ -1,109 +1,62 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
-  showPromptText?: boolean;
   onSearch?: (query: string) => void;
+  initialValue?: string;
 }
 
-const prompts = ["China", "Gaza", "Tariffs", "Ukraine"];
-
-export default function SearchBar({ showPromptText = true, onSearch }: SearchBarProps) {
-  const [index, setIndex] = useState(0);
-  const [fadeOut, setFadeOut] = useState(false);
-  const [inputText, setInputText] = useState("");
-  const [lastSearchedQuery, setLastSearchedQuery] = useState("");
+export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProps) {
+  const [inputText, setInputText] = useState(initialValue);
   const router = useRouter();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeOut(true);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % prompts.length);
-        setFadeOut(false);
-      }, 300);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Debounced search function
-  const debouncedSearch = useCallback(
-    (searchQuery: string) => {
-      const trimmedQuery = searchQuery.trim();
-      if (trimmedQuery === lastSearchedQuery) return;
-      
-      setLastSearchedQuery(trimmedQuery);
-      if (trimmedQuery) {
-        // Navigate to search page with query parameter
-        router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`);
-        // Still call onSearch if provided (for backward compatibility)
-        onSearch?.(trimmedQuery);
-      } else {
-        onSearch?.("Gaza");
-        onSearch?.("China");
-        onSearch?.("Tariffs");
-        onSearch?.("Ukraine");
-      }
-    },
-    [onSearch, lastSearchedQuery, router]
-  );
-
-  // Set up debounce effect
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      debouncedSearch(inputText);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [inputText, debouncedSearch]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const trimmedInput = inputText.trim();
+      if (trimmedInput) {
+        router.push(`/search?q=${encodeURIComponent(trimmedInput)}`);
+        onSearch?.(trimmedInput);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [inputText, router, onSearch]);
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      const trimmedQuery = inputText.trim();
-      if (trimmedQuery !== lastSearchedQuery) {
-        setLastSearchedQuery(trimmedQuery);
-        if (trimmedQuery) {
-          // Navigate to search page with query parameter
-          router.push(`/search?q=${encodeURIComponent(trimmedQuery)}`);
-          // Still call onSearch if provided (for backward compatibility)
-          onSearch?.(trimmedQuery);
-        } else {
-          // Reset to homepage when search is empty
-          router.push('/');
-          onSearch?.("");
-        }
+      const trimmedInput = inputText.trim();
+      if (trimmedInput) {
+        router.push(`/search?q=${encodeURIComponent(trimmedInput)}`);
+        onSearch?.(trimmedInput);
       }
     }
   };
 
   return (
     <div className={styles.searchWrapper}>
-      <div className={styles.fakeInput}>
-        <input
-          type="text"
-          className={styles.realInput}
-          value={inputText}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          placeholder=""
-        />
-        {inputText === "" && (
-          <span className={styles.fixed}>
-            Search up news like{" "}
-            {showPromptText && (
-              <span className={`${styles.cycle} ${fadeOut ? styles.fadeOut : styles.fadeIn}`}>
-                {prompts[index]}
-              </span>
-            )}
-          </span>
-        )}
+      <input
+        type="text"
+        className={styles.searchInput}
+        value={inputText}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        placeholder="Search a topic (e.g, Gaza, AI, Economy...)"
+      />
+      <div className={styles.searchIcon}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" 
+            stroke="#666666" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"/>
+        </svg>
       </div>
     </div>
   );

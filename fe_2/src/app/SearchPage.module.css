@@ -1,57 +1,91 @@
 .page {
-    padding: 2rem;
-    background-color: #262624;
-    color: white;
+    padding: 2rem 4rem;
+    background-color: white;
+    color: #333;
     min-height: 100vh;
+    width: 100%;
   }
   
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    max-width: 1400px;
+    margin: 2rem auto;
   }
   
   .title {
-    font-size: 2rem;
-    font-weight: bold;
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: normal;
   }
   
   .toggleBtn {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: #4a4a46;
-    color: white;
-    border: none;
+    background-color: #f5f5f5;
+    color: #666;
+    border: 1px solid #ddd;
     cursor: pointer;
-    font-family: "Special Gothic", sans-serif;
-    transition: background-color 0.3s;
+    font-family: inherit;
+    transition: all 0.2s ease;
   }
   
   .toggleBtn:hover {
-    background-color: #5e5e5a;
+    background-color: #eee;
+    color: #333;
   }
   
   .cardContainer {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
   }
   
   .masonryGrid {
     display: flex;
     width: 100%;
-    margin-left: -2rem; /* Compensate for column gap */
+    margin-left: -2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
   }
   
   .masonryColumn {
-    padding-left: 2rem; /* Column gap */
+    padding-left: 2rem;
     background-clip: padding-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .searchContainer {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
   }
   
   /* Media queries for responsive design */
+  @media (max-width: 1024px) {
+    .page {
+      padding: 2rem;
+    }
+  }
+  
   @media (max-width: 700px) {
+    .page {
+      padding: 1rem;
+    }
+    
     .masonryGrid {
       margin-left: -1rem;
     }

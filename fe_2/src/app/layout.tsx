@@ -10,8 +10,40 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://full-picture.vercel.app'),
   title: "Full Picture",
-  description: "Get the Full Picture - all-side news aggregator.",
+  description: "See the angles behind every story - a comprehensive news platform that brings you multiple perspectives on current events.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
+  openGraph: {
+    title: "Full Picture",
+    description: "See the angles behind every story - a comprehensive news platform that brings you multiple perspectives on current events.",
+    url: "https://full-picture.vercel.app",
+    siteName: "Full Picture",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Full Picture - See the angles behind every story",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Full Picture",
+    description: "See the angles behind every story - a comprehensive news platform that brings you multiple perspectives on current events.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

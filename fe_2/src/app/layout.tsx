@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        width: 1024,
+        height: 576,
         alt: "Full Picture - See the angles behind every story",
       },
     ],

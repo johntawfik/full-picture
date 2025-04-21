@@ -42,7 +42,7 @@ export default function SearchPage() {
         <>
           <div className={styles.header}>
             <h2 className={styles.title}>
-              Results for "{initialQuery}"
+              Results for &#34;{initialQuery}&#34;
             </h2>
           </div>
 

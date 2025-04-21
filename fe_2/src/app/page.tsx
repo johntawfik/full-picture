@@ -6,6 +6,8 @@ import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
 import { useRouter } from 'next/navigation';
 import { useSearch } from "@/hooks/useSearch";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 interface Article {
   id: string;
@@ -67,6 +69,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Analytics />
+        <SpeedInsights />
         <h1 className={styles.title}>Full Picture</h1>
         <h2 className={styles.subtitle}>See the angles behind every story</h2>
         

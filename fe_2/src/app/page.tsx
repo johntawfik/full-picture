@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Card from "@/components/Card";
 import SearchBar from "@/components/SearchBar";
+import Masonry from 'react-masonry-css';
 
 interface Perspective {
   id: string;
@@ -140,7 +141,16 @@ export default function Home() {
           </span>
         </h1>
         <SearchBar showPromptText={true} onSearch={(val) => setQuery(val)} />
-        <div className={styles.cardGrid}>
+        <Masonry
+          breakpointCols={{
+            default: 3,
+            1200: 3,
+            900: 2,
+            600: 1
+          }}
+          className={styles.masonryGrid}
+          columnClassName={styles.masonryColumn}
+        >
           {perspectives.map((p) => (
             <Card
               key={p.id}
@@ -153,7 +163,7 @@ export default function Home() {
               date={p.date}
             />
           ))}
-        </div>
+        </Masonry>
       </main>
     </div>
   );

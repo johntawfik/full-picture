@@ -7,6 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import styles from "./SearchPage.module.css";
 import homeStyles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
+import Masonry from 'react-masonry-css';
 
 interface Perspective {
   id: string;
@@ -88,20 +89,45 @@ export default function SearchPage() {
         </button>
       </div>
 
-      <div className={isGridView ? styles.gridContainer : styles.cardContainer}>
-        {perspectives.map((p) => (
-          <Card
-            key={p.id}
-            id={p.id}
-            title={p.title}
-            community={p.community}
-            sentiment={p.sentiment}
-            quote={p.quote}
-            url={p.url}
-            date={p.date}
-          />
-        ))}
-      </div>
+      {isGridView ? (
+        <Masonry
+          breakpointCols={{
+            default: 3,
+            1100: 2,
+            700: 1
+          }}
+          className={styles.masonryGrid}
+          columnClassName={styles.masonryColumn}
+        >
+          {perspectives.map((p) => (
+            <Card
+              key={p.id}
+              id={p.id}
+              title={p.title}
+              community={p.community}
+              sentiment={p.sentiment}
+              quote={p.quote}
+              url={p.url}
+              date={p.date}
+            />
+          ))}
+        </Masonry>
+      ) : (
+        <div className={styles.cardContainer}>
+          {perspectives.map((p) => (
+            <Card
+              key={p.id}
+              id={p.id}
+              title={p.title}
+              community={p.community}
+              sentiment={p.sentiment}
+              quote={p.quote}
+              url={p.url}
+              date={p.date}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -233,7 +233,7 @@ async def create_comment(perspective_id: str, comment: CommentCreate = Body(...)
 
 
 @app.get("/api/recent", response_model=List[Perspective])
-@cache(expire=300)
+@cache(expire=21600)
 async def get_recent_perspectives():
     """
     Get the most recent perspectives from each community (right, center, left)

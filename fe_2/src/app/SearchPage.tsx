@@ -72,9 +72,20 @@ export default function SearchPage() {
         groupedArticles.right.length
       );
 
+      const getPerspectiveColor = (p: 'Left' | 'Center' | 'Right') => {
+        switch (p) {
+          case 'Left': return 'blue';
+          case 'Center': return 'green';
+          case 'Right': return 'red';
+          default: return '#00A3BF'; // Default to original color
+        }
+      };
+
       const renderColumn = (articles: Article[], perspective: 'Left' | 'Center' | 'Right') => {
         // Don't render anything if there are no articles
-        if (articles.length === 0) return null;
+        if (articles.length === 0 && layoutMode === 'grouped' && !isDesktop) return null; // Also hide on mobile if grouped and empty
+
+        const perspectiveColor = getPerspectiveColor(perspective);
 
         return (
           <div className={styles.masonryColumn}>
@@ -92,9 +103,9 @@ export default function SearchPage() {
               />
             ))}
             {/* Only show empty state if we're on desktop and this perspective has fewer articles than max */}
-            {articles.length < maxArticles && isDesktop && (
+            {articles.length < maxArticles && isDesktop && layoutMode === 'grouped' && (
               <div className={styles.emptyState}>
-                <div className={styles.asterisk}>*</div>
+                <div className={styles.asterisk} style={{ color: perspectiveColor, fontSize: '3.5rem' }}>*</div>
                 <h3 className={styles.emptyStateTitle}>No more {perspective.toLowerCase()} perspectives on &apos;{initialQuery}&apos; yet</h3>
                 <p className={styles.emptyStateText}>This topic may be underreported or filtered by our sources.</p>
               </div>

@@ -95,7 +95,7 @@ export default function SearchPage() {
             {articles.length < maxArticles && isDesktop && (
               <div className={styles.emptyState}>
                 <div className={styles.asterisk}>*</div>
-                <h3 className={styles.emptyStateTitle}>No more {perspective.toLowerCase()} perspectives on '{initialQuery}' yet</h3>
+                <h3 className={styles.emptyStateTitle}>No more {perspective.toLowerCase()} perspectives on &apos;{initialQuery}&apos; yet</h3>
                 <p className={styles.emptyStateText}>This topic may be underreported or filtered by our sources.</p>
               </div>
             )}

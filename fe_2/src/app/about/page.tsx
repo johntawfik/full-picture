@@ -7,7 +7,7 @@ export default function AboutPage() {
       <div className={styles.content}>
         <section className={styles.section}>
           <p>
-            In today's media landscape, what you see isn't always the full story — it's the version that drives the most clicks.
+            In today&apos;s media landscape, what you see isn&apos;t always the full story — it&apos;s the version that drives the most clicks.
           </p>
           <p>
             Algorithms on platforms like TikTok, Instagram, and even major news outlets prioritize engagement over balance. 
@@ -26,7 +26,7 @@ export default function AboutPage() {
             spectrum so you can decide for yourself, without spin.
           </p>
           <p>
-            This isn't about changing minds. It's about opening them.
+            This isn&apos;t about changing minds. It&apos;s about opening them.
           </p>
         </section>
       </div>

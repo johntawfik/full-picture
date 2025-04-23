@@ -8,84 +8,69 @@ import homeStyles from "./page.module.css";
 import { useSearchParams } from "next/navigation";
 import { useSearch } from "@/hooks/useSearch";
 import { useState, useEffect } from "react";
-
-interface Article {
-  id: string;
-  title: string;
-  source: string;
-  community: string;
-  quote: string;
-  sentiment: number;
-  date: string;
-  url: string;
-  comment_count: number;
-}
-
-const groupArticlesByLeaning = (articles: Article[]) => {
-  return articles.reduce((acc, article) => {
-    const leaning = article.community.toLowerCase();
-    if (leaning.includes('left')) {
-      acc.left.push(article);
-    } else if (leaning.includes('center')) {
-      acc.center.push(article);
-    } else if (leaning.includes('right')) {
-      acc.right.push(article);
-    }
-    return acc;
-  }, { left: [], center: [], right: [] } as { left: Article[]; center: Article[]; right: Article[] });
-};
-
-// Add useMediaQuery hook
-function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    setMatches(media.matches);
-
-    const listener = (e: MediaQueryListEvent) => {
-      setMatches(e.matches);
-    };
-
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, [query]);
-
-  return matches;
-}
+import { Article, groupArticlesByLeaning, getPerspectiveColor, PerspectiveKey, PerspectiveLabel } from "@/utils/articleUtils";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
   const { articles, error, isLoading, setQuery } = useSearch(initialQuery);
-  const [layoutMode, setLayoutMode] = useState<'balanced' | 'grouped'>('balanced');
+  const [layoutMode, setLayoutMode] = useState<'balanced' | 'grouped'>('grouped');
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   
   const groupedArticles = groupArticlesByLeaning(articles);
 
   const renderArticles = () => {
     if (layoutMode === 'grouped') {
-      // Find the maximum number of articles in any perspective
       const maxArticles = Math.max(
         groupedArticles.left.length,
         groupedArticles.center.length,
         groupedArticles.right.length
       );
 
-      const getPerspectiveColor = (p: 'Left' | 'Center' | 'Right') => {
-        switch (p) {
-          case 'Left': return 'blue';
-          case 'Center': return 'green';
-          case 'Right': return 'red';
-          default: return '#00A3BF'; // Default to original color
-        }
-      };
-
-      const renderColumn = (articles: Article[], perspective: 'Left' | 'Center' | 'Right') => {
-        // Don't render anything if there are no articles
-        if (articles.length === 0 && layoutMode === 'grouped' && !isDesktop) return null; // Also hide on mobile if grouped and empty
+      const renderColumn = (
+        articles: Article[],
+        perspective: PerspectiveLabel,
+        allGroupedArticles: { left: Article[]; center: Article[]; right: Article[] },
+        globalMaxArticles: number
+      ) => {
+        if (articles.length === 0 && layoutMode === 'grouped' && !isDesktop) return null;
 
         const perspectiveColor = getPerspectiveColor(perspective);
+        const perspectiveKey = perspective.toLowerCase() as PerspectiveKey;
+        let fallbackArticlesToRender: Article[] = [];
+
+        if (articles.length < globalMaxArticles && isDesktop && layoutMode === 'grouped') {
+          let fallbackPerspective: PerspectiveLabel | null = null;
+          const currentLength = articles.length;
+
+          if (perspective === 'Left') {
+            if (allGroupedArticles.center.length > currentLength) {
+              fallbackPerspective = 'Center';
+            }
+          } else if (perspective === 'Right') {
+            if (allGroupedArticles.center.length > currentLength) {
+              fallbackPerspective = 'Center';
+            }
+          } else {
+            const leftLength = allGroupedArticles.left.length;
+            const rightLength = allGroupedArticles.right.length;
+            const remainingLeft = leftLength - currentLength;
+            const remainingRight = rightLength - currentLength;
+
+            if (remainingRight > 0 && remainingRight >= remainingLeft) {
+               fallbackPerspective = 'Right';
+            } else if (remainingLeft > 0) {
+               fallbackPerspective = 'Left';
+            }
+          }
+
+          if (fallbackPerspective) {
+            const fallbackKey = fallbackPerspective.toLowerCase() as PerspectiveKey;
+            const fallbackSourceArticles = allGroupedArticles[fallbackKey];
+            fallbackArticlesToRender = fallbackSourceArticles.slice(currentLength);
+          }
+        }
 
         return (
           <div className={styles.masonryColumn}>
@@ -102,23 +87,37 @@ export default function SearchPage() {
                 commentCount={article.comment_count}
               />
             ))}
-            {/* Only show empty state if we're on desktop and this perspective has fewer articles than max */}
-            {articles.length < maxArticles && isDesktop && layoutMode === 'grouped' && (
+
+            {articles.length < globalMaxArticles && isDesktop && layoutMode === 'grouped' && articles.length > 0 && (
               <div className={styles.emptyState}>
                 <div className={styles.asterisk} style={{ color: perspectiveColor, fontSize: '3.5rem' }}>*</div>
                 <h3 className={styles.emptyStateTitle}>No more {perspective.toLowerCase()} perspectives on &apos;{initialQuery}&apos; yet</h3>
                 <p className={styles.emptyStateText}>This topic may be underreported or filtered by our sources.</p>
               </div>
             )}
+
+            {fallbackArticlesToRender.map((article) => (
+               <Card
+                 key={`${article.id}-fallback-${perspectiveKey}`}
+                 id={article.id}
+                 title={article.title}
+                 community={article.community}
+                 sentiment={article.sentiment}
+                 quote={article.quote}
+                 url={article.url}
+                 date={article.date}
+                 commentCount={article.comment_count}
+               />
+             ))}
           </div>
         );
       };
 
       return (
         <div className={styles.articlesGrid} key="grouped">
-          {renderColumn(groupedArticles.left, 'Left')}
-          {renderColumn(groupedArticles.center, 'Center')}
-          {renderColumn(groupedArticles.right, 'Right')}
+          {renderColumn(groupedArticles.left, 'Left', groupedArticles, maxArticles)}
+          {renderColumn(groupedArticles.center, 'Center', groupedArticles, maxArticles)}
+          {renderColumn(groupedArticles.right, 'Right', groupedArticles, maxArticles)}
         </div>
       );
     } else {

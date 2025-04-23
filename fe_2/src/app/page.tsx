@@ -9,36 +9,7 @@ import { useSearch } from "@/hooks/useSearch";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Link from 'next/link';
-
-interface Article {
-  id: string;
-  title: string;
-  source: string;
-  community: string;
-  quote: string;
-  sentiment: number;
-  date: string;
-  url: string;
-  comment_count: number;
-}
-
-const shuffleArray = <T,>(array: T[]): T[] => {
-  return [...array].sort(() => Math.random() - 0.5);
-};
-
-const groupArticlesByLeaning = (articles: Article[]) => {
-  return articles.reduce((acc, article) => {
-    const leaning = article.community.toLowerCase();
-    if (leaning.includes('left')) {
-      acc.left.push(article);
-    } else if (leaning.includes('center')) {
-      acc.center.push(article);
-    } else if (leaning.includes('right')) {
-      acc.right.push(article);
-    }
-    return acc;
-  }, { left: [], center: [], right: [] } as { left: Article[]; center: Article[]; right: Article[] });
-};
+import { Article, groupArticlesByLeaning, getPerspectiveColor, PerspectiveLabel } from "@/utils/articleUtils";
 
 export default function Home() {
   const [recentArticles, setRecentArticles] = useState<Article[]>([]);
@@ -61,7 +32,7 @@ export default function Home() {
       }
       
       const data = await res.json();
-      setRecentArticles(shuffleArray(data));
+      setRecentArticles(data);
     } catch (err) {
       console.error(`Error fetching homepage articles:`, err);
       setError(err instanceof Error ? err.message : 'An error occurred while fetching articles');
@@ -72,16 +43,35 @@ export default function Home() {
     if (didFetch.current) return;
     didFetch.current = true;
     fetchHomepage();
-  }, []);
+  }, [apiUrl]);
 
-  // When search results come in, redirect to search page
-  useEffect(() => {
-    if (searchResults.length > 0) {
-      router.push(`/search?q=${encodeURIComponent(searchResults[0].title)}`);
+  const handleSearch = (query: string) => {
+    if (query.trim()) {
+       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
     }
-  }, [searchResults, router]);
+  };
 
   const groupedArticles = groupArticlesByLeaning(recentArticles);
+
+  const renderColumn = (articles: Article[]) => {
+    return (
+      <div className={styles.masonryColumn}>
+        {articles.map((article) => (
+          <Card
+            key={article.id}
+            id={article.id}
+            title={article.title}
+            community={article.community}
+            sentiment={article.sentiment}
+            quote={article.quote}
+            url={article.url}
+            date={article.date}
+            commentCount={article.comment_count}
+          />
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className={styles.page}>
@@ -93,12 +83,12 @@ export default function Home() {
         <h2 className={styles.subtitle}>See the angles behind every story</h2>
         
         <div className={styles.searchContainer}>
-          <SearchBar onSearch={setQuery} />
+          <SearchBar onSearch={handleSearch} />
         </div>
 
         {error && (
           <div className={styles.error}>
-            {error}
+            Error loading articles: {error}
           </div>
         )}
 
@@ -108,21 +98,17 @@ export default function Home() {
           </div>
         )}
 
-        <div className={styles.articlesGrid}>
-          {recentArticles.map((article) => (
-            <Card
-              key={article.id}
-              id={article.id}
-              title={article.title}
-              community={article.community}
-              sentiment={article.sentiment}
-              quote={article.quote}
-              url={article.url}
-              date={article.date}
-              commentCount={article.comment_count}
-            />
-          ))}
-        </div>
+        {!isLoading && !error && recentArticles.length > 0 && (
+          <div className={styles.articlesGrid}>
+            {renderColumn(groupedArticles.left)}
+            {renderColumn(groupedArticles.center)}
+            {renderColumn(groupedArticles.right)}
+          </div>
+        )}
+
+        {!isLoading && !error && recentArticles.length === 0 && (
+            <p>No recent articles found.</p>
+        )}
       </main>
     </div>
   );

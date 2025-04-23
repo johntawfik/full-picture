@@ -84,9 +84,8 @@
 
 .articlesGrid {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
   opacity: 0;
@@ -105,20 +104,20 @@
 }
 
 .masonryColumn {
-  flex: 1;
+  flex: 1 0 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  min-width: 0;
 }
 
 .columnTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #666;
   margin-bottom: 1rem;
   text-align: center;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid;
 }
 
 @media (max-width: 1024px) {
@@ -127,13 +126,15 @@
   }
 
   .articlesGrid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
-  
+
   .masonryColumn {
-    width: 100%;
+    min-width: calc(50% - 0.75rem);
+    flex-grow: 1;
   }
-  
+
   .columnTitle {
     margin-top: 2rem;
   }
@@ -145,7 +146,17 @@
   }
 
   .articlesGrid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .masonryColumn {
+    min-width: 100%;
+    gap: 1.5rem;
+  }
+
+  .masonryColumn + .masonryColumn {
+    margin-top: 2rem;
   }
 }
 

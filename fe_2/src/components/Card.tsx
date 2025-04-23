@@ -46,6 +46,13 @@ export default function Card({
 
   const communityLabel = community.toLowerCase();
   
+  const getSourceUrl = (url: string) => {
+    if (url.includes('nytimes.com')) {
+      return `https://www.removepaywall.com/${url}`;
+    }
+    return url;
+  };
+  
   const toggleExpanded = () => {
     setExpanded((prev) => !prev);
   };
@@ -75,7 +82,7 @@ export default function Card({
       </div>
       
       <h3 className={styles.title}>
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a href={getSourceUrl(url)} target="_blank" rel="noopener noreferrer">
           {title}
         </a>
       </h3>
@@ -84,7 +91,7 @@ export default function Card({
       
       <div className={styles.cardFooter}>
         <a 
-          href={url} 
+          href={getSourceUrl(url)} 
           target="_blank" 
           rel="noopener noreferrer"
           className={styles.sourceLink}

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useSearch } from "@/hooks/useSearch";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from 'next/link';
 
 interface Article {
   id: string;
@@ -23,6 +24,20 @@ interface Article {
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   return [...array].sort(() => Math.random() - 0.5);
+};
+
+const groupArticlesByLeaning = (articles: Article[]) => {
+  return articles.reduce((acc, article) => {
+    const leaning = article.community.toLowerCase();
+    if (leaning.includes('left')) {
+      acc.left.push(article);
+    } else if (leaning.includes('center')) {
+      acc.center.push(article);
+    } else if (leaning.includes('right')) {
+      acc.right.push(article);
+    }
+    return acc;
+  }, { left: [], center: [], right: [] } as { left: Article[]; center: Article[]; right: Article[] });
 };
 
 export default function Home() {
@@ -66,8 +81,11 @@ export default function Home() {
     }
   }, [searchResults, router]);
 
+  const groupedArticles = groupArticlesByLeaning(recentArticles);
+
   return (
     <div className={styles.page}>
+      <Link href="/about" className={styles.aboutLink}>About</Link>
       <main className={styles.main}>
         <Analytics />
         <SpeedInsights />
@@ -91,7 +109,7 @@ export default function Home() {
         )}
 
         <div className={styles.articlesGrid}>
-          {Array.isArray(recentArticles) && recentArticles.map((article) => (
+          {recentArticles.map((article) => (
             <Card
               key={article.id}
               id={article.id}

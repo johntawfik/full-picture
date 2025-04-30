@@ -218,3 +218,20 @@
     margin-bottom: 0.5rem;
   }
   
+  .aboutLink {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    color: #333;
+    text-decoration: none;
+    z-index: 1000;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .aboutLink.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  

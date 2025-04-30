@@ -14,10 +14,21 @@ import { Article, groupArticlesByLeaning, getPerspectiveColor, PerspectiveLabel 
 export default function Home() {
   const [recentArticles, setRecentArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [isAboutVisible, setIsAboutVisible] = useState(true);
   const didFetch = useRef(false);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
   const { setQuery, articles: searchResults, isLoading } = useSearch();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsAboutVisible(scrollPosition < 100); // Hide after scrolling 100px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const fetchHomepage = async () => {
     setRecentArticles([]);
@@ -75,7 +86,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <Link href="/about" className={styles.aboutLink}>About</Link>
+      <Link href="/about" className={`${styles.aboutLink} ${!isAboutVisible ? styles.hidden : ''}`}>About</Link>
       <main className={styles.main}>
         <Analytics />
         <SpeedInsights />

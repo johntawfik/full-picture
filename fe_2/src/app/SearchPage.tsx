@@ -16,8 +16,19 @@ export default function SearchPage() {
   const initialQuery = searchParams.get("q") || "";
   const { articles, error, isLoading, setQuery } = useSearch(initialQuery);
   const [layoutMode, setLayoutMode] = useState<'balanced' | 'grouped'>('grouped');
+  const [isAboutVisible, setIsAboutVisible] = useState(true);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsAboutVisible(scrollPosition < 100); // Hide after scrolling 100px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const groupedArticles = groupArticlesByLeaning(articles);
 
   const renderArticles = () => {
@@ -143,7 +154,7 @@ export default function SearchPage() {
 
   return (
     <div className={styles.page}>
-      <Link href="/about" className={homeStyles.aboutLink}>About</Link>
+      <Link href="/about" className={`${styles.aboutLink} ${!isAboutVisible ? styles.hidden : ''}`}>About</Link>
       <div className={styles.searchContainer}>
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h1 className={homeStyles.title} style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
